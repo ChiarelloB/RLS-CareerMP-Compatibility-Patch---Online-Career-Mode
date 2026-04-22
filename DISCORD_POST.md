@@ -1,35 +1,39 @@
-# Texto para Discord
+# Discord Post
 
-Saiu a primeira release do patch de compatibilidade do **RLS Career Overhaul 2.6.5.1** com **CareerMP / BeamMP**.
+## Title
 
-O foco desse patch foi fazer o RLS novo funcionar no fluxo de **carreira online**, sem depender da base antiga `RLS_2.6.4_MPv3.8`.
+RLS Career Overhaul 2.6.5.1 CareerMP Compatibility Patch
 
-## O que foi feito
+## Message
 
-- compatibilizado o `RLS 2.6.5.1` com o entrypoint `career_careerMP`
-- removido o bloqueio que desativava o `BeamMP` ao iniciar o RLS
-- restaurado o sistema de `prop cargo`
-- adicionados os hooks de `prop cargo` na UI de carga
-- ajustada a compatibilidade entre o menu do computador do RLS e o `CareerMP`
-- corrigido o empacotamento do `CareerMP.zip` para carregar corretamente
+The first beta release of the **RLS Career Overhaul 2.6.5.1 CareerMP Compatibility Patch** is available.
 
-## Como usar
+This patch is focused on making the newer RLS `2.6.5.1` build work in **online career mode** with `BeamMP + CareerMP`, without relying on the older `RLS_2.6.4_MPv3.8` package.
 
-Use:
+### What changed
+
+- Added compatibility with the `career_careerMP` entrypoint.
+- Prevented RLS from disabling `BeamMP` on startup.
+- Restored the `prop cargo` system.
+- Added prop cargo support to the cargo UI.
+- Added compatibility between the RLS computer menu and `CareerMP`.
+- Fixed the `CareerMP.zip` packaging flow so `modScript.lua` loads correctly.
+
+### Required mods
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
 - `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
 
-Nao use junto:
+### Do not use together
 
 - `RLS_2.6.4_MPv3.8.zip`
 - `rls_career_overhaul_2.6.5.1.zip`
 
-## Download / repo
+### Download / repository
 
-`<COLE_AQUI_O_LINK_DO_GITHUB>`
+`<PASTE_GITHUB_LINK_HERE>`
 
-## Observacao
+### Note
 
-Esse repo distribui o **patch de compatibilidade** e o script para gerar os zips finais a partir dos mods originais.
+The repository distributes the compatibility patch and build script. It does not redistribute the full original RLS mod archive.

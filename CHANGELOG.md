@@ -2,28 +2,28 @@
 
 ## v1.0.0-beta.1
 
-### Adicionado
+### Added
 
-- Compatibilidade do entrypoint `career_careerMP` com a carreira sobrescrita do RLS.
-- Reintroducao do modulo `propCargo.lua` no RLS `2.6.5.1`.
-- Novo fluxo de cards de `prop cargo` no `cargoScreen.lua`.
-- Filtro `propCargo` no `cargoCards.lua`.
-- Script `build_release.py` para gerar os zips finais a partir dos mods originais.
+- Compatibility between the `career_careerMP` entrypoint and the RLS-overhauled career implementation.
+- Reintroduced `propCargo.lua` for RLS `2.6.5.1`.
+- Prop cargo card flow in `cargoScreen.lua`.
+- `propCargo` filter support in `cargoCards.lua`.
+- `build_release.py` script for generating the final release zips from the original mod archives.
 
-### Alterado
+### Changed
 
-- `extensionManager.lua` para nao desativar o `multiplayerbeammp`.
-- `careerMPEnabler.lua` para responder tambem a `onComputerMenuOpened`.
-- `computer.lua` para limpar o tether ao trocar de submenu e ao fechar o menu.
-- `mod_info/RLSCO24/info.json` para identificar a variante compatível.
+- Updated `extensionManager.lua` so it no longer disables `multiplayerbeammp`.
+- Updated `careerMPEnabler.lua` so it also responds to `onComputerMenuOpened`.
+- Updated `computer.lua` so the computer tether is cleared when moving into submenus or closing the menu.
+- Updated `mod_info/RLSCO24/info.json` to identify the compatible variant.
 
-### Corrigido
+### Fixed
 
-- RLS carregando apenas no `career_career` e ignorando o `career_careerMP`.
-- Falta do sistema de `prop cargo` no porte para `2.6.5.1`.
-- `CareerMP.zip` empacotado de forma incorreta, impedindo o `modScript.lua` de carregar.
-- Conflito entre hooks do menu do computador do RLS e o `CareerMP`.
+- RLS only loading through `career_career` and not through `career_careerMP`.
+- Missing prop cargo support in the `2.6.5.1` port.
+- Incorrect `CareerMP.zip` packaging that prevented `modScript.lua` from loading.
+- Hook mismatch between the RLS computer menu and `CareerMP`.
 
-### Pendente de validacao final
+### Pending Final Validation
 
-- Fluxo completo de `tuning` / `painting` / `part shopping` em sessao online apos o ajuste do tether do computador.
+- Full online tuning, painting, and part-shopping flow after the computer tether cleanup.
