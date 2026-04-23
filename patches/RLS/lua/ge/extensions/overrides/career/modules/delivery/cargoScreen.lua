@@ -29,7 +29,13 @@ local function addCard(data)
   --cardId = cardId + 1
   local id = data.isFacilityCard and "F-" or "P-"
   if data.cardType == "parcelGroup" then
-    id = id .. "pg-"..data.id
+    -- Prop cargo cards can mirror the same parcel ids, so they need a distinct
+    -- card key or they overwrite the standard parcel cards in cardsById.
+    if data.isPropCargo then
+      id = id .. "pcg-"..data.id
+    else
+      id = id .. "pg-"..data.id
+    end
   elseif data.cardType == "storage" then
     id = id .. "st-"..data.id
   elseif data.cardType == 'vehicleOffer' then
