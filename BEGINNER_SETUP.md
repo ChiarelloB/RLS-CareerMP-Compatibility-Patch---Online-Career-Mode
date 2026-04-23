@@ -45,6 +45,15 @@ For a normal West Coast setup, the server should use:
 
 Use only the compatible RLS zip, not the original RLS zip.
 
+If you want traffic fully disabled on your server:
+
+- replace **both** generated files, not just `CareerMP.zip`
+- set `roadTrafficEnabled` to `false`
+- set `parkedTrafficEnabled` to `false`
+- set `roadTrafficAmount` to `0`
+- set `parkedTrafficAmount` to `0`
+- set `autoUpdate` to `false` in the CareerMP server config so the patched files do not get overwritten later
+
 ## Option C: I Need To Build The Files Myself
 
 You only need this section if you do **not** already have the finished compatible zips.
@@ -136,6 +145,8 @@ Check these first:
 - Did you also install `CareerMPBanking.zip`?
 - If using an add-on map, did you keep the base compatible RLS zip installed too?
 - If using River Highway, are you using the PHI map and the generated River delta, not the original old River beta by itself?
+- If traffic is supposed to be off, did you replace both generated zips and not only `CareerMP.zip`?
+- If traffic is still wrong on a server, is `autoUpdate` turned off in the CareerMP server config?
 
 If you are still stuck, send:
 

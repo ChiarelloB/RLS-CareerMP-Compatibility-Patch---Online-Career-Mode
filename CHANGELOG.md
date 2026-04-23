@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- Patched the RLS `overrides/career/modules/playerDriving.lua` traffic setup path so CareerMP servers with `roadTrafficEnabled=false` and `parkedTrafficEnabled=false` no longer get forced fallback spawns.
+- Fixed the RLS career traffic bootstrap interpreting `trafficAmount = 0` and `trafficParkedAmount = 0` as auto-spawn values during multiplayer startup.
+- Disabled the extra default police traffic pool when the CareerMP server traffic config turns road traffic off, preventing the common `2 traffic + 2 parked` fallback case.
+
+### Validated
+
+- Rebuilt both generated release zips and started a dedicated West Coast no-traffic test server with `roadTrafficEnabled=false`, `roadTrafficAmount=0`, `parkedTrafficEnabled=false`, and `parkedTrafficAmount=0`.
+
 ## v1.0.0-beta.5
 
 ### Fixed
