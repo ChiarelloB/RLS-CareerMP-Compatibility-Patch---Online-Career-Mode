@@ -58,6 +58,90 @@ python scripts/build_release.py --rls-original "C:\\path\\to\\rls_career_overhau
 - `built/CareerMP.zip`
 - `built/checksums.txt`
 
+## Beginner Windows Build Guide
+
+Use this section if you are not used to Python or command line tools.
+
+### 1. Install Python
+
+- Install Python 3 from https://www.python.org/downloads/
+- During installation, enable **Add python.exe to PATH**.
+- After installing, open PowerShell and run:
+
+```powershell
+python --version
+```
+
+- If that does not work, try:
+
+```powershell
+py --version
+```
+
+### 2. Download this patch
+
+- Download this repository as a zip from GitHub.
+- Extract it somewhere easy, for example:
+
+```text
+C:\RLS-CareerMP-Patch
+```
+
+### 3. Put the original mods somewhere easy
+
+You need the original files:
+
+- `rls_career_overhaul_2.6.5.1.zip`
+- `CareerMP.zip`
+
+Example:
+
+```text
+C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip
+C:\BeamNG-Mod-Build\CareerMP.zip
+```
+
+### 4. Open PowerShell in the patch folder
+
+In PowerShell, go to the extracted patch folder:
+
+```powershell
+cd "C:\RLS-CareerMP-Patch"
+```
+
+### 5. Build the compatible zips
+
+Run this command, changing the paths if your files are somewhere else:
+
+```powershell
+python .\scripts\build_release.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --out-dir ".\built"
+```
+
+If your computer uses the Python launcher instead of `python`, run:
+
+```powershell
+py .\scripts\build_release.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --out-dir ".\built"
+```
+
+### 6. Use the generated files
+
+After the script finishes, open the `built` folder. These are the files you should use:
+
+- `built\rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `built\CareerMP.zip`
+
+Use those generated files on the server/client setup together with `CareerMPBanking.zip`.
+
+Do **not** also install the original `rls_career_overhaul_2.6.5.1.zip`, because it will conflict with the compatible RLS zip.
+
+### Common Build Problems
+
+- `python is not recognized`: reinstall Python and enable **Add python.exe to PATH**, or use the `py` command instead.
+- `RLS original zip not found`: check that the path after `--rls-original` points to the real original RLS zip.
+- `CareerMP original zip not found`: check that the path after `--careermp-original` points to the real original CareerMP zip.
+- The game still has the minimap crash: make sure you replaced the old generated RLS zip with the new one from `built`.
+- AI traffic still appears when disabled: make sure you replaced the old generated `CareerMP.zip` with the new one from `built`.
+
 ## Server Setup
 
 Distribute these mods:
