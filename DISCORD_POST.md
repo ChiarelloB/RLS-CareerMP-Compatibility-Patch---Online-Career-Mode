@@ -12,14 +12,16 @@ This patch is focused on making the newer RLS `2.6.5.1` build work in **online c
 
 ### What changed
 
-- Added compatibility with the `career_careerMP` entrypoint.
-- Prevented RLS from disabling `BeamMP` on startup.
-- Restored the `prop cargo` system.
-- Added prop cargo support to the cargo UI.
-- Added compatibility between the RLS computer menu and `CareerMP`.
-- Fixed the `CareerMP.zip` packaging flow so `modScript.lua` loads correctly.
 - Fixed the minimap crash on rejoin caused by the old RLS minimap app override.
 - Enforced CareerMP road/parked traffic settings on clients so AI traffic stays disabled when the server config disables it.
+- Keeps all previous beta fixes: `career_careerMP` compatibility, BeamMP startup compatibility, prop cargo restore, cargo UI support, computer menu compatibility, and corrected `CareerMP.zip` packaging.
+
+### Important update note
+
+If you are updating from `v1.0.0-beta.1`, replace **both** generated zips:
+
+- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` fixes the minimap crash.
+- `CareerMP.zip` fixes AI traffic config enforcement.
 
 ### Required mods
 
@@ -34,7 +36,7 @@ This patch is focused on making the newer RLS `2.6.5.1` build work in **online c
 
 ### Download / repository
 
-`<PASTE_GITHUB_LINK_HERE>`
+https://github.com/ChiarelloB/RLS-CareerMP-Compatibility-Patch---Online-Career-Mode
 
 ### Note
 

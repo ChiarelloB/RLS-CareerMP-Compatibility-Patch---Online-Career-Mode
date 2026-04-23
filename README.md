@@ -66,10 +66,20 @@ Distribute these mods:
 - `CareerMPBanking.zip`
 - `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
 
+When updating from `v1.0.0-beta.1` or an older build, replace **both** generated files:
+
+- Replace `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` to fix the minimap crash on rejoin.
+- Replace `CareerMP.zip` to enforce the server-side AI traffic settings on clients.
+
 Do not distribute these at the same time:
 
 - `RLS_2.6.4_MPv3.8.zip`
 - `rls_career_overhaul_2.6.5.1.zip`
+
+## Troubleshooting
+
+- `ui_apps_minimap_minimap` fatal Lua error on rejoin: rebuild or download the latest compatible RLS zip. The old RLS minimap override must not be present in the final archive under `lua/ge/extensions/overrides/ui/apps/minimap/`.
+- AI traffic appears even though CareerMP config disables it: make sure the updated generated `CareerMP.zip` is installed. The traffic config fix is in `lua/ge/extensions/careerMPEnabler.lua`, not in the RLS zip.
 
 ## Notes
 

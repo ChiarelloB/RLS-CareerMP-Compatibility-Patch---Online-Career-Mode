@@ -8,6 +8,10 @@
 - Synced CareerMP road and parked traffic settings to BeamNG runtime settings so server-side traffic disable flags are enforced on clients.
 - Added a runtime traffic guard that keeps AI traffic and parked traffic disabled when the CareerMP server config turns them off.
 
+### Upgrade Notes
+
+- Servers updating from `v1.0.0-beta.1` must replace both generated release zips: the RLS compatible zip fixes the minimap, and the generated `CareerMP.zip` fixes traffic config enforcement.
+
 ## v1.0.0-beta.1
 
 ### Added
