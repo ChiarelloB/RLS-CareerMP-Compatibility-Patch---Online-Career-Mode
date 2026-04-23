@@ -16,6 +16,7 @@ end
 
 local careerMPActive = false
 local syncRequested = false
+local trafficRuntimeTimer = 0
 
 local originalMPOnUpdate
 local originalGetDriverData
@@ -34,11 +35,42 @@ local function getUserTrafficSettings()
 	userTrafficSettings.trafficSmartSelections = settings.getValue('trafficSmartSelections')
 	userTrafficSettings.trafficSimpleVehicles = settings.getValue('trafficSimpleVehicles')
 	userTrafficSettings.trafficAllowMods = settings.getValue('trafficAllowMods')
+	userTrafficSettings.trafficAmount = settings.getValue('trafficAmount')
+	userTrafficSettings.trafficParkedAmount = settings.getValue('trafficParkedAmount')
+	userTrafficSettings.trafficParkedVehicles = settings.getValue('trafficParkedVehicles')
 end
 
 local function setTrafficSettings(trafficSettings)
 	for setting, value in pairs(trafficSettings) do
 		settings.setValue(setting, value)
+	end
+end
+
+local function applyTrafficRuntimeState()
+	if not clientConfig then return end
+
+	local roadTrafficEnabled = clientConfig.roadTrafficEnabled == true
+	local parkedTrafficEnabled = clientConfig.parkedTrafficEnabled == true
+	local roadTrafficAmount = clientConfig.roadTrafficAmount or 0
+	local parkedTrafficAmount = clientConfig.parkedTrafficAmount or 0
+
+	if freeroam_freeroam and freeroam_freeroam.spawningOptionsHelper then
+		freeroam_freeroam.spawningOptionsHelper.trafficMode = roadTrafficEnabled and "enabled" or "disabled"
+		freeroam_freeroam.spawningOptionsHelper.trafficAmount = roadTrafficAmount
+		freeroam_freeroam.spawningOptionsHelper.trafficPolice = "disabled"
+		freeroam_freeroam.spawningOptionsHelper.trafficPoliceRatio = 0
+		freeroam_freeroam.spawningOptionsHelper.trafficParked = parkedTrafficEnabled and "enabled" or "disabled"
+		freeroam_freeroam.spawningOptionsHelper.trafficParkedAmount = parkedTrafficAmount
+	end
+
+	if not roadTrafficEnabled and gameplay_traffic then
+		if gameplay_traffic.deactivate then gameplay_traffic.deactivate(true) end
+		if gameplay_traffic.deleteVehicles then gameplay_traffic.deleteVehicles() end
+	end
+
+	if not parkedTrafficEnabled and gameplay_parking then
+		if gameplay_parking.deactivate then gameplay_parking.deactivate() end
+		if gameplay_parking.deleteVehicles then gameplay_parking.deleteVehicles() end
 	end
 end
 
@@ -369,7 +401,11 @@ local function settingsCheck()
 	careerMPTrafficSettings.trafficAllowMods = clientConfig.trafficAllowMods
 	careerMPTrafficSettings.trafficSimpleVehicles = clientConfig.trafficSimpleVehicles
 	careerMPTrafficSettings.trafficSmartSelections = clientConfig.trafficSmartSelections
+	careerMPTrafficSettings.trafficAmount = clientConfig.roadTrafficEnabled and clientConfig.roadTrafficAmount or 0
+	careerMPTrafficSettings.trafficParkedAmount = clientConfig.parkedTrafficEnabled and clientConfig.parkedTrafficAmount or 0
+	careerMPTrafficSettings.trafficParkedVehicles = clientConfig.parkedTrafficEnabled == true
 	setTrafficSettings(careerMPTrafficSettings)
+	applyTrafficRuntimeState()
 	careerMPGameplaySettings.simplifyRemoteVehicles = clientConfig.simplifyRemoteVehicles
 	careerMPGameplaySettings.spawnVehicleIgnitionLevel = clientConfig.spawnVehicleIgnitionLevel
 	careerMPGameplaySettings.skipOtherPlayersVehicles = clientConfig.skipOtherPlayersVehicles
@@ -427,6 +463,13 @@ end
 
 local function onUpdate(dtReal, dtSim, dtRaw)
 	patchBeamMP()
+	if clientConfig then
+		trafficRuntimeTimer = trafficRuntimeTimer + (dtReal or 0)
+		if trafficRuntimeTimer > 2 then
+			applyTrafficRuntimeState()
+			trafficRuntimeTimer = 0
+		end
+	end
 	if worldReadyState == 2 then
 		if clientConfig then
 			local vehicles = MPVehicleGE.getVehicles()

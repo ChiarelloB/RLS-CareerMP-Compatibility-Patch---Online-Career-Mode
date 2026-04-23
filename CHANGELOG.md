@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.2
+
+### Fixed
+
+- Removed the legacy RLS minimap app override during release builds to prevent `ui_apps_minimap_minimap` nil crashes after rejoining.
+- Synced CareerMP road and parked traffic settings to BeamNG runtime settings so server-side traffic disable flags are enforced on clients.
+- Added a runtime traffic guard that keeps AI traffic and parked traffic disabled when the CareerMP server config turns them off.
+
 ## v1.0.0-beta.1
 
 ### Added

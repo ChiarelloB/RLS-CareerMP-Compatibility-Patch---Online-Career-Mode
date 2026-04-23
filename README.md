@@ -24,6 +24,8 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 - Adds compatibility between the RLS computer menu hook and the hook used by `CareerMP`.
 - Fixes the `CareerMP.zip` packaging flow so `modScript.lua` loads correctly in BeamNG.
 - Adds a defensive computer tether cleanup to avoid closing tuning, painting, or part-shopping screens when switching into the vehicle.
+- Removes the old RLS minimap app override from release builds so the vanilla/CareerMP minimap can load without `ui_apps_minimap_minimap` crashes.
+- Applies CareerMP server traffic settings on the client, including disabling road and parked AI traffic when the server config has them turned off.
 
 ## Changed Files
 

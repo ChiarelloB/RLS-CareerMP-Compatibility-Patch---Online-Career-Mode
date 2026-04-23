@@ -7,6 +7,13 @@ import zipfile
 from pathlib import Path
 
 
+RLS_REMOVE_PREFIXES = (
+    # RLS 2.6.5.1 ships a legacy minimap app override that can remain in the
+    # final zip after patch overlay and crash BeamNG on rejoin.
+    "lua/ge/extensions/overrides/ui/apps/minimap/",
+)
+
+
 def sha256sum(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -33,6 +40,12 @@ def overlay_directory(entries: dict[str, bytes], patch_dir: Path) -> None:
         entries[rel] = file_path.read_bytes()
 
 
+def remove_entry_prefixes(entries: dict[str, bytes], prefixes: tuple[str, ...]) -> None:
+    for name in list(entries):
+        if any(name.startswith(prefix) for prefix in prefixes):
+            del entries[name]
+
+
 def write_zip(zip_path: Path, entries: dict[str, bytes]) -> None:
     zip_path.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
@@ -40,8 +53,9 @@ def write_zip(zip_path: Path, entries: dict[str, bytes]) -> None:
             zf.writestr(name, entries[name])
 
 
-def build_mod(base_zip: Path, patch_dir: Path, output_zip: Path) -> tuple[int, str]:
+def build_mod(base_zip: Path, patch_dir: Path, output_zip: Path, remove_prefixes: tuple[str, ...] = ()) -> tuple[int, str]:
     entries = read_zip_entries(base_zip)
+    remove_entry_prefixes(entries, remove_prefixes)
     overlay_directory(entries, patch_dir)
     write_zip(output_zip, entries)
     return output_zip.stat().st_size, sha256sum(output_zip)
@@ -75,7 +89,7 @@ def main() -> int:
     rls_out = out_dir / "rls_career_overhaul_2.6.5.1_careermp_compatible.zip"
     careermp_out = out_dir / "CareerMP.zip"
 
-    rls_size, rls_hash = build_mod(rls_original, rls_patch_dir, rls_out)
+    rls_size, rls_hash = build_mod(rls_original, rls_patch_dir, rls_out, RLS_REMOVE_PREFIXES)
     cmp_size, cmp_hash = build_mod(careermp_original, careermp_patch_dir, careermp_out)
 
     checksums = out_dir / "checksums.txt"
