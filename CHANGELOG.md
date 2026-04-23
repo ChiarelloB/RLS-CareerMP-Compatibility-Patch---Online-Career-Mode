@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.0-beta.5
+
+### Fixed
+
+- Patched both RLS insurance module paths (`career/modules` and `overrides/career/modules`) so multiplayer uses the repaired logic regardless of which path BeamNG loads first.
+- Replaced broken multiplayer `Instant` repair handling with a safe `2 sec` repair flow to avoid charging players without actually repairing the vehicle.
+- Fixed the repair screen so the displayed repair time matches the backend repair value in multiplayer sessions.
+- Fixed the garage repair callback so repaired vehicles return to the garage flow correctly instead of leaving players inside the damaged vehicle.
+- Fixed delayed repair handoff to use the current inventory vehicle reference instead of the stale pre-repair vehicle reference.
+
+### Validated
+
+- West Coast multiplayer repair flow now completes successfully: payment, repair, and garage return all worked in the validated test build.
+
 ## v1.0.0-beta.4
 
 ### Fixed
