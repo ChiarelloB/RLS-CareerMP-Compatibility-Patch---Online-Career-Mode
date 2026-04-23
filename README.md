@@ -4,6 +4,15 @@ Compatibility patch for running `RLS Career Overhaul 2.6.5.1` together with `Car
 
 This repository **does not redistribute the full RLS mod**. It only contains the modified files, plus a build script that overlays those files onto the original mod archives to generate the final server/client zips.
 
+## Start Here
+
+If you are new and just want the simple version, read [BEGINNER_SETUP.md](BEGINNER_SETUP.md) first.
+
+Quick answer:
+
+- If someone already gave you the finished compatible zip files, you do **not** need Python.
+- Python is only needed if you are generating the compatible files yourself from the original mod archives.
+
 ## Goal
 
 Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, while preserving the RLS overhaul features and removing the parts that break multiplayer loading.
@@ -234,6 +243,7 @@ Do not distribute these at the same time:
 - `ui_apps_minimap_minimap` fatal Lua error on rejoin: rebuild or download the latest compatible RLS zip. The old RLS minimap override must not be present in the final archive under `lua/ge/extensions/overrides/ui/apps/minimap/`.
 - `ui/apps.lua` fatal Lua error mentioning `layout` as nil: replace the generated `CareerMP.zip`. The builder removes the old CareerMP UI layout preset that can break BeamNG 0.34 layout discovery.
 - AI traffic appears even though CareerMP config disables it: make sure the updated generated `CareerMP.zip` is installed. The traffic config fix is in `lua/ge/extensions/careerMPEnabler.lua`, not in the RLS zip.
+- `Prop Cargo` will not turn in: the physical prop must reach the destination area, and then the player should be back in a vehicle and move away from the drop-off area so the delivery can confirm.
 - River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.5.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
 - River Highway has floating city pieces or floating trees: remove the original RLS River beta zip from the server/client mods and use only the generated River delta together with PHI.
 
