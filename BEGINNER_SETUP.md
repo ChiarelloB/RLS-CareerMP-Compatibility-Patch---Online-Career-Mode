@@ -54,6 +54,11 @@ If you want traffic fully disabled on your server:
 - set `parkedTrafficAmount` to `0`
 - set `autoUpdate` to `false` in the CareerMP server config so the patched files do not get overwritten later
 
+The current compatibility update bundles two fixes together:
+
+- the traffic-disable fix for servers that want `roadTrafficEnabled=false` / `parkedTrafficEnabled=false`
+- the workshop compatibility fix for tune and part-shopping flows that could otherwise leave the player vehicle in AI traffic or break recovery / taxi
+
 ## Option C: I Need To Build The Files Myself
 
 You only need this section if you do **not** already have the finished compatible zips.
@@ -146,6 +151,7 @@ Check these first:
 - If using an add-on map, did you keep the base compatible RLS zip installed too?
 - If using River Highway, are you using the PHI map and the generated River delta, not the original old River beta by itself?
 - If traffic is supposed to be off, did you replace both generated zips and not only `CareerMP.zip`?
+- If tune, recovery, or taxi still breaks after a workshop change, did you replace both generated zips and not only one of them?
 - If traffic is still wrong on a server, is `autoUpdate` turned off in the CareerMP server config?
 
 If you are still stuck, send:

@@ -1,16 +1,19 @@
 # Changelog
 
-## Unreleased
+## v1.0.0-beta.6
 
 ### Fixed
 
+- Consolidated this compatibility update so the generated patch set now covers both the multiplayer traffic-disable regression and the workshop respawn/recovery/taxi regression in one release step.
 - Patched the RLS `overrides/career/modules/playerDriving.lua` traffic setup path so CareerMP servers with `roadTrafficEnabled=false` and `parkedTrafficEnabled=false` no longer get forced fallback spawns.
 - Fixed the RLS career traffic bootstrap interpreting `trafficAmount = 0` and `trafficParkedAmount = 0` as auto-spawn values during multiplayer startup.
 - Disabled the extra default police traffic pool when the CareerMP server traffic config turns road traffic off, preventing the common `2 traffic + 2 parked` fallback case.
+- Added inventory and workshop compatibility guards so a tuned vehicle no longer gets treated as AI traffic after respawn and stale vehicle references no longer break recovery or taxi actions.
 
 ### Validated
 
 - Rebuilt both generated release zips and started a dedicated West Coast no-traffic test server with `roadTrafficEnabled=false`, `roadTrafficAmount=0`, `parkedTrafficEnabled=false`, and `parkedTrafficAmount=0`.
+- Validated the workshop flow on a West Coast multiplayer test server: applying a tune, opening recovery with `R`, taking a taxi to a garage, and taking a taxi back to the last vehicle all completed without the previous softlock or `recoverPrompt` crash.
 
 ## v1.0.0-beta.5
 
