@@ -1,0 +1,5 @@
+RLS CareerMP Compatibility - River Highway texture aliases
+
+This delta supplies exact-extension fallback texture files for legacy River Highway/RLS references that BeamNG 0.36 reports as missing.
+The aliases are copied from River Highway PHI or vanilla BeamNG content without changing PNG/DDS extensions.
+Intentionally skipped extension-mismatch references are left for later material-level cleanup if needed.

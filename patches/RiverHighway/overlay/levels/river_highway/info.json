@@ -1,0 +1,88 @@
+{
+	"features":"Multi-lane highways, river, airport, railway, dam, towns, dirt tracks",
+	"description":"A full rework of the original River Highway map by Unyxium. It features a revitalised highway network, new areas to explore and additional features such as speed cameras.",
+	"authors":"unyxium, PowerHausIndustries",
+	"roads":"90% asphalt, 10% dirt",
+	"title":"River Highway PowerHaus Rework",
+	"defaultSpawnPointName":"spawns_highway_rest_area",
+	"size":[
+		8192,
+		8192
+	],
+	"previews":[
+		"previews/river_highway1.jpg",
+		"previews/river_highway2.jpg",
+		"previews/river_highway3.jpg",
+		"previews/river_highway4.jpg",
+		"previews/river_highway5.jpg",
+		"previews/river_highway6.jpg",
+		"previews/river_highway7.jpg"
+	],
+	"spawnPoints":[
+		{
+			"translationId":"Highway Rest Area",
+			"objectname":"spawns_highway_rest_area",
+			"preview":"previews/spawns_highway_rest_area.jpg"
+		},
+		{
+			"translationId":"Town Fuel Station",
+			"objectname":"spawns_town_fuelstation",
+			"preview":"previews/spawns_town_fuelstation.jpg"
+		},
+		{
+			"translationId":"Train Station Tracks",
+			"objectname":"spawns_train_station",
+			"preview":"previews/spawns_train_station.jpg"
+		},
+		{
+			"translationId":"Airport Runway 31",
+			"objectname":"spawns_runway_31",
+			"preview":"previews/spawns_runway_31.jpg"
+		},
+		{
+			"translationId":"Airport Runway 13",
+			"objectname":"spawns_runway_13",
+			"preview":"previews/spawns_runway_13.jpg"
+		},
+		{
+			"translationId":"Airport Hangars",
+			"objectname":"spawns_apron",
+			"preview":"previews/spawns_apron.jpg"
+		},
+		{
+			"translationId":"Farm House",
+			"objectname":"spawns_farm_house",
+			"preview":"previews/spawns_farm_house.jpg"
+		},
+		{
+			"translationId":"Hill Farm House",
+			"objectname":"spawns_hill_farm_house",
+			"preview":"previews/spawns_hill_farm_house.jpg"
+		},
+		{
+			"translationId":"Dam Wall",
+			"objectname":"spawns_dam",
+			"preview":"previews/spawns_dam.jpg"
+		},
+		{
+			"translationId":"Airstrip",
+			"objectname":"spawns_airstrip",
+			"preview":"previews/spawns_airstrip.jpg"
+		},
+		{
+			"translationId":"Coastal Town",
+			"objectname":"spawns_coastal_town",
+			"preview":"previews/spawns_coastal_town.jpg"
+		},
+		{
+			"translationId":"Coastal Lookout",
+			"objectname":"spawns_coast_lookout",
+			"preview":"previews/spawns_coastal_lookout.jpg"
+		},
+		{
+			"translationId":"Sawmill",
+			"objectname":"spawns_sawmill",
+			"preview":"previews/spawns_sawmill.jpg"
+		}
+	]
+}

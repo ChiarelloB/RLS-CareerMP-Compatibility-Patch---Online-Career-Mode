@@ -1,0 +1,1872 @@
+{
+  "aliases": [
+    {
+      "archive": "italy.zip",
+      "source": "beamng",
+      "source_path": "levels/italy/art/shapes/buildings/italy_bld_balcony_rail_details_d.dds",
+      "target": "art/levels/italy/art/shapes/buildings/italy_bld_balcony_rail_details_d.dds"
+    },
+    {
+      "archive": "italy.zip",
+      "source": "beamng",
+      "source_path": "levels/italy/art/shapes/buildings/italy_bld_balcony_rail_details_n.dds",
+      "target": "art/levels/italy/art/shapes/buildings/italy_bld_balcony_rail_details_n.dds"
+    },
+    {
+      "archive": "italy.zip",
+      "source": "beamng",
+      "source_path": "levels/italy/art/shapes/buildings/italy_bld_balcony_rail_details_s.dds",
+      "target": "art/levels/italy/art/shapes/buildings/italy_bld_balcony_rail_details_s.dds"
+    },
+    {
+      "archive": "italy.zip",
+      "source": "beamng",
+      "source_path": "levels/italy/art/shapes/buildings/stone_wall_d.dds",
+      "target": "art/levels/italy/art/shapes/buildings/stone_wall_d"
+    },
+    {
+      "archive": "italy.zip",
+      "source": "beamng",
+      "source_path": "levels/italy/art/shapes/buildings/stone_wall_d.dds",
+      "target": "art/levels/italy/art/shapes/buildings/stone_wall_d.dds"
+    },
+    {
+      "archive": "Utah.zip",
+      "source": "beamng",
+      "source_path": "levels/Utah/art/shapes/clutter/clutter_workshop_n.dds",
+      "target": "art/shapes/garage_and_dealership/Clutter/clutter_workshop_n.dds"
+    },
+    {
+      "archive": "Utah.zip",
+      "source": "beamng",
+      "source_path": "levels/Utah/art/shapes/clutter/clutter_workshop_s.dds",
+      "target": "art/shapes/garage_and_dealership/Clutter/clutter_workshop_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Clover_closetop.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/Clover_closetop.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Grass03_tropical_d.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/Grass03_tropical_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Grass_Green_a.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/Grass_Green_a.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Grass_Green_d.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/Grass_Green_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Grass_Green_n.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/Grass_Green_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Grass_Green_r.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/Grass_Green_r.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/Grass_Green_s.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/Grass_Green_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/corn_group.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/corn_group.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/corn_group_a.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/corn_group_a.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/corn_group_c.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/corn_group_c.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/corn_group_o.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/corn_group_o.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/crops.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/crops.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/crops_c.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/crops_c.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/crops_o.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/crops_o.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/daisies_closetop.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/daisies_closetop.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/forest_vegetation_a.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/forest_vegetation_a.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/forest_vegetation_d.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/forest_vegetation_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/forest_vegetation_n.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/forest_vegetation_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/forest_vegetation_s.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/forest_vegetation_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/grass_field_long.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/grass_field_long.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/grass_trimmed_d.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/grass_trimmed_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/grass_trimmed_n.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/grass_trimmed_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/hemp.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/hemp.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_big_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_big_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_big_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_big_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_big_b.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_big_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_big_b.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_big_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_b.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_b.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_01_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_01_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_02_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_02_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_02_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_02_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_02_b.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_02_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ferns_02_b.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ferns_02_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_b.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_b.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_c.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_c.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_d.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_d.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_d.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_d.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_e.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_e.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_general_01_e.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_general_01_e.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_grass_01_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_grass_01_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_grass_01_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_grass_01_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_grass_01_b.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_grass_01_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_grass_01_b.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_grass_01_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_grass_01_c.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_grass_01_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_grass_01_c.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_grass_01_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_01_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_01_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_01_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_01_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_01_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_01_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_01_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_01_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_02_a.cdae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_02_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_02_a.dae",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_02_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_ground_02_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_02_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_vegetation_bb_d.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_vegetation_bb_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_vegetation_d.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_vegetation_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_vegetation_n.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_vegetation_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/lush_vegetation_s.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_vegetation_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/main.materials.json",
+      "target": "levels/Cliff/art/shapes/groundcover/main.materials.json"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/materials.cs",
+      "target": "levels/Cliff/art/shapes/groundcover/materials.cs"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/plants_grasses.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/plants_grasses.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/plants_grasses_n.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/plants_grasses_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/groundcover/t_grass_01_ao.data.DDS",
+      "target": "levels/Cliff/art/shapes/groundcover/t_grass_01_ao.data.DDS"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_a.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_a.cs",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_a.cs"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_a.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_b.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_b.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_c.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_c.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_c.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_c.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_c.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_c.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_d.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_d.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_d.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_d.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_d.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_d.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_d.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_d.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_e.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_e.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_e.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_e.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_e.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_e.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_e.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_e.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_f.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_f.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_f.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_f.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_g.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_g.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/DRI_rock_g.dae",
+      "target": "levels/Cliff/art/shapes/rocks/DRI_rock_g.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/Rock-02_d.dds",
+      "target": "levels/Cliff/art/shapes/rocks/Rock-02_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/Rock-02_n.dds",
+      "target": "levels/Cliff/art/shapes/rocks/Rock-02_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/Rock-03_d.dds",
+      "target": "levels/Cliff/art/shapes/rocks/Rock-03_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/Rock-03_n.dds",
+      "target": "levels/Cliff/art/shapes/rocks/Rock-03_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/Rock-03_nhm.dds",
+      "target": "levels/Cliff/art/shapes/rocks/Rock-03_nhm.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_a.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_a.dae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_b.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_b.dae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_c.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_c.dae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_c.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_c.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_c.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_c.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_d.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_d.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_d.dae",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_d.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_d.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_d.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/coastrock_dark_d.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/coastrock_dark_d.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/materials.cs",
+      "target": "levels/Cliff/art/shapes/rocks/materials.cs"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_a.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_a.dae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_b.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_b.dae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_c.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_c.dae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_c.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_c.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_large_c.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_large_c.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_a.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_a.dae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_b.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_b.dae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_c.cdae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_c.dae",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_c.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_c.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rock_01_a_small_c.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rock_01_a_small_c.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rocks_01_a_d.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rocks_01_a_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rocks_01_a_n.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rocks_01_a_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/rocks/rocks_01_a_s.dds",
+      "target": "levels/Cliff/art/shapes/rocks/rocks_01_a_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/detail_grunge_palm_01.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/detail_grunge_palm_01.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/materials.cs",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/materials.cs"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_a.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_a.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_b.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_b.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_c.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_c.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_c.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_c.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_c.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_c.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_c.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_c.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_d.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_d.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_d.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_d.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_d.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_d.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_d.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_d.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_e.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_e.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_e.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_e.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_e.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_e.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_e.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_e.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_f.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_f.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_f.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_f.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_f.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_f.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_f.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_f.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_a.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_a.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_a.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_a.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_a.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_a.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_a.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_b.cdae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_b.cdae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_b.dae",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_b.dae"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_b.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_b.dae.imposter.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/tree_palm_overhang_b.dae.imposter_normals.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/tree_palm_overhang_b.dae.imposter_normals.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/vegetation_palm_01_d.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/vegetation_palm_01_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/vegetation_palm_01_n.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/vegetation_palm_01_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/vegetation_palm_01_s.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/vegetation_palm_01_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/vegetation_palm_bark_01_d.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/vegetation_palm_bark_01_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/trees/trees_palm/vegetation_palm_bark_01_n.dds",
+      "target": "levels/Cliff/art/shapes/trees/trees_palm/vegetation_palm_bark_01_n.dds"
+    },
+    {
+      "archive": "tileable.zip",
+      "source": "beamng",
+      "source_path": "assets/materials/tileable/metal/ind_bld_metalgrate_01/ind_bld_mgrate-01_d.dds",
+      "target": "levels/Utah/art/shapes/buildings/ind_bld_mgrate-01_d.dds"
+    },
+    {
+      "archive": "tileable.zip",
+      "source": "beamng",
+      "source_path": "assets/materials/tileable/metal/ind_bld_metalgrate_01/ind_bld_mgrate-01_s.dds",
+      "target": "levels/Utah/art/shapes/buildings/ind_bld_mgrate-01_s.dds"
+    },
+    {
+      "archive": "tileable.zip",
+      "source": "beamng",
+      "source_path": "assets/materials/tileable/stone/m_stone_cinderblocks/t_stone_cinderblocks_detail.data.dds",
+      "target": "levels/driver_training/art/shapes/buildings/t_stone_cinderblocks_detail.data.DDS"
+    },
+    {
+      "archive": "hirochi_raceway.zip",
+      "source": "beamng",
+      "source_path": "levels/hirochi_raceway/art/shapes/objects/wca_objects_construction_r.dds",
+      "target": "levels/johnson_valley/art/shapes/misc/wca_objects_construction_r.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/buildings/detail_grunge_02_streak.dds",
+      "target": "levels/river_highway/art/phi_import/signs/utb/detail_grunge_02_streak.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/buildings/tin-01_d.dds",
+      "target": "levels/river_highway/art/phi_import/signs/utb/tin-01_d.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/buildings/tin-01_n.dds",
+      "target": "levels/river_highway/art/phi_import/signs/utb/tin-01_n.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/buildings/tin-01_s.dds",
+      "target": "levels/river_highway/art/phi_import/signs/utb/tin-01_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/art/shapes/buildings/eca/eca_bld_roof_objects_glow.dds",
+      "target": "levels/river_highway/art/shapes/buildings/eca/eca_bld_roof_objects_s.dds"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/facilities/images/switchMap.jpg",
+      "target": "levels/river_highway/facilities/switchMap.jpg"
+    },
+    {
+      "source": "rls_river",
+      "source_path": "levels/river_highway/test_b/textures/racetabautov1.color.dds",
+      "target": "levels/river_highway/test_b/materials/racetabautov1.dds"
+    },
+    {
+      "archive": "foliage.zip",
+      "source": "beamng",
+      "source_path": "assets/materials/foliage/grass/grass_field/grass_field.dds",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field.dds"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_closetop.cdae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_closetop.cdae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_closetop.dae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_closetop.dae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_closetop.dae.imposter.dds",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_closetop.dae.imposter.dds"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_closetop.dae.imposter_normals.dds",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_closetop.dae.imposter_normals.dds"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_filler.cdae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_filler.cdae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_filler.dae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_filler.dae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_large.cdae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_large.cdae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_large.dae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_large.dae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_long.cdae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_long.cdae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_long.dae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_long.dae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_sml.cdae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_sml.cdae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_sml.dae",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_sml.dae"
+    },
+    {
+      "archive": "Cliff.zip",
+      "source": "beamng",
+      "source_path": "levels/Cliff/art/shapes/groundcover/grass_field_sml.dds",
+      "target": "levels/west_coast_usa/art/groundcover/grass_field_sml.dds"
+    },
+    {
+      "archive": "common.zip",
+      "source": "beamng",
+      "source_path": "vehicles/common/gavril_lettering_b.color.dds",
+      "target": "vehicles/common/gavril_lettering_d.dds"
+    },
+    {
+      "archive": "common.zip",
+      "source": "beamng",
+      "source_path": "vehicles/common/gavril_lettering_n.normal.dds",
+      "target": "vehicles/common/gavril_lettering_n.dds"
+    },
+    {
+      "archive": "common.zip",
+      "source": "beamng",
+      "source_path": "vehicles/common/gavril_lettering_o.data.dds",
+      "target": "vehicles/common/gavril_lettering_s.dds"
+    },
+    {
+      "archive": "etki.zip",
+      "source": "beamng",
+      "source_path": "vehicles/etki/etki_engine_b.color.dds",
+      "target": "vehicles/etki/etki_engine_d.dds"
+    },
+    {
+      "archive": "etki.zip",
+      "source": "beamng",
+      "source_path": "vehicles/etki/etki_engine_nm.normal.dds",
+      "target": "vehicles/etki/etki_engine_n.dds"
+    },
+    {
+      "archive": "etki.zip",
+      "source": "beamng",
+      "source_path": "vehicles/etki/etki_engine_m.data.dds",
+      "target": "vehicles/etki/etki_engine_s.dds"
+    },
+    {
+      "archive": "fullsize.zip",
+      "source": "beamng",
+      "source_path": "vehicles/fullsize/fullsize_intcarpet_b.color.dds",
+      "target": "vehicles/fullsize/fullsize_intcarpet_d.dds"
+    }
+  ],
+  "blank_files": [
+    "levels/river_highway/forest/BBZ_redwood1.forest4.json",
+    "levels/river_highway/forest/BBZ_redwood2.forest4.json",
+    "levels/river_highway/forest/BBZ_redwood3.forest4.json",
+    "levels/river_highway/forest/BBZ_redwood4.forest4.json",
+    "levels/river_highway/forest/BBZ_redwood5.forest4.json",
+    "levels/river_highway/forest/Clover_closetop.forest4.json",
+    "levels/river_highway/forest/automation_shrub_a.forest4.json",
+    "levels/river_highway/forest/automation_shrub_b.forest4.json",
+    "levels/river_highway/forest/automation_shrub_c.forest4.json",
+    "levels/river_highway/forest/barrierfence_folk.forest4.json",
+    "levels/river_highway/forest/barrierfence_plain.forest4.json",
+    "levels/river_highway/forest/billboard_structure1.forest4.json",
+    "levels/river_highway/forest/billboard_structure2.forest4.json",
+    "levels/river_highway/forest/bollard_hoop_grey.forest4.json",
+    "levels/river_highway/forest/bollard_hoop_red.forest4.json",
+    "levels/river_highway/forest/bollard_yellow.forest4.json",
+    "levels/river_highway/forest/boom_trafficlight_small.forest4.json",
+    "levels/river_highway/forest/cable_boom.forest4.json",
+    "levels/river_highway/forest/cone.forest4.json",
+    "levels/river_highway/forest/constructionbarrier.forest4.json",
+    "levels/river_highway/forest/cork_oak_bush_medium.forest4.json",
+    "levels/river_highway/forest/crosswalklight.forest4.json",
+    "levels/river_highway/forest/cypress_tree.forest4.json",
+    "levels/river_highway/forest/daisies_closetop.forest4.json",
+    "levels/river_highway/forest/desert_rocks_large_02.forest4.json",
+    "levels/river_highway/forest/desert_rocks_large_03.forest4.json",
+    "levels/river_highway/forest/desert_rocks_large_04.forest4.json",
+    "levels/river_highway/forest/desert_rocks_large_05.forest4.json",
+    "levels/river_highway/forest/desert_rocks_large_06.forest4.json",
+    "levels/river_highway/forest/desert_rocks_large_07.forest4.json",
+    "levels/river_highway/forest/desert_rocks_medium_01.forest4.json",
+    "levels/river_highway/forest/desert_rocks_medium_02.forest4.json",
+    "levels/river_highway/forest/desert_rocks_medium_04.forest4.json",
+    "levels/river_highway/forest/desert_rocks_medium_05.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_01.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_02.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_03.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_04.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_05.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_06.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_07.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_08.forest4.json",
+    "levels/river_highway/forest/desert_rocks_small_09.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_01.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_02.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_03.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_04.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_05.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_06.forest4.json",
+    "levels/river_highway/forest/desert_rocks_tiny_07.forest4.json",
+    "levels/river_highway/forest/dumpster.forest4.json",
+    "levels/river_highway/forest/eca_rock_big_narrow.forest4.json",
+    "levels/river_highway/forest/eca_rock_big_wide.forest4.json",
+    "levels/river_highway/forest/eucalyptus_double.forest4.json",
+    "levels/river_highway/forest/eucalyptus_group.forest4.json",
+    "levels/river_highway/forest/eucalyptus_tall.forest4.json",
+    "levels/river_highway/forest/fanpalm_full.forest4.json",
+    "levels/river_highway/forest/fanpalm_short.forest4.json",
+    "levels/river_highway/forest/fanpalm_skirt.forest4.json",
+    "levels/river_highway/forest/fanpalm_slim.forest4.json",
+    "levels/river_highway/forest/fanpalm_tall.forest4.json",
+    "levels/river_highway/forest/featherflag_beamng.forest4.json",
+    "levels/river_highway/forest/featherflag_bruckell.forest4.json",
+    "levels/river_highway/forest/featherflag_gavril.forest4.json",
+    "levels/river_highway/forest/featherflag_ibishu.forest4.json",
+    "levels/river_highway/forest/featherflag_repair.forest4.json",
+    "levels/river_highway/forest/fence_metal1.forest4.json",
+    "levels/river_highway/forest/fir_dead_branches.forest4.json",
+    "levels/river_highway/forest/fire_hydrant.forest4.json",
+    "levels/river_highway/forest/fluffy_bush.forest4.json",
+    "levels/river_highway/forest/garbage_bin_a.forest4.json",
+    "levels/river_highway/forest/garbage_bin_b.forest4.json",
+    "levels/river_highway/forest/garbage_bottle_a.forest4.json",
+    "levels/river_highway/forest/garbage_bottle_b.forest4.json",
+    "levels/river_highway/forest/garbage_cardboard_box_a.forest4.json",
+    "levels/river_highway/forest/garbage_cardboard_box_b.forest4.json",
+    "levels/river_highway/forest/garbage_littlebox.forest4.json",
+    "levels/river_highway/forest/garbage_plasticbag.forest4.json",
+    "levels/river_highway/forest/garbage_plasticbag_black.forest4.json",
+    "levels/river_highway/forest/garbage_sack.forest4.json",
+    "levels/river_highway/forest/grassclump_large.forest4.json",
+    "levels/river_highway/forest/guardrail1.forest4.json",
+    "levels/river_highway/forest/guardrail1_blue.forest4.json",
+    "levels/river_highway/forest/guardrail1_red.forest4.json",
+    "levels/river_highway/forest/guardrail1_white.forest4.json",
+    "levels/river_highway/forest/guardrail2.forest4.json",
+    "levels/river_highway/forest/guardrail2_blue.forest4.json",
+    "levels/river_highway/forest/guardrail2_red.forest4.json",
+    "levels/river_highway/forest/guardrail2_white.forest4.json",
+    "levels/river_highway/forest/guardrailpost.forest4.json",
+    "levels/river_highway/forest/house1.forest4.json",
+    "levels/river_highway/forest/house2.forest4.json",
+    "levels/river_highway/forest/house3.forest4.json",
+    "levels/river_highway/forest/house4.forest4.json",
+    "levels/river_highway/forest/hr_tire_mod.forest4.json",
+    "levels/river_highway/forest/hr_tirestack_blue.forest4.json",
+    "levels/river_highway/forest/hr_tirestack_white.forest4.json",
+    "levels/river_highway/forest/hydrant1.forest4.json",
+    "levels/river_highway/forest/industrial_watertower.forest4.json",
+    "levels/river_highway/forest/jerseybarrier_3m.forest4.json",
+    "levels/river_highway/forest/jerseybarrier_end.forest4.json",
+    "levels/river_highway/forest/lamp1.forest4.json",
+    "levels/river_highway/forest/leanto_large.forest4.json",
+    "levels/river_highway/forest/leanto_small.forest4.json",
+    "levels/river_highway/forest/light_city.forest4.json",
+    "levels/river_highway/forest/log_barrier.forest4.json",
+    "levels/river_highway/forest/lush_big_a.forest4.json",
+    "levels/river_highway/forest/lush_big_b.forest4.json",
+    "levels/river_highway/forest/lush_ferns_01_a.forest4.json",
+    "levels/river_highway/forest/lush_ferns_01_b.forest4.json",
+    "levels/river_highway/forest/lush_ferns_02_a.forest4.json",
+    "levels/river_highway/forest/lush_ferns_02_b.forest4.json",
+    "levels/river_highway/forest/lush_general_01_b.forest4.json",
+    "levels/river_highway/forest/lush_general_01_e.forest4.json",
+    "levels/river_highway/forest/lush_grass_01_a.forest4.json",
+    "levels/river_highway/forest/lush_grass_01_b.forest4.json",
+    "levels/river_highway/forest/lush_grass_01_c.forest4.json",
+    "levels/river_highway/forest/marshaltower.forest4.json",
+    "levels/river_highway/forest/oak_dry_a.forest4.json",
+    "levels/river_highway/forest/oak_dry_b.forest4.json",
+    "levels/river_highway/forest/oak_dry_c.forest4.json",
+    "levels/river_highway/forest/oak_dry_d.forest4.json",
+    "levels/river_highway/forest/pallet.forest4.json",
+    "levels/river_highway/forest/pine_radiata_forest.forest4.json",
+    "levels/river_highway/forest/pine_radiata_large.forest4.json",
+    "levels/river_highway/forest/pine_radiata_small.forest4.json",
+    "levels/river_highway/forest/pine_radiata_weathered.forest4.json",
+    "levels/river_highway/forest/pipeline_support1.forest4.json",
+    "levels/river_highway/forest/pipeline_support2.forest4.json",
+    "levels/river_highway/forest/planterbox.forest4.json",
+    "levels/river_highway/forest/pole_boom_med.forest4.json",
+    "levels/river_highway/forest/pole_city1.forest4.json",
+    "levels/river_highway/forest/pole_fence1.forest4.json",
+    "levels/river_highway/forest/pole_fence2.forest4.json",
+    "levels/river_highway/forest/pole_light_bridge.forest4.json",
+    "levels/river_highway/forest/pole_light_double.forest4.json",
+    "levels/river_highway/forest/pole_light_single.forest4.json",
+    "levels/river_highway/forest/pole_lighting1.forest4.json",
+    "levels/river_highway/forest/pole_lighting2.forest4.json",
+    "levels/river_highway/forest/pole_thick.forest4.json",
+    "levels/river_highway/forest/pole_traffic1.forest4.json",
+    "levels/river_highway/forest/postbox_blue.forest4.json",
+    "levels/river_highway/forest/powerpole1.forest4.json",
+    "levels/river_highway/forest/powerpole2.forest4.json",
+    "levels/river_highway/forest/powerpole3.forest4.json",
+    "levels/river_highway/forest/powerpole4.forest4.json",
+    "levels/river_highway/forest/pylon.forest4.json",
+    "levels/river_highway/forest/railing_support1.forest4.json",
+    "levels/river_highway/forest/railing_support2.forest4.json",
+    "levels/river_highway/forest/redwood_broad.forest4.json",
+    "levels/river_highway/forest/redwood_split.forest4.json",
+    "levels/river_highway/forest/redwood_tall.forest4.json",
+    "levels/river_highway/forest/river_highway_guardrails_heavy.forest4.json",
+    "levels/river_highway/forest/road_support1.forest4.json",
+    "levels/river_highway/forest/rock_01_a_large_a.forest4.json",
+    "levels/river_highway/forest/rock_01_a_large_b.forest4.json",
+    "levels/river_highway/forest/rock_01_a_large_c.forest4.json",
+    "levels/river_highway/forest/sandbarrel.forest4.json",
+    "levels/river_highway/forest/screenfence1.forest4.json",
+    "levels/river_highway/forest/seating1.forest4.json",
+    "levels/river_highway/forest/shrub_a.forest4.json",
+    "levels/river_highway/forest/shrub_b.forest4.json",
+    "levels/river_highway/forest/shrub_c.forest4.json",
+    "levels/river_highway/forest/shrub_d.forest4.json",
+    "levels/river_highway/forest/shrub_e.forest4.json",
+    "levels/river_highway/forest/shrub_f.forest4.json",
+    "levels/river_highway/forest/shrub_g.forest4.json",
+    "levels/river_highway/forest/sign_truss1.forest4.json",
+    "levels/river_highway/forest/sign_truss2.forest4.json",
+    "levels/river_highway/forest/sign_truss3.forest4.json",
+    "levels/river_highway/forest/sign_truss4.forest4.json",
+    "levels/river_highway/forest/solarpanel.forest4.json",
+    "levels/river_highway/forest/spanishbayonet1.forest4.json",
+    "levels/river_highway/forest/spanishbayonet2.forest4.json",
+    "levels/river_highway/forest/spool.forest4.json",
+    "levels/river_highway/forest/storagerack.forest4.json",
+    "levels/river_highway/forest/substation_circuitbreaker.forest4.json",
+    "levels/river_highway/forest/substation_lightning.forest4.json",
+    "levels/river_highway/forest/substation_support.forest4.json",
+    "levels/river_highway/forest/substation_transformer.forest4.json",
+    "levels/river_highway/forest/substation_truss.forest4.json",
+    "levels/river_highway/forest/tall_plant.forest4.json",
+    "levels/river_highway/forest/tent1.forest4.json",
+    "levels/river_highway/forest/toll.forest4.json",
+    "levels/river_highway/forest/toll_edge.forest4.json",
+    "levels/river_highway/forest/toll_side.forest4.json",
+    "levels/river_highway/forest/trafficlightbox_green.forest4.json",
+    "levels/river_highway/forest/train_support1.forest4.json",
+    "levels/river_highway/forest/tree_aspen_bush_b.forest4.json",
+    "levels/river_highway/forest/tree_aspen_bush_c.forest4.json",
+    "levels/river_highway/forest/tree_aspen_chopped.forest4.json",
+    "levels/river_highway/forest/tree_aspen_forest_a.forest4.json",
+    "levels/river_highway/forest/tree_aspen_forest_b.forest4.json",
+    "levels/river_highway/forest/tree_aspen_forest_group.forest4.json",
+    "levels/river_highway/forest/tree_aspen_large_a.forest4.json",
+    "levels/river_highway/forest/tree_aspen_large_b.forest4.json",
+    "levels/river_highway/forest/tree_aspen_overhang_a.forest4.json",
+    "levels/river_highway/forest/tree_aspen_small_a.forest4.json",
+    "levels/river_highway/forest/tree_aspen_small_b.forest4.json",
+    "levels/river_highway/forest/tree_aspen_small_c.forest4.json",
+    "levels/river_highway/forest/tree_aspen_small_d.forest4.json",
+    "levels/river_highway/forest/tree_aspen_small_low.forest4.json",
+    "levels/river_highway/forest/tree_aspen_small_low_group.forest4.json",
+    "levels/river_highway/forest/tree_aspen_wall.forest4.json",
+    "levels/river_highway/forest/tree_beech_bush_a.forest4.json",
+    "levels/river_highway/forest/tree_beech_bush_b.forest4.json",
+    "levels/river_highway/forest/tree_beech_bush_c.forest4.json",
+    "levels/river_highway/forest/tree_beech_bush_d.forest4.json",
+    "levels/river_highway/forest/tree_beech_chopped_a.forest4.json",
+    "levels/river_highway/forest/tree_beech_chopped_b.forest4.json",
+    "levels/river_highway/forest/tree_beech_dead_a.forest4.json",
+    "levels/river_highway/forest/tree_beech_dead_b.forest4.json",
+    "levels/river_highway/forest/tree_beech_forest_a.forest4.json",
+    "levels/river_highway/forest/tree_beech_forest_b.forest4.json",
+    "levels/river_highway/forest/tree_beech_forest_group.forest4.json",
+    "levels/river_highway/forest/tree_beech_large_b.forest4.json",
+    "levels/river_highway/forest/tree_beech_large_c.forest4.json",
+    "levels/river_highway/forest/tree_beech_overhang_a.forest4.json",
+    "levels/river_highway/forest/tree_beech_small_b.forest4.json",
+    "levels/river_highway/forest/tree_beech_small_c.forest4.json",
+    "levels/river_highway/forest/tree_beech_small_d.forest4.json",
+    "levels/river_highway/forest/tree_beech_small_forest_group2.forest4.json",
+    "levels/river_highway/forest/tree_cypress.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_chopped.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_dead.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_dead_02.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_group.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_large_c.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_small_b.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_small_d.forest4.json",
+    "levels/river_highway/forest/tree_oak_chopped_a.forest4.json",
+    "levels/river_highway/forest/tree_oak_chopped_b.forest4.json",
+    "levels/river_highway/forest/tree_oak_forest_group.forest4.json",
+    "levels/river_highway/forest/tree_oak_large_c.forest4.json",
+    "levels/river_highway/forest/tree_oak_sml_a.forest4.json",
+    "levels/river_highway/forest/tree_oak_sml_b.forest4.json",
+    "levels/river_highway/forest/tree_palm_a.forest4.json",
+    "levels/river_highway/forest/tree_palm_b.forest4.json",
+    "levels/river_highway/forest/tree_palm_c.forest4.json",
+    "levels/river_highway/forest/tree_palm_d.forest4.json",
+    "levels/river_highway/forest/tree_palm_e.forest4.json",
+    "levels/river_highway/forest/tree_palm_f.forest4.json",
+    "levels/river_highway/forest/tree_palm_overhang_a.forest4.json",
+    "levels/river_highway/forest/tree_palm_overhang_b.forest4.json",
+    "levels/river_highway/forest/undergrowth_eca_large_a.forest4.json",
+    "levels/river_highway/forest/wall_brick1.forest4.json",
+    "levels/river_highway/forest/wall_metal1.forest4.json",
+    "levels/river_highway/forest/wall_wire1.forest4.json",
+    "levels/river_highway/forest/wall_wood1.forest4.json",
+    "levels/river_highway/forest/warehouse1.forest4.json",
+    "levels/river_highway/forest/wca_rock5.forest4.json",
+    "levels/river_highway/forest/wca_rock6.forest4.json",
+    "levels/river_highway/forest/wca_rock7.forest4.json",
+    "levels/river_highway/forest/wca_rock9.forest4.json",
+    "levels/river_highway/forest/wood_crate.forest4.json",
+    "levels/river_highway/forest/workshop1.forest4.json"
+  ],
+  "copy_from_beamng": [
+    {
+      "archive": "Cliff.zip",
+      "source": "levels/Cliff/art/shapes/groundcover/lush_ground_02_a.dae.imposter.dds",
+      "target": "levels/Cliff/art/shapes/groundcover/lush_ground_02_a.dae.imposter.dds"
+    }
+  ],
+  "copy_from_phi": [],
+  "copy_from_rls_river": [
+    "gameplay/delivery/RHSmallTrailerVehicles.deliveryVehicles.json",
+    "gameplay/delivery/RHVehicles.deliveryVehicles.json",
+    "gameplay/delivery/carGo.deliveryParcels.json",
+    "gameplay/delivery/rhBoxes.deliveryParcels.json",
+    "gameplay/organizations/river_highway.organizations.json",
+    "levels/river_highway/aa_miami/sectors/s1/main.materials.json",
+    "levels/river_highway/aa_miami/sectors/s8/main.materials.json",
+    "levels/river_highway/art/phi_import/att/buildings/main.materials.json",
+    "levels/river_highway/art/phi_import/garage/alt/main.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/lansdale.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/legran.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/main.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/midsize.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/pessima.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/pickup.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/roamer.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/robotvan.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/sunburst2.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/van.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/vivace.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/materials/wendover.materials.json",
+    "levels/river_highway/art/phi_import/garage/vehicles/traffic/models/main.materials.json",
+    "levels/river_highway/art/phi_import/jv/objects/main.materials.json",
+    "levels/river_highway/art/phi_import/wcusa/buildings/steel_factory/main.materials.json",
+    "levels/river_highway/art/phi_import/wcusa/roads/main.materials.json",
+    "levels/river_highway/art/shapes/trees/trees_beech/tree_beech_blocker_a.dae.asset.json",
+    "levels/river_highway/art/shapes/trees/trees_douglasfir/tree_douglasfir_small_c.dae.asset.json",
+    "levels/river_highway/art/shapes/trees/trees_oak/tree_oak_blocker_a.dae.asset.json",
+    "levels/river_highway/art/shapes/trees/trees_oak/tree_oak_bush_a.dae.asset.json",
+    "levels/river_highway/art/shapes/trees/trees_oak/tree_oak_bush_c.dae.asset.json",
+    "levels/river_highway/art/shapes/trees/trees_oak/tree_oak_dead_a.dae.asset.json",
+    "levels/river_highway/art/shapes/trees/trees_oak/tree_oak_dead_b.dae.asset.json",
+    "levels/river_highway/art2/raceway/buildings/main.materials.json",
+    "levels/river_highway/city.sites.json",
+    "levels/river_highway/dynamicRoute.json",
+    "levels/river_highway/facilities.sites.json",
+    "levels/river_highway/facilities/dealerships.facilities.json",
+    "levels/river_highway/facilities/delivery/carGoDelivery.facilities.json",
+    "levels/river_highway/facilities/delivery/carGoDelivery.sites.json",
+    "levels/river_highway/facilities/delivery/pictures/TPBjapanOrg.jpg",
+    "levels/river_highway/facilities/delivery/pictures/TPBjapanOrg_import.jpg",
+    "levels/river_highway/facilities/delivery/pictures/beamBearFactory.jpg",
+    "levels/river_highway/facilities/delivery/pictures/bigm_delivery.jpg",
+    "levels/river_highway/facilities/delivery/pictures/carGoAirport.jpg",
+    "levels/river_highway/facilities/delivery/pictures/carGoCrossroads.jpg",
+    "levels/river_highway/facilities/delivery/pictures/carGoPort.jpg",
+    "levels/river_highway/facilities/delivery/pictures/carGoSpearleaf.jpg",
+    "levels/river_highway/facilities/delivery/pictures/cavalierConstruction.jpg",
+    "levels/river_highway/facilities/delivery/pictures/cavalierConstructionHq.jpg",
+    "levels/river_highway/facilities/delivery/pictures/cavalierConstructionSite.jpg",
+    "levels/river_highway/facilities/delivery/pictures/cavalierConstructionSite2.jpg",
+    "levels/river_highway/facilities/delivery/pictures/cavalierConstructionSite3.jpg",
+    "levels/river_highway/facilities/delivery/pictures/cavalierConstructionSite4.jpg",
+    "levels/river_highway/facilities/delivery/pictures/firRoofing.jpg",
+    "levels/river_highway/facilities/delivery/pictures/firRoofingProject.jpg",
+    "levels/river_highway/facilities/delivery/pictures/firRoofingProject2.jpg",
+    "levels/river_highway/facilities/delivery/pictures/flanigans_bar_miami.jpg",
+    "levels/river_highway/facilities/delivery/pictures/logicalTruckingWarehouse.jpg",
+    "levels/river_highway/facilities/delivery/pictures/miamiMall.jpg",
+    "levels/river_highway/facilities/delivery/pictures/miami_stars_cafe.jpg",
+    "levels/river_highway/facilities/delivery/pictures/palaiseFactory.jpg",
+    "levels/river_highway/facilities/delivery/pictures/powerHausArena.jpg",
+    "levels/river_highway/facilities/delivery/pictures/powerhausRoofingProject.jpg",
+    "levels/river_highway/facilities/delivery/pictures/pueto_bakery.jpg",
+    "levels/river_highway/facilities/delivery/pictures/rh_hotrolled.jpg",
+    "levels/river_highway/facilities/delivery/pictures/rh_miami_hospital.jpg",
+    "levels/river_highway/facilities/delivery/pictures/spearleaf.jpg",
+    "levels/river_highway/facilities/delivery/pictures/spearleafMarinePort.jpg",
+    "levels/river_highway/facilities/delivery/pictures/spearleafRailPort.jpg",
+    "levels/river_highway/facilities/delivery/pictures/spearleafReineryPort.jpg",
+    "levels/river_highway/facilities/delivery/pictures/spearleafReineryRail.jpg",
+    "levels/river_highway/facilities/delivery/pictures/speedLineTiresOrg.jpg",
+    "levels/river_highway/facilities/delivery/pictures/sport_cafe_miami.jpg",
+    "levels/river_highway/facilities/delivery/pictures/tastiCola.jpg",
+    "levels/river_highway/facilities/delivery/pictures/tekkvinylFactory.jpg",
+    "levels/river_highway/facilities/delivery/pictures/tekkvinylFactory2.jpg",
+    "levels/river_highway/facilities/delivery/pictures/threeCubeMarket.jpg",
+    "levels/river_highway/facilities/delivery/pictures/threeCubeMarket2.jpg",
+    "levels/river_highway/facilities/delivery/pictures/threeCubeMarket3.jpg",
+    "levels/river_highway/facilities/delivery/pictures/threeCubeMarket4.jpg",
+    "levels/river_highway/facilities/delivery/pictures/trebEnterprises.jpg",
+    "levels/river_highway/facilities/delivery/pictures/trebEnterprisesmiami.jpg",
+    "levels/river_highway/facilities/delivery/pictures/trebOffsiteWearhouse.jpg",
+    "levels/river_highway/facilities/delivery/pictures/tyrannosFuel.jpg",
+    "levels/river_highway/facilities/delivery/pictures/unclesMysteriousDeliveries.jpg",
+    "levels/river_highway/facilities/delivery/pictures/vixenFactory.jpg",
+    "levels/river_highway/facilities/delivery/pictures/vixen_dinner_key_park.jpg",
+    "levels/river_highway/facilities/delivery/pictures/volitaliaMiami.jpg",
+    "levels/river_highway/facilities/delivery/pictures/volitaliaRiverHighway.jpg",
+    "levels/river_highway/facilities/delivery/restaurants.facilities.json",
+    "levels/river_highway/facilities/delivery/restaurants.sites.json",
+    "levels/river_highway/facilities/delivery/rhDryVanDelivery.facilities.json",
+    "levels/river_highway/facilities/delivery/rhDryVanDelivery.sites.json",
+    "levels/river_highway/facilities/delivery/rhFlatbedDelivery.facilities.json",
+    "levels/river_highway/facilities/delivery/rhFlatbedDelivery.sites.json",
+    "levels/river_highway/facilities/delivery/roleplay.facilities.json",
+    "levels/river_highway/facilities/delivery/roleplay.sites.json",
+    "levels/river_highway/facilities/delivery/smallTrailerDelivery.facilities.json",
+    "levels/river_highway/facilities/delivery/smallTrailerDelivery.sites.json",
+    "levels/river_highway/facilities/facilities.facilities.json",
+    "levels/river_highway/facilities/freeroamEvents/airportTownDriftLoop1.jpg",
+    "levels/river_highway/facilities/freeroamEvents/airportTownDriftLoop2.jpg",
+    "levels/river_highway/facilities/freeroamEvents/airportTownStreetLoop1.jpg",
+    "levels/river_highway/facilities/freeroamEvents/goKartTrack.jpg",
+    "levels/river_highway/facilities/freeroamEvents/leafSpringLoop1.jpg",
+    "levels/river_highway/facilities/freeroamEvents/powerHausSprint.jpg",
+    "levels/river_highway/facilities/freeroamEvents/powerHausSprintReverse.jpg",
+    "levels/river_highway/facilities/freeroamEvents/rallyCrossLoop.jpg",
+    "levels/river_highway/facilities/freeroamEvents/riverHighwayTouge1.jpg",
+    "levels/river_highway/facilities/freeroamEvents/riverSideRally.jpg",
+    "levels/river_highway/facilities/images/apexDealer.jpg",
+    "levels/river_highway/facilities/images/auroraImport.jpg",
+    "levels/river_highway/facilities/images/blankCanvas.jpg",
+    "levels/river_highway/facilities/images/coastal_junction_tyrannos_gas.jpg",
+    "levels/river_highway/facilities/images/fuel_preview.jpg",
+    "levels/river_highway/facilities/images/switchMap.jpg",
+    "levels/river_highway/facilities/images/tyrannosFuel.jpg",
+    "levels/river_highway/facilities/images/watersideCars.jpg",
+    "levels/river_highway/facilities/pictures/12San_marino_island.jpg",
+    "levels/river_highway/facilities/pictures/2palm_drive.jpg",
+    "levels/river_highway/facilities/pictures/58alton_road.jpg",
+    "levels/river_highway/facilities/pictures/63alton_road.jpg",
+    "levels/river_highway/facilities/pictures/GumtreeHollow.jpg",
+    "levels/river_highway/facilities/pictures/abandonedAirport.jpg",
+    "levels/river_highway/facilities/pictures/airportTownHouse.jpg",
+    "levels/river_highway/facilities/pictures/airportTownWorkshop.jpg",
+    "levels/river_highway/facilities/pictures/airportTuningShed.jpg",
+    "levels/river_highway/facilities/pictures/altonRoad_A.jpg",
+    "levels/river_highway/facilities/pictures/altonRoad_B.jpg",
+    "levels/river_highway/facilities/pictures/backstreet_garage.jpg",
+    "levels/river_highway/facilities/pictures/beamBearFactory.jpg",
+    "levels/river_highway/facilities/pictures/carGoAirport.jpg",
+    "levels/river_highway/facilities/pictures/carGoCrossroads.jpg",
+    "levels/river_highway/facilities/pictures/carGoDKP.jpg",
+    "levels/river_highway/facilities/pictures/carGoPort.jpg",
+    "levels/river_highway/facilities/pictures/carGoSpearleaf.jpg",
+    "levels/river_highway/facilities/pictures/carsRUs.jpg",
+    "levels/river_highway/facilities/pictures/cavalierConstruction.jpg",
+    "levels/river_highway/facilities/pictures/cavalierConstructionHq.jpg",
+    "levels/river_highway/facilities/pictures/cavalierConstructionSite.jpg",
+    "levels/river_highway/facilities/pictures/cavalierConstructionSite2.jpg",
+    "levels/river_highway/facilities/pictures/cavalierConstructionSite3.jpg",
+    "levels/river_highway/facilities/pictures/cavalierConstructionSite4.jpg",
+    "levels/river_highway/facilities/pictures/commercialYard.jpg",
+    "levels/river_highway/facilities/pictures/costalHouse.jpg",
+    "levels/river_highway/facilities/pictures/costalShed.jpg",
+    "levels/river_highway/facilities/pictures/crossroads_north_unit4a.jpg",
+    "levels/river_highway/facilities/pictures/crossroads_north_unit4b.jpg",
+    "levels/river_highway/facilities/pictures/customCreations.jpg",
+    "levels/river_highway/facilities/pictures/firRoofing.jpg",
+    "levels/river_highway/facilities/pictures/firRoofingProject.jpg",
+    "levels/river_highway/facilities/pictures/firRoofingProject2.jpg",
+    "levels/river_highway/facilities/pictures/greenFieldFarm.jpg",
+    "levels/river_highway/facilities/pictures/greenfield_farm.jpg",
+    "levels/river_highway/facilities/pictures/guestHouse1.jpg",
+    "levels/river_highway/facilities/pictures/guestHouse2.jpg",
+    "levels/river_highway/facilities/pictures/hillViewCompound.jpg",
+    "levels/river_highway/facilities/pictures/jeffersonMotorsRH.jpg",
+    "levels/river_highway/facilities/pictures/jeffersonService.jpg",
+    "levels/river_highway/facilities/pictures/jefferson_service_bay.jpg",
+    "levels/river_highway/facilities/pictures/laPinkHouse.jpg",
+    "levels/river_highway/facilities/pictures/leafSpringsRanch.jpg",
+    "levels/river_highway/facilities/pictures/logicalTruckingWarehouse.jpg",
+    "levels/river_highway/facilities/pictures/magnumOpus.jpg",
+    "levels/river_highway/facilities/pictures/magnum_opus.jpg",
+    "levels/river_highway/facilities/pictures/miamiMall.jpg",
+    "levels/river_highway/facilities/pictures/ocean_drive_garage.jpg",
+    "levels/river_highway/facilities/pictures/palaiseFactory.jpg",
+    "levels/river_highway/facilities/pictures/palmDrive.jpg",
+    "levels/river_highway/facilities/pictures/portAvenue.jpg",
+    "levels/river_highway/facilities/pictures/port_ave.jpg",
+    "levels/river_highway/facilities/pictures/powerHausTrack1.jpg",
+    "levels/river_highway/facilities/pictures/powerHausTrack2.jpg",
+    "levels/river_highway/facilities/pictures/powerhausRoofingProject.jpg",
+    "levels/river_highway/facilities/pictures/private.jpg",
+    "levels/river_highway/facilities/pictures/randolphTrucking.jpg",
+    "levels/river_highway/facilities/pictures/redHoleHouse.jpg",
+    "levels/river_highway/facilities/pictures/rh_marble_quarry.jpg",
+    "levels/river_highway/facilities/pictures/richesAutoRH.jpg",
+    "levels/river_highway/facilities/pictures/riverDockHouse.jpg",
+    "levels/river_highway/facilities/pictures/spearleaf.jpg",
+    "levels/river_highway/facilities/pictures/spearleafMarinePort.jpg",
+    "levels/river_highway/facilities/pictures/spearleafRailPort.jpg",
+    "levels/river_highway/facilities/pictures/spearleafReineryPort.jpg",
+    "levels/river_highway/facilities/pictures/spearleafReineryRail.jpg",
+    "levels/river_highway/facilities/pictures/steelAreaHouse.jpg",
+    "levels/river_highway/facilities/pictures/tastiCola.jpg",
+    "levels/river_highway/facilities/pictures/tekkvinylFactory.jpg",
+    "levels/river_highway/facilities/pictures/tekkvinylFactory2.jpg",
+    "levels/river_highway/facilities/pictures/threeCubeMarket.jpg",
+    "levels/river_highway/facilities/pictures/threeCubeMarket2.jpg",
+    "levels/river_highway/facilities/pictures/threeCubeMarket3.jpg",
+    "levels/river_highway/facilities/pictures/threeCubeMarket4.jpg",
+    "levels/river_highway/facilities/pictures/track_1_workshop.jpg",
+    "levels/river_highway/facilities/pictures/track_2_workshop.jpg",
+    "levels/river_highway/facilities/pictures/trebEnterprises.jpg",
+    "levels/river_highway/facilities/pictures/trebOffsiteWearhouse.jpg",
+    "levels/river_highway/facilities/pictures/tyrannosFuel.jpg",
+    "levels/river_highway/facilities/pictures/unclesCampGround.jpg",
+    "levels/river_highway/facilities/pictures/unclesMysteriousDeliveries.jpg",
+    "levels/river_highway/facilities/pictures/unit_a1.jpg",
+    "levels/river_highway/facilities/pictures/vixenFactory.jpg",
+    "levels/river_highway/facilities/pictures/volitaliaMiami.jpg",
+    "levels/river_highway/facilities/pictures/volitaliaRiverHighway.jpg",
+    "levels/river_highway/facilities/quarryRH.loading.json",
+    "levels/river_highway/facilityWorkConfig.json",
+    "levels/river_highway/forest/cork_oak_bush_large.forest4.json",
+    "levels/river_highway/forest/generibush.forest4.json",
+    "levels/river_highway/forest/generibush_small.forest4.json",
+    "levels/river_highway/forest/maritime_pine_bush.forest4.json",
+    "levels/river_highway/forest/mixed_bushes_a.forest4.json",
+    "levels/river_highway/forest/river_highway_guardrails1.forest4.json",
+    "levels/river_highway/forest/tree_aspen_bush_a.forest4.json",
+    "levels/river_highway/forest/tree_beech_bush_e.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_bush_a.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_bush_b.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_group_low.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_large_a.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_large_b.forest4.json",
+    "levels/river_highway/forest/tree_douglasfir_large_d.forest4.json",
+    "levels/river_highway/forest/tree_oak_forest_a.forest4.json",
+    "levels/river_highway/forest/tree_oak_forest_b.forest4.json",
+    "levels/river_highway/forest/tree_oak_large_a.forest4.json",
+    "levels/river_highway/forest/tree_oak_large_b.forest4.json",
+    "levels/river_highway/main/MissionGroup/AInavMeshing/items.level.json",
+    "levels/river_highway/main/MissionGroup/Level_object/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Dealerships/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Airport Town/Airport Town Drift Loop 1/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Airport Town/Airport Town Drift Loop 2/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Airport Town/Power Haus Sprint Reverse/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Airport Town/Power Haus Sprint/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Airport Town/Street Loop/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Airport Town/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Leaf Springs/Leaf Spring Loop/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/Leaf Springs/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/RallyCross Area/RallyCross Loop 1/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/RallyCross Area/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/misc FRE's/Go Kart Track/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/misc FRE's/River Side Rally/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/misc FRE's/River highway Touge/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/FRE/misc FRE's/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Airport Town/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Coastal Town/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Down Town Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Empty Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Forest Junction/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Hwy 7 Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Industrial Bay/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Leaf Town Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Miami Beach Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Miami Entrance Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Palm Springs Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/PowerHaus Arena/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Sender Town Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/Waterside Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/West Miami Fuel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Fuel Stations/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Garages/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Map Travel/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/Roleplay/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS Career Mode/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS/FRE/items.level.json",
+    "levels/river_highway/main/MissionGroup/RLS/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/career_garage_decalroad/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/career_garage_exterior/career_garage_exterior_decalroads/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/career_garage_exterior/career_garage_exterior_props/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/career_garage_exterior/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/career_garage_parkingLines/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/career_garage_props/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageBenchLights/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageExteriorLights/garageExteriorLightsPropsOff/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageExteriorLights/garageExteriorLightsPropsOn/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageExteriorLights/garageExteriorLightsSources/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageExteriorLights/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageMainLights/garageMainLightPropsOff/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageMainLights/garageMainLightPropsOn/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageMainLights/garageMainLightSources/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageMainLights/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/garageOfficeLights/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garageLights/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/garage_interactions/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/truckGarage/angledParkingLines/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/truckGarage/computers/items.level.json",
+    "levels/river_highway/main/MissionGroup/career_garage/truckGarage/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/DownTownBridgeWest/DownTownBridgeWest_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/DownTownBridgeWest/DownTownBridgeWest_B/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/DownTownBridgeWest/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/H13ExtH7J6/H13ExtH7J6_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/H13ExtH7J6/H13ExtH7J6_B/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/H13ExtH7J6/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/MiamiTollBridge/MiamiTollBridge_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/MiamiTollBridge/MiamiTollBridge_B/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/MiamiTollBridge/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/SouthBeachTC/SouthBeachTC_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/SouthBeachTC/SouthBeachTC_B/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/SouthBeachTC/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_B/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_C/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_D/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_E/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_F/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/StateBorder/StateBorder_G/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/diLidoIslandMain/diLidoIslandMain_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/diLidoIslandMain/diLidoIslandMain__b/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/diLidoIslandMain/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/lowBridgeRail/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/lowBridgeRail/lowBridgeRail_A/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamicEvents/dynamicRoutes/lowBridgeRail/lowBridgeRail_B/items.level.json",
+    "levels/river_highway/main/MissionGroup/dynamic_lights/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer1/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer10/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer13/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer14/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer15/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer17/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer18/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer19/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer2/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer20/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer3/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer5/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer6/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer8/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer9/items.level.json",
+    "levels/river_highway/main/MissionGroup/weatherController/weatherClear/items.level.json",
+    "levels/river_highway/main/MissionGroup/weatherController/weatherRainHeavy/items.level.json",
+    "levels/river_highway/main/MissionGroup/weatherController/weatherRainLight/items.level.json",
+    "levels/river_highway/quarryRH.sites.json",
+    "levels/river_highway/race_data.json",
+    "levels/river_highway/signalControllerDefinitions.json",
+    "levels/river_highway/signals.json",
+    "levels/river_highway/test_b/materials/main.materials.json",
+    "levels/river_highway/test_b/meshes/main.materials.json",
+    "levels/river_highway/test_b/textures/t_breakup_general_b.color.dds.link",
+    "levels/river_highway/test_b/textures/t_breakup_general_o.data.dds.link",
+    "levels/river_highway/test_b/textures/t_breakup_general_r.data.dds.link",
+    "levels/river_highway/test_b/textures/t_wood_oak_raw_01_b.color.dds.link",
+    "levels/river_highway/test_b/textures/t_wood_oak_raw_01_nm.normal.dds.link",
+    "levels/river_highway/test_b/textures/t_wood_oak_raw_01_r.data.dds.link",
+    "lua/ge/extensions/riverHighway/careerMap.lua",
+    "scripts/rls_career_overhaul_river_highway/modScript.lua",
+    "ui/modules/career/profilePreview_river_highway.jpg",
+    "vehicles/cargotrailer/cavalier/cargotrailer_skin_cavalier.dds",
+    "vehicles/cargotrailer/cavalier/materials.json",
+    "vehicles/cargotrailer/cavalier/skin.jbeam",
+    "vehicles/cargotrailer/firroofing/cargotrailer_skin_firroofing.dds",
+    "vehicles/cargotrailer/firroofing/materials.json",
+    "vehicles/cargotrailer/firroofing/skin.jbeam",
+    "vehicles/dryvan/beambeer/dryvan.jbeam",
+    "vehicles/dryvan/beambeer/dryvan_skin_beambeer.dds",
+    "vehicles/dryvan/beambeer/dryvan_skin_beambeerpup.dds",
+    "vehicles/dryvan/beambeer/skin.materials.json",
+    "vehicles/dryvan/palaise/dryvan.jbeam",
+    "vehicles/dryvan/palaise/dryvan_skin_palaise.dds",
+    "vehicles/dryvan/palaise/dryvan_skin_palaisepup.dds",
+    "vehicles/dryvan/palaise/skin.materials.json",
+    "vehicles/dryvan/vixenbakery/dryvan.jbeam",
+    "vehicles/dryvan/vixenbakery/dryvan_skin_vixenbakery.dds",
+    "vehicles/dryvan/vixenbakery/dryvan_skin_vixenbakerypup.dds",
+    "vehicles/dryvan/vixenbakery/skin.materials.json",
+    "vehicles/dryvan/volitalia/dryvan.jbeam",
+    "vehicles/dryvan/volitalia/dryvan_skin_volitalia.dds",
+    "vehicles/dryvan/volitalia/dryvan_skin_volitaliapup.dds",
+    "vehicles/dryvan/volitalia/skin.materials.json",
+    "vehicles/pickup/cavalier/materials.json",
+    "vehicles/pickup/cavalier/pickup.jbeam",
+    "vehicles/pickup/cavalier/pickup_skin_cavalier.dds",
+    "vehicles/tanker/oilex/skin.jbeam",
+    "vehicles/tanker/oilex/skin.materials.json",
+    "vehicles/tanker/oilex/tanker_skin_oilex.dds",
+    "vehicles/tanker/oilex/tanker_skin_oilex_m.data.dds",
+    "vehicles/us_semi/cargocourierorg/cabover_skin_cargocourierorg.dds",
+    "vehicles/us_semi/cargocourierorg/conventional_skin_cargocourierorg.dds",
+    "vehicles/us_semi/cargocourierorg/skin.jbeam",
+    "vehicles/us_semi/cargocourierorg/skin.materials.json",
+    "vehicles/us_semi/oilex/cabover_skin_oilex.dds",
+    "vehicles/us_semi/oilex/conventional_skin_oilex.dds",
+    "vehicles/us_semi/oilex/skin.jbeam",
+    "vehicles/us_semi/oilex/skin.materials.json",
+    "vehicles/us_semi/oilex/tanker_skin_oilex.dds",
+    "vehicles/us_semi/oilex/tanker_skin_oilex_m.data.dds",
+    "vehicles/van/firroofing/materials.json",
+    "vehicles/van/firroofing/van.jbeam",
+    "vehicles/van/firroofing/van_skin_firroofing.dds"
+  ],
+  "description": "River Highway CareerMP delta builder manifest. Binary assets are copied from user-provided original archives at build time.",
+  "link_aliases": [
+    {
+      "link_path": "/assets/materials/tileable/wood/ind_plywood_old/ind_plywood_d.color.png",
+      "target": "art/shapes/garage_and_dealership/Clutter/ind_plywood_d.color.png"
+    },
+    {
+      "link_path": "/assets/materials/tileable/wood/ind_plywood_old/ind_plywood_nm.normal.png",
+      "target": "art/shapes/garage_and_dealership/Clutter/ind_plywood_nm.normal.png"
+    },
+    {
+      "link_path": "/assets/materials/tileable/wood/ind_plywood_old/ind_plywood_s.color.png",
+      "target": "art/shapes/garage_and_dealership/Clutter/ind_plywood_s.color.png"
+    },
+    {
+      "link_path": "/levels/east_coast_usa/art/shapes/buildings/ut_wood_old_d.color.dds",
+      "target": "levels/Utah/art/shapes/buildings/ut_wood_old_d.color.png"
+    },
+    {
+      "link_path": "/levels/east_coast_usa/art/shapes/buildings/ut_wood_old_nm.normal.dds",
+      "target": "levels/Utah/art/shapes/buildings/ut_wood_old_nm.normal.png"
+    },
+    {
+      "link_path": "/assets/materials/decalroad/dirt/m_dirt_road_01/t_dirt_road_ao.data.png",
+      "target": "levels/west_coast_usa/art/road/pbr_textures/t_dirt_road_ao.data.png"
+    },
+    {
+      "link_path": "/assets/materials/baked_props/flag_usa_loose/t_flag_usa_loose_nm.normal.dds",
+      "target": "levels/west_coast_usa/art/shapes/objects/t_flag_usa_loose_r.data.png"
+    },
+    {
+      "link_path": "/vehicles/common/trailers/flat_bed_wood_r.data.dds",
+      "target": "vehicles/common/trailers/flat_bed_wood_m.data.png"
+    }
+  ],
+  "output_name": "rls_career_overhaul_river_highway_beta_0.0.5_careermp_delta.zip",
+  "overlay_files": [
+    "levels/river_highway/art/forest/managedItemData.json",
+    "levels/river_highway/art/rls_compat_materials/main.materials.json",
+    "levels/river_highway/info.json",
+    "levels/river_highway/main/MissionGroup/LevelObjects/time/items.level.json",
+    "levels/river_highway/ultra/utb/main.materials.json",
+    "rls_careermp_compat/river_highway_missing_mesh_material_aliases.txt",
+    "rls_careermp_compat/river_highway_online_notes.txt",
+    "rls_careermp_compat/river_highway_texture_aliases.txt"
+  ],
+  "schema_version": 1,
+  "transform_disable_west_coast_items": [
+    "levels/river_highway/main/MissionGroup/Buildings/items.level.json",
+    "levels/river_highway/main/MissionGroup/SteelMill_unpacked/items.level.json",
+    "levels/river_highway/main/MissionGroup/dealerships/quarryside_dealership/quarrySide_props/items.level.json",
+    "levels/river_highway/main/MissionGroup/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer11/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer16/items.level.json",
+    "levels/river_highway/main/MissionGroup/lagReducer/lagReducer4/items.level.json",
+    "levels/river_highway/main/MissionGroup/pumpjacks/items.level.json",
+    "levels/river_highway/main/MissionGroup/steel_factory/props/items.level.json",
+    "levels/river_highway/main/MissionGroup/trafficlights/items.level.json"
+  ],
+  "validation": {
+    "forbid_prefixes": [
+      "lua/ge/extensions/overrides/ui/apps/minimap/"
+    ],
+    "required_files": [
+      "lua/ge/extensions/riverHighway/careerMap.lua",
+      "scripts/rls_career_overhaul_river_highway/modScript.lua",
+      "levels/river_highway/main/MissionGroup/LevelObjects/time/items.level.json",
+      "levels/river_highway/art/forest/managedItemData.json"
+    ],
+    "west_coast_shape_tokens": [
+      "west_coast_usa",
+      "/wca_",
+      "wcusa"
+    ]
+  }
+}

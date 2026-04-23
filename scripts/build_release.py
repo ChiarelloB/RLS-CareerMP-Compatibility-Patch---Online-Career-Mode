@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import shutil
 import zipfile
 from pathlib import Path
 
@@ -79,8 +78,6 @@ def main() -> int:
     if not careermp_original.is_file():
         raise SystemExit(f"CareerMP original zip not found: {careermp_original}")
 
-    if out_dir.exists():
-        shutil.rmtree(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     rls_patch_dir = repo_root / "patches" / "RLS"

@@ -1,0 +1,2044 @@
+{
+  "rocks_desert_ca": {
+    "name": "rocks_desert_ca",
+    "mapTo": "rocks_desert_ca",
+    "class": "Material",
+    "persistentId": "e01b8cd9-9989-48dc-ae9e-b78a213e3cd3",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/rocksJV/t_rocks_desert_ca_ao.data.png",
+        "baseColorFactor": [
+          0.939755976,
+          0.913416982,
+          0.862555027,
+          1
+        ],
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/rocksJV/t_rocks_desert_ca_b.color.png",
+        "detailMap": "/levels/west_coast_usa/art/shapes/rocksJV/t_rocks_pac_detail_b.data.png",
+        "detailNormalMap": "/levels/west_coast_usa/art/shapes/rocksJV/t_rocks_pac_detail_n.normal.png",
+        "detailNormalMapStrength": 0.699999988,
+        "detailScale": [
+          32,
+          16
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/rocksJV/t_rocks_desert_ca_nm.normal.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/rocksJV/t_rocks_desert_ca_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      },
+      {
+        "baseColorFactor": null,
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      },
+      {
+        "baseColorFactor": null,
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      }
+    ],
+    "annotation": "ROCK",
+    "groundType": "ROCK",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "eca_rocks": {
+    "name": "eca_rocks",
+    "mapTo": "eca_rocks",
+    "class": "Material",
+    "persistentId": "9f88644e-9984-4f54-8a57-4e4c962eef05",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/rocks/t_rocks_eca_ao.data.png",
+        "baseColorFactor": [
+          1,
+          0.948472023,
+          0.896924973,
+          1
+        ],
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/rocks/t_rocks_eca_b.color.png",
+        "detailMap": "/levels/west_coast_usa/art/shapes/rocks/t_rocks_eca_detail_b.data.png",
+        "detailNormalMap": "/levels/west_coast_usa/art/shapes/rocks/t_rocks_eca_detail_nm.normal.png",
+        "detailNormalMapStrength": 0.300000012,
+        "detailScale": [
+          24,
+          24
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/rocks/t_rocks_eca_nm.normal.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/rocks/t_rocks_eca_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "ROCK",
+    "doubleSided": false,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "rock",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "redwood_billboards": {
+    "name": "redwood_billboards",
+    "mapTo": "redwood_billboards",
+    "class": "Material",
+    "persistentId": "704a06ad-b3c1-43fa-be64-12349866086b",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_redwood_billboards_ao.data.png",
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_redwood_billboards_b.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_redwood_billboards_nm.normal.png",
+        "opacityMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_redwood_billboards_o.data.png",
+        "roughnessFactor": 0.61700666,
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_redwood_billboards_r.data.png"
+      },
+      {
+        "roughnessFactor": null
+      },
+      {
+        "roughnessFactor": null
+      },
+      {
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 90,
+    "alphaTest": true,
+    "annotation": "NATURE",
+    "doubleSided": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vegetation",
+    "materialTag2": "Natural",
+    "version": 1.5
+  },
+  "redwood_trunk": {
+    "name": "redwood_trunk",
+    "mapTo": "redwood_trunk",
+    "class": "material",
+    "persistentId": "2bf9b6a4-2da5-469d-848c-2da302f9b799",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_wcu_oak_bark_ao.data.png",
+        "baseColorFactor": [
+          0.820975006,
+          0.820969999,
+          0.820967019,
+          1
+        ],
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_douglasfir_trunk_b.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_wcu_oak_bark_nm.normal.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_wcu_oak_bark_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "NATURE",
+    "groundType": "WOOD",
+    "materialTag0": "vegetation",
+    "materialTag1": "beamng",
+    "materialTag2": "Natural",
+    "specularStrength0": "0.294118",
+    "version": 1.5
+  },
+  "pine1": {
+    "name": "pine1",
+    "mapTo": "pine1",
+    "class": "Material",
+    "persistentId": "a7d4cfc9-329a-4452-a75d-693ad64a6806",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_d.color.png",
+        "diffuseColor": [
+          0.996078014,
+          0.996078014,
+          0.996078014,
+          1
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_nm.normal.png",
+        "specular": [
+          0.992156982,
+          0.992156982,
+          0.992156982,
+          1
+        ],
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "diffuseColor": null,
+        "specular": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "specular": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "specular": null,
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 100,
+    "alphaTest": true,
+    "annotation": "NATURE",
+    "doubleSided": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vegetation",
+    "materialTag2": "Natural",
+    "materialTag3": "vegetation",
+    "specularStrength0": "0",
+    "translucentZWrite": true
+  },
+  "m_pine_bark": {
+    "name": "m_pine_bark",
+    "mapTo": "m_pine_bark",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_bark_ao.data.png",
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_bark_b.color.png",
+        "detailNormalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_tree_bark_variation_nm.normal.png",
+        "detailNormalMapStrength": 0.5,
+        "detailScale": [
+          0.100000001,
+          0.400000006
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_bark_nm.normal.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_bark_r.data.png"
+      },
+      {
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      },
+      {
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      },
+      {
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      }
+    ],
+    "alphaRef": 0,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "m_pine_dead_branch": {
+    "name": "m_pine_dead_branch",
+    "mapTo": "m_pine_dead_branch",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_branch_d.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_branch_nm.normal.png",
+        "normalMapStrength": 2,
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_branch_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "normalMapStrength": null,
+        "useAnisotropic": null
+      },
+      {
+        "normalMapStrength": null,
+        "useAnisotropic": null
+      },
+      {
+        "normalMapStrength": null,
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 80,
+    "alphaTest": true,
+    "doubleSided": true,
+    "invertBackFaceNormals": true,
+    "translucentBlendOp": "None",
+    "translucentZWrite": true
+  },
+  "m_pine_branch": {
+    "name": "m_pine_branch",
+    "mapTo": "m_pine_branch",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_02_d.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_02_nm.normal.png",
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_02_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 100,
+    "alphaTest": true,
+    "doubleSided": true,
+    "translucentBlendOp": "None",
+    "translucentZWrite": true
+  },
+  "m_pine_branch_green": {
+    "name": "m_pine_branch_green",
+    "mapTo": "m_pine_branch_green",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_green_d.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_02_nm.normal.png",
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_leaves_02_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 100,
+    "alphaTest": true,
+    "doubleSided": true,
+    "translucentBlendOp": "None",
+    "translucentZWrite": true
+  },
+  "m_pine_merged_foliage": {
+    "name": "m_pine_merged_foliage",
+    "mapTo": "m_pine_merged_foliage",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_merged_foliage_d.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_conifer/t_pine_merged_foliage_nm.normal.png",
+        "useAnisotropic": true
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 45,
+    "alphaTest": true,
+    "doubleSided": true,
+    "translucentZWrite": true
+  },
+  "m_eucalyptus_bark": {
+    "name": "m_eucalyptus_bark",
+    "mapTo": "m_eucalyptus_bark",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_ao.data.png",
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_b.color.png",
+        "detailBaseColorMapStrength": 3,
+        "detailMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_tree_bark_variation_b.data.png",
+        "detailNormalMapStrength": 0.25,
+        "detailScale": [
+          0.25,
+          1
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_nm.normal.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_r.data.png"
+      },
+      {
+        "detailBaseColorMapStrength": null,
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      },
+      {
+        "detailBaseColorMapStrength": null,
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      },
+      {
+        "detailBaseColorMapStrength": null,
+        "detailNormalMapStrength": null,
+        "detailScale": null
+      }
+    ],
+    "version": 1.5
+  },
+  "m_eucalyptus_foliage": {
+    "name": "m_eucalyptus_foliage",
+    "mapTo": "m_eucalyptus_foliage",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_foliage_d.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_foliage_nm.normal.png",
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_foliage_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 110,
+    "alphaTest": true,
+    "doubleSided": true,
+    "translucentZWrite": true
+  },
+  "m_eucalyptus_branches": {
+    "name": "m_eucalyptus_branches",
+    "mapTo": "m_eucalyptus_branches",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_branches_d.color.png",
+        "diffuseColor": [
+          0.915611982,
+          0.896906018,
+          0.872148991,
+          1
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_branches_nm.normal.png",
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_branches_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "diffuseColor": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 90,
+    "alphaTest": true,
+    "doubleSided": true,
+    "invertBackFaceNormals": true,
+    "translucentZWrite": true
+  },
+  "m_eucalyptus_bark_02": {
+    "name": "m_eucalyptus_bark_02",
+    "mapTo": "m_eucalyptus_bark_02",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_02_b.color.png",
+        "detailBaseColorMapStrength": 2,
+        "detailNormalMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_tree_bark_variation_nm.normal.png",
+        "detailScale": [
+          1,
+          4
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_02_nm.normal.png",
+        "normalMapStrength": 2,
+        "opacityMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_02_o.data.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_02_r.data.png"
+      },
+      {
+        "detailBaseColorMapStrength": null,
+        "detailScale": null,
+        "normalMapStrength": null
+      },
+      {
+        "detailBaseColorMapStrength": null,
+        "detailScale": null,
+        "normalMapStrength": null
+      },
+      {
+        "detailBaseColorMapStrength": null,
+        "detailScale": null,
+        "normalMapStrength": null
+      }
+    ],
+    "alphaRef": 147,
+    "alphaTest": true,
+    "translucentZWrite": true,
+    "version": 1.5
+  },
+  "m_eucalyptus_merged_foliage": {
+    "name": "m_eucalyptus_merged_foliage",
+    "mapTo": "m_eucalyptus_merged_foliage",
+    "class": "Material",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_merged_foliage_d.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_merged_foliage_nm.normal.png",
+        "useAnisotropic": true
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      },
+      {
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 80,
+    "alphaTest": true,
+    "doubleSided": true,
+    "translucentZWrite": true
+  },
+  "m_palm_trunk": {
+    "name": "m_palm_trunk",
+    "mapTo": "m_palm_trunk",
+    "class": "Material",
+    "persistentId": "be07620b-94b5-4987-88b6-7b43b24f6fb6",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_palm_trunk_ao.data.png",
+        "baseColorFactor": [
+          0.825949013,
+          0.825949013,
+          0.825949013,
+          1
+        ],
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_palm_trunk_b.color.png",
+        "detailBaseColorMapStrength": 0.100000001,
+        "detailMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_b.color.png",
+        "detailNormalMap": "/levels/west_coast_usa/art/shapes/trees/trees_eucalyptus/t_eucalyptus_bark_nm.normal.png",
+        "detailNormalMapStrength": 2,
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_palm_trunk_nm.normal.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_palm_trunk_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "detailBaseColorMapStrength": null,
+        "detailNormalMapStrength": null
+      },
+      {
+        "baseColorFactor": null,
+        "detailBaseColorMapStrength": null,
+        "detailNormalMapStrength": null
+      },
+      {
+        "baseColorFactor": null,
+        "detailBaseColorMapStrength": null,
+        "detailNormalMapStrength": null
+      }
+    ],
+    "annotation": "NATURE",
+    "doubleSided": true,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "vegetation",
+    "materialTag2": "Natural",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "m_fanpalm_leaves": {
+    "name": "m_fanpalm_leaves",
+    "mapTo": "m_fanpalm_leaves",
+    "class": "Material",
+    "persistentId": "60bf62bf-86c3-4c16-99e9-5c5ba10ac8a5",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_ao.data.png",
+        "baseColorFactor": [
+          0.996078014,
+          0.996078014,
+          0.996078014,
+          1
+        ],
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_b.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_nm.normal.png",
+        "opacityMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_o.data.png",
+        "roughnessFactor": 0.699999988,
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_r.data.png",
+        "specular": [
+          0.996078014,
+          0.996078014,
+          0.996078014,
+          1
+        ]
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null,
+        "specular": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null,
+        "specular": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null,
+        "specular": null
+      }
+    ],
+    "alphaRef": 80,
+    "alphaTest": true,
+    "annotation": "NATURE",
+    "doubleSided": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vegetation",
+    "materialTag2": "Natural",
+    "version": 1.5
+  },
+  "m_fanpalm_leaves_02": {
+    "name": "m_fanpalm_leaves_02",
+    "mapTo": "m_fanpalm_leaves_02",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_02_o.data.png",
+        "baseColorMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_02_b.color.png",
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_02_nm.normal.png",
+        "opacityMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_02_o.data.png",
+        "roughnessMap": "/levels/west_coast_usa/art/shapes/trees/trees_palm/t_fanpalm_leaves_02_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 70,
+    "alphaTest": true,
+    "doubleSided": true,
+    "version": 1.5
+  },
+  "grasses1": {
+    "name": "grasses1",
+    "mapTo": "grasses1",
+    "class": "Material",
+    "persistentId": "7ed1047f-c737-4d89-90b7-1b1d3c58decd",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/grasses1_d.dds",
+        "diffuseColor": [
+          0.996078014,
+          0.996078014,
+          0.996078014,
+          1
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/grasses1_n.dds",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.621950269,
+        "specular": [
+          0.992156982,
+          0.992156982,
+          0.992156982,
+          1
+        ],
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/grasses1_s.dds",
+        "useAnisotropic": true
+      },
+      {
+        "diffuseColor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null,
+        "specular": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null,
+        "specular": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null,
+        "specular": null,
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 128,
+    "alphaTest": true,
+    "annotation": "NATURE",
+    "materialTag0": "beamng",
+    "materialTag1": "vegetation",
+    "materialTag2": "Natural",
+    "materialTag3": "vegetation"
+  },
+  "lod_vertcol_reflective": {
+    "name": "lod_vertcol_reflective",
+    "mapTo": "lod_vertcol_reflective",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.42,
+          0.44,
+          0.45,
+          1
+        ],
+        "roughnessFactor": 0.55,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "m_concrete_barrier": {
+    "name": "m_concrete_barrier",
+    "mapTo": "m_concrete_barrier",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.62,
+          0.6,
+          0.55,
+          1
+        ],
+        "roughnessFactor": 0.92,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "defaultMat": {
+    "name": "defaultMat",
+    "mapTo": "defaultMat",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "roughnessFactor": 0.8,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "invis": {
+    "name": "invis",
+    "mapTo": "invis",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "roughnessFactor": 1,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "LerpAlpha",
+    "version": 1.5,
+    "translucent": true,
+    "alphaTest": true,
+    "alphaRef": 1
+  },
+  "alphabet": {
+    "name": "alphabet",
+    "mapTo": "alphabet",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.78,
+          1
+        ],
+        "roughnessFactor": 0.7,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "licenseplate": {
+    "name": "licenseplate",
+    "mapTo": "licenseplate",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.85,
+          0.83,
+          0.75,
+          1
+        ],
+        "roughnessFactor": 0.45,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "tsfb_lights": {
+    "name": "tsfb_lights",
+    "mapTo": "tsfb_lights",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.85,
+          0.55,
+          1
+        ],
+        "roughnessFactor": 0.35,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "mod_lightbar": {
+    "name": "mod_lightbar",
+    "mapTo": "mod_lightbar",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.15,
+          0.2,
+          0.28,
+          1
+        ],
+        "roughnessFactor": 0.35,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "utility_taillight": {
+    "name": "utility_taillight",
+    "mapTo": "utility_taillight",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.85,
+          0.05,
+          0.03,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "utility_signal_R": {
+    "name": "utility_signal_R",
+    "mapTo": "utility_signal_R",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "utility_signal_L": {
+    "name": "utility_signal_L",
+    "mapTo": "utility_signal_L",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "mirror_CX": {
+    "name": "mirror_CX",
+    "mapTo": "mirror_CX",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.12,
+          0.14,
+          0.16,
+          1
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "mirror_CE": {
+    "name": "mirror_CE",
+    "mapTo": "mirror_CE",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.12,
+          0.14,
+          0.16,
+          1
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "parts_offroad": {
+    "name": "parts_offroad",
+    "mapTo": "parts_offroad",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.12,
+          0.12,
+          0.12,
+          1
+        ],
+        "roughnessFactor": 0.7,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "rollcage_black": {
+    "name": "rollcage_black",
+    "mapTo": "rollcage_black",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.02,
+          0.02,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.65,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_interior": {
+    "name": "van_interior",
+    "mapTo": "van_interior",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.08,
+          0.08,
+          0.075,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_glass_int": {
+    "name": "van_glass_int",
+    "mapTo": "van_glass_int",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.18,
+          0.25,
+          0.28,
+          0.45
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "LerpAlpha",
+    "version": 1.5,
+    "translucent": true,
+    "alphaTest": true,
+    "alphaRef": 1
+  },
+  "van_lights": {
+    "name": "van_lights",
+    "mapTo": "van_lights",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.9,
+          0.82,
+          0.6,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_reverselight": {
+    "name": "van_reverselight",
+    "mapTo": "van_reverselight",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.9,
+          0.9,
+          0.85,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_taillight": {
+    "name": "van_taillight",
+    "mapTo": "van_taillight",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.85,
+          0.05,
+          0.03,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_taillight_R": {
+    "name": "van_taillight_R",
+    "mapTo": "van_taillight_R",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.85,
+          0.05,
+          0.03,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_taillight_L": {
+    "name": "van_taillight_L",
+    "mapTo": "van_taillight_L",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.85,
+          0.05,
+          0.03,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_signal_R": {
+    "name": "van_signal_R",
+    "mapTo": "van_signal_R",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_signal_L": {
+    "name": "van_signal_L",
+    "mapTo": "van_signal_L",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_lowbeam": {
+    "name": "van_lowbeam",
+    "mapTo": "van_lowbeam",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.95,
+          0.75,
+          1
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_highbeam": {
+    "name": "van_highbeam",
+    "mapTo": "van_highbeam",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.95,
+          0.75,
+          1
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "van_headlight": {
+    "name": "van_headlight",
+    "mapTo": "van_headlight",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.95,
+          0.75,
+          1
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "generic_gauges_odo": {
+    "name": "generic_gauges_odo",
+    "mapTo": "generic_gauges_odo",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.02,
+          0.04,
+          0.04,
+          1
+        ],
+        "roughnessFactor": 0.6,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "signal_L": {
+    "name": "signal_L",
+    "mapTo": "signal_L",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "signal_R": {
+    "name": "signal_R",
+    "mapTo": "signal_R",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "checkengine": {
+    "name": "checkengine",
+    "mapTo": "checkengine",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.55,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "lowpressure": {
+    "name": "lowpressure",
+    "mapTo": "lowpressure",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.55,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "parkingbrake": {
+    "name": "parkingbrake",
+    "mapTo": "parkingbrake",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.1,
+          0.05,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "abs": {
+    "name": "abs",
+    "mapTo": "abs",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.55,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "lowfuel": {
+    "name": "lowfuel",
+    "mapTo": "lowfuel",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.55,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "highbeam": {
+    "name": "highbeam",
+    "mapTo": "highbeam",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.25,
+          0.5,
+          1.0,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "battery": {
+    "name": "battery",
+    "mapTo": "battery",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.1,
+          0.05,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "hazard": {
+    "name": "hazard",
+    "mapTo": "hazard",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          0.45,
+          0.02,
+          1
+        ],
+        "roughnessFactor": 0.4,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "trucks_mechanical": {
+    "name": "trucks_mechanical",
+    "mapTo": "trucks_mechanical",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.16,
+          0.15,
+          0.14,
+          1
+        ],
+        "roughnessFactor": 0.8,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "generic_shock_absorber": {
+    "name": "generic_shock_absorber",
+    "mapTo": "generic_shock_absorber",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ],
+        "roughnessFactor": 0.65,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "steelwheel_02a": {
+    "name": "steelwheel_02a",
+    "mapTo": "steelwheel_02a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.35,
+          0.35,
+          0.34,
+          1
+        ],
+        "roughnessFactor": 0.55,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "hubcap_ring_0910_0102a": {
+    "name": "hubcap_ring_0910_0102a",
+    "mapTo": "hubcap_ring_0910_0102a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.6,
+          0.6,
+          0.58,
+          1
+        ],
+        "roughnessFactor": 0.45,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "traffic_fullsize_lights": {
+    "name": "traffic_fullsize_lights",
+    "mapTo": "traffic_fullsize_lights",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.85,
+          0.08,
+          0.04,
+          1
+        ],
+        "roughnessFactor": 0.25,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "traffic_fullsize_lightglass": {
+    "name": "traffic_fullsize_lightglass",
+    "mapTo": "traffic_fullsize_lightglass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.7,
+          0.08,
+          0.04,
+          0.6
+        ],
+        "roughnessFactor": 0.2,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "LerpAlpha",
+    "version": 1.5,
+    "translucent": true,
+    "alphaTest": true,
+    "alphaRef": 1
+  },
+  "traffic_fullsize_lightglass_dmg": {
+    "name": "traffic_fullsize_lightglass_dmg",
+    "mapTo": "traffic_fullsize_lightglass_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.45,
+          0.08,
+          0.04,
+          0.6
+        ],
+        "roughnessFactor": 0.35,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "LerpAlpha",
+    "version": 1.5,
+    "translucent": true,
+    "alphaTest": true,
+    "alphaRef": 1
+  },
+  "traffic_fullsize_alt": {
+    "name": "traffic_fullsize_alt",
+    "mapTo": "traffic_fullsize_alt",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.06,
+          0.06,
+          0.06,
+          1
+        ],
+        "roughnessFactor": 0.75,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "traffic_paint.skin_traffic_fullsize.traffic_fullsize_taxi": {
+    "name": "traffic_paint.skin_traffic_fullsize.traffic_fullsize_taxi",
+    "mapTo": "traffic_paint.skin_traffic_fullsize.traffic_fullsize_taxi",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.95,
+          0.72,
+          0.08,
+          1
+        ],
+        "roughnessFactor": 0.5,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "traffic_paint_fullsize.skin_traffic_fullsize.traffic_fullsize_t": {
+    "name": "traffic_paint_fullsize.skin_traffic_fullsize.traffic_fullsize_t",
+    "mapTo": "traffic_paint_fullsize.skin_traffic_fullsize.traffic_fullsize_t",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.95,
+          0.72,
+          0.08,
+          1
+        ],
+        "roughnessFactor": 0.5,
+        "specular": [
+          0.08,
+          0.08,
+          0.08,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "oak_leaves": {
+    "name": "oak_leaves",
+    "mapTo": "oak_leaves",
+    "class": "Material",
+    "persistentId": "ddebdfb1-a843-4cf3-8514-ff253b195f5c",
+    "Stages": [
+      {
+        "colorMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_oak_leaves_wcusa_d.color.png",
+        "diffuseColor": [
+          0.996078014,
+          0.996078014,
+          0.996078014,
+          1
+        ],
+        "normalMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_oak_leaves_wcusa_nm.normal.png",
+        "pixelSpecular": true,
+        "specular": [
+          0.992156982,
+          0.992156982,
+          0.992156982,
+          1
+        ],
+        "specularMap": "/levels/west_coast_usa/art/shapes/trees/trees_oak/t_oak_leaves_wcusa_s.color.png",
+        "useAnisotropic": true
+      },
+      {
+        "diffuseColor": null,
+        "pixelSpecular": null,
+        "specular": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "pixelSpecular": null,
+        "specular": null,
+        "useAnisotropic": null
+      },
+      {
+        "diffuseColor": null,
+        "pixelSpecular": null,
+        "specular": null,
+        "useAnisotropic": null
+      }
+    ],
+    "alphaRef": 90,
+    "alphaTest": true,
+    "annotation": "NATURE",
+    "doubleSided": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vegetation",
+    "materialTag2": "Natural",
+    "materialTag3": "vegetation",
+    "translucentZWrite": true
+  }
+}

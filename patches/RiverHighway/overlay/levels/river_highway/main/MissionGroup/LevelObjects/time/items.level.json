@@ -1,0 +1,15 @@
+{
+  "tod": {
+    "class": "TimeOfDay",
+    "persistentId": "203eaf47-551b-445f-bb4a-3153d1dd4d45",
+    "__parent": "LevelObjects/time",
+    "dayLength": 120,
+    "dayScale": 1,
+    "nightScale": 0.5,
+    "play": true,
+    "startTime": 0.35,
+    "time": 0.35,
+    "timeScale": 1,
+    "visibleDistance": 10000
+  }
+}

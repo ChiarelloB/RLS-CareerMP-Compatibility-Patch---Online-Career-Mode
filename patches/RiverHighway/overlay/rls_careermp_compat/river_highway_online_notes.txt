@@ -1,0 +1,4 @@
+RLS CareerMP compatibility patch for River Highway online.
+- Forces River Highway time of day to daylight for online spawning.
+- Adds 184 missing forest item definitions required by the PHI River Highway map.
+- Disables only unmapped wca_rock5/6/7/9 forest instance files.

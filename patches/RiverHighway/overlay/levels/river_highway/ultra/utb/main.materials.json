@@ -1,0 +1,2976 @@
+{
+  "aircraft_corrugated_metal": {
+    "name": "aircraft_corrugated_metal",
+    "mapTo": "aircraft_corrugated_metal",
+    "class": "Material",
+    "persistentId": "0608b463-71d4-4cda-9078-d54224e3b475",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/aircraft_corrugated_metal_d.dds",
+        "normalMap": "/levels/Utah/art/shapes/buildings/aircraft_corrugated_metal_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "reflectivityMap": "/levels/Utah/art/shapes/buildings/aircraft_corrugated_metal_r.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/aircraft_corrugated_metal_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "busstop": {
+    "name": "busstop",
+    "mapTo": "busstop",
+    "class": "Material",
+    "persistentId": "a03ffc22-198a-4c67-b8ba-b2b35bd568e3",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/busstop_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/busstop_n.dds",
+        "pixelSpecular": true,
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/busstop_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/busstop_s.dds",
+        "specularPower": 32,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 64,
+    "alphaTest": true,
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "translucentBlendOp": "None"
+  },
+  "busstop_windows": {
+    "name": "busstop_windows",
+    "mapTo": "busstop_windows",
+    "class": "Material",
+    "persistentId": "e9bd365d-0c83-4d1c-bafa-2601747e7795",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/busstop_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/busstop_n.dds",
+        "pixelSpecular": true,
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/busstop_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/busstop_s.dds",
+        "specularPower": 32,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 64,
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "eca_bld_bricks": {
+    "name": "eca_bld_bricks",
+    "mapTo": "eca_bld_bricks",
+    "class": "Material",
+    "persistentId": "119a7a13-623e-4ad2-b6ae-17f828d6202b",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/eca_bld_bricks_d.dds",
+        "normalMap": "/levels/Utah/art/shapes/buildings/eca_bld_bricks_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/eca_bld_bricks_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "BUILDINGS",
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "east_coast_usa",
+    "translucentBlendOp": "None"
+  },
+  "eca_bld_chainlink": {
+    "name": "eca_bld_chainlink",
+    "mapTo": "eca_bld_chainlink",
+    "class": "Material",
+    "persistentId": "5048cf94-6562-488c-924d-9323c799d8a1",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/eca_bld_chainlink_d.dds",
+        "diffuseColor": [
+          0.807843029,
+          0.811765015,
+          0.811765015,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/eca_bld_chainlink_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/eca_bld_chainlink_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 27,
+    "annotation": "BUILDINGS",
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "east_coast_usa",
+    "translucent": true
+  },
+  "eca_bld_house_decoration": {
+    "name": "eca_bld_house_decoration",
+    "mapTo": "eca_bld_house_decoration",
+    "class": "Material",
+    "persistentId": "92622a6a-384d-47a0-b2cf-12296a9f06ad",
+    "Stages": [
+      {
+        "colorMap": "/levels/utah/art/shapes/buildings/eca_bld_house_decoration_d.dds",
+        "normalMap": "/levels/utah/art/shapes/buildings/eca_bld_house_decoration_n.dds",
+        "specularMap": "/levels/utah/art/shapes/buildings/eca_bld_house_decoration_s.dds",
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "OBSTACLES",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "east_coast_usa",
+    "translucentBlendOp": "None"
+  },
+  "eca_bld_metaltrim": {
+    "name": "eca_bld_metaltrim",
+    "mapTo": "eca_bld_metaltrim",
+    "class": "Material",
+    "persistentId": "7ef7b0b0-2102-4ebb-a86b-0f6ee1d5e54c",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/eca_bld_metal_trim_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/eca_grungewood_b.dds",
+        "detailScale": [
+          0.2000000029802322,
+          0.2000000029802322
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/eca_bld_metal_trim_n.dds",
+        "pixelSpecular": true,
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/eca_bld_metal_trim_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/eca_bld_metal_trim_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "BUILDINGS",
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "east_coast_usa",
+    "specularStrength0": "0.588235",
+    "translucentBlendOp": "None"
+  },
+  "eca_genericsigns": {
+    "name": "eca_genericsigns",
+    "mapTo": "eca_genericsigns",
+    "class": "Material",
+    "persistentId": "5580c6d9-520d-4aad-9a9e-fdb8916a3ad6",
+    "Stages": [
+      {
+        "colorMap": "levels/utah/art/shapes/buildings/eca_genericsigns_d.dds",
+        "specular": [
+          0.9882349967956544,
+          0.9882349967956544,
+          0.9882349967956544,
+          1
+        ],
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {
+        "colorMap": "levels/utah/art/shapes/buildings/eca_genericsigns_emissive.dds",
+        "glow": true,
+        "vertColor": true
+      },
+      {},
+      {}
+    ],
+    "alphaRef": 159,
+    "alphaTest": true,
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "east_coast_usa",
+    "specularStrength0": "0.784314",
+    "translucentZWrite": true
+  },
+  "glass_dust": {
+    "name": "glass_dust",
+    "mapTo": "glass_dust",
+    "class": "Material",
+    "persistentId": "041287f7-1b7a-4218-a2b7-1b961572c92f",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/glass_dust_d.dds",
+        "specularPower": 32,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "annotation": "BUILDINGS",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "specularColor0": "0.1 0.1 0.1 0.1",
+    "specularStrength0": "0.05",
+    "translucent": true
+  },
+  "glass_transparent": {
+    "name": "glass_transparent",
+    "mapTo": "glass_transparent",
+    "class": "Material",
+    "persistentId": "0bd27d37-514f-4857-a3e7-e6ba56752105",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/glass_transparent_d.dds",
+        "diffuseColor": [
+          1,
+          1,
+          1,
+          0.470587999
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/glass_transparent_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/glass_transparent_r.dds",
+        "roughnessFactor": 0.607767701,
+        "specularMap": "levels/Utah/art/shapes/buildings/glass_transparent_s.dds",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {
+        "diffuseColor": null,
+        "roughnessFactor": null,
+        "useAnisotropic": null,
+        "vertColor": null
+      },
+      {
+        "diffuseColor": null,
+        "roughnessFactor": null,
+        "useAnisotropic": null,
+        "vertColor": null
+      },
+      {
+        "diffuseColor": null,
+        "roughnessFactor": null,
+        "useAnisotropic": null,
+        "vertColor": null
+      }
+    ],
+    "alphaRef": 0,
+    "alphaTest": true,
+    "annotation": "BUILDINGS",
+    "castShadows": false,
+    "cubemap": "cubemap_utah_reflection",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularColor0": "1 1 1 1",
+    "specularStrength0": "0.05",
+    "translucent": true
+  },
+  "ind_bld_Tin_01": {
+    "name": "ind_bld_Tin_01",
+    "mapTo": "ind_bld__2__Tin-01",
+    "class": "Material",
+    "persistentId": "b4aa2cb1-54ef-44bd-ac7d-fb5163dddb18",
+    "Stages": [
+      {
+        "colorMap": "tin-01_d.dds",
+        "detailMap": "detail_grunge_02_streak.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "tin-01_n.dds",
+        "specularMap": "tin-01_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "Industrial",
+    "materialTag1": "beamng",
+    "translucentBlendOp": "None"
+  },
+  "ind_bld_buildingextras": {
+    "name": "ind_bld_buildingextras",
+    "mapTo": "ind_bld_buildingextras",
+    "class": "material",
+    "persistentId": "e999f780-a860-440b-94e2-898647166473",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ind_bld_buildingextras_d.dds",
+        "detailNormalMapStrength": 0.5,
+        "detailScale": [
+          0.5,
+          0.5
+        ],
+        "diffuseColor": [
+          0.992156923,
+          0.992156923,
+          0.992156923,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ind_bld_buildingextras_n.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "levels/Utah/art/shapes/buildings/ind_bld_buildingextras_s.dds",
+        "specularPower": 19,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 60,
+    "alphaTest": true,
+    "annotation": "BUILDINGS",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "italy",
+    "materialTag2": "utah",
+    "specularStrength0": "0.490196"
+  },
+  "ind_bld_concrete": {
+    "name": "ind_bld_concrete",
+    "mapTo": "ind_bld__2__concrete",
+    "class": "Material",
+    "persistentId": "55d804e6-7c14-4b6d-a97f-a4f69e1548f3",
+    "Stages": [
+      {
+        "colorMap": "concrete-01_d.dds",
+        "detailMap": "detail_grunge_03.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "diffuseColor": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "normalMap": "concrete-01_n.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "Concrete-01_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "beamng",
+    "materialTag2": "Industrial",
+    "specularStrength0": "0.588235",
+    "translucentBlendOp": "None"
+  },
+  "ind_bld_metalgrate_01": {
+    "name": "ind_bld_metalgrate_01",
+    "mapTo": "ind_bld_metalgrate_01",
+    "class": "Material",
+    "persistentId": "cbd377bf-1b8a-478c-b9c1-bd2e5c88ae76",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ind_bld_mgrate-01_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ind_bld_mgrate-01_s.dds",
+        "pixelSpecular": true,
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 114,
+    "alphaTest": true,
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "Industrial",
+    "materialTag1": "beamng",
+    "materialTag2": "Industrial"
+  },
+  "ind_bld_tin_02": {
+    "name": "ind_bld_tin_02",
+    "mapTo": "ind_bld__2__Tin-02",
+    "class": "Material",
+    "persistentId": "6c8ba0c5-b083-4908-894e-fa489314ef69",
+    "Stages": [
+      {
+        "colorMap": "tin-01b_d.dds",
+        "detailMap": "detail_grunge_02_streak.dds",
+        "detailNormalMapStrength": 0.1000000014901161,
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "tin-01_n.dds",
+        "specularMap": "tin-01b_s.dds",
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "Industrial",
+    "materialTag1": "beamng",
+    "translucentBlendOp": "None"
+  },
+  "ind_blockwall_painted": {
+    "name": "ind_blockwall_painted",
+    "mapTo": "ind_blockwall_painted",
+    "class": "material",
+    "persistentId": "161ca0e0-2cda-4d31-9935-f18ba4633819",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ind_blockwall_painted_d.dds",
+        "detailScale": [
+          0.2000000029802322,
+          0.2000000029802322
+        ],
+        "diffuseColor": [
+          0.9960784912109376,
+          0.937254965,
+          0.603921592,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ind_blockwall_painted_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/wall_grunge_01_a.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ind_blockwall_painted_s.dds",
+        "specularPower": 20,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ind_planks_01": {
+    "name": "ind_planks_01",
+    "mapTo": "Ind_planks",
+    "class": "Material",
+    "persistentId": "5fb91732-070c-469f-8412-933a08db6932",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ind_planks_01_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ind_planks_01_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ind_planks_01_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 121,
+    "alphaTest": true,
+    "groundType": "WOOD",
+    "materialTag1": "beamng",
+    "materialTag2": "Industrial"
+  },
+  "italy_bld_electric_wire": {
+    "name": "italy_bld_electric_wire",
+    "mapTo": "italy_bld_electric_wire",
+    "class": "Material",
+    "persistentId": "21a3f56b-9720-4c5c-b944-01005d4dbae1",
+    "Stages": [
+      {
+        "colorMap": "levels/utah/art/shapes/buildings/italy_bld_electric_wire_d.dds",
+        "detailNormalMapStrength": 0.5,
+        "detailScale": [
+          0.5,
+          0.5
+        ],
+        "diffuseColor": [
+          0.623529434,
+          0.623529434,
+          0.627451003,
+          1
+        ],
+        "normalMap": "levels/utah/art/shapes/buildings/italy_bld_electric_wire_n.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "levels/utah/art/shapes/buildings/italy_bld_electric_wire_s.dds",
+        "specularPower": 19,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 113,
+    "alphaTest": true,
+    "annotation": "BUILDINGS",
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "italy",
+    "specularStrength0": "0.490196"
+  },
+  "italy_bld_light_glow": {
+    "name": "italy_bld_light_glow",
+    "mapTo": "italy_bld_light_glow",
+    "class": "Material",
+    "persistentId": "928759f9-46b8-4240-b782-573f3ebc126b",
+    "Stages": [
+      {
+        "diffuseColor": [
+          1,
+          0.9999899864196776,
+          0.9999899864196776,
+          1
+        ],
+        "emissive": true,
+        "glow": true,
+        "pixelSpecular": true,
+        "specularPower": 32,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 239,
+    "annotation": "TRAFFIC_SIGNALS",
+    "castShadows": false,
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "AddAlpha"
+  },
+  "jri_port_edge": {
+    "name": "jri_port_edge",
+    "mapTo": "jri_port_edge",
+    "class": "Material",
+    "persistentId": "72847d63-1b17-4da2-b471-07af8dc850b4",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/jri_port_edge_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/jri_port_edge_n.dds",
+        "pixelSpecular": true,
+        "specularMap": "levels/Utah/art/shapes/buildings/jri_port_edge_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "Industrial",
+    "materialTag2": "Industrial",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None"
+  },
+  "light_plane_panels": {
+    "name": "light_plane_panels",
+    "mapTo": "light_plane_panels",
+    "class": "Material",
+    "persistentId": "a2f4682b-6dc5-4cf7-9897-1bdf27f309e8",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/light_plane_panels_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "diffuseColor": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/light_plane_panels_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "reflectivityMap": "/levels/Utah/art/shapes/buildings/light_plane_panels_r.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "levels/Utah/art/shapes/buildings/light_plane_panels_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "beamng",
+    "materialTag2": "Industrial",
+    "specularStrength0": "0.588235",
+    "translucentBlendOp": "None"
+  },
+  "lights": {
+    "name": "lights",
+    "mapTo": "lights",
+    "class": "Material",
+    "persistentId": "ee4de1da-582a-4a6f-92ea-0ca6d34247bc",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/lights_d.dds",
+        "diffuseColor": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "emissive": true,
+        "normalMap": "levels/Utah/art/shapes/buildings/lights_n.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/lights_a.dds"
+      },
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "east_coast_usa",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None"
+  },
+  "logos_dealership_utah": {
+    "name": "logos_dealership_utah",
+    "mapTo": "logos_dealership_utah",
+    "class": "Material",
+    "persistentId": "a7d4b89e-dc39-450c-894c-b6e79ea534a4",
+    "Stages": [
+      {
+        "colorMap": "/levels/utah/art/shapes/buildings/logos_dealership_garage_utah_d.color.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "order_simset": 32766
+  },
+  "road_guardrail": {
+    "name": "road_guardrail",
+    "mapTo": "road_guardrail",
+    "class": "Material",
+    "persistentId": "bee266f3-d694-4f8d-8f93-1728b4bdc29c",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/road_guardrail_d.dds",
+        "diffuseColor": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/road_guardrail_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/road_guardrail_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "east_coast_usa",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None"
+  },
+  "stone_cladding": {
+    "name": "stone_cladding",
+    "mapTo": "stone_cladding",
+    "class": "Material",
+    "persistentId": "031440a9-dd6f-47f2-a2d0-747fb9abe2f0",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/stone_cladding_d.dds",
+        "detailNormalMap": "levels/Utah/art/shapes/buildings/detail_strata_n.dds",
+        "detailScale": [
+          4,
+          4
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/stone_cladding_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/stone_cladding_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "BUILDINGS",
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "tarpaulin": {
+    "name": "tarpaulin",
+    "mapTo": "tarpaulin",
+    "class": "Material",
+    "persistentId": "907db8d1-82ce-4a99-a58a-50142f66d9d2",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/tarpaulin_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "/levels/Utah/art/shapes/buildings/tarpaulin_n.dds",
+        "pixelSpecular": true,
+        "specularMap": "/levels/Utah/art/shapes/buildings/tarpaulin_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "Industrial",
+    "materialTag2": "Industrial",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None"
+  },
+  "usa_roadsigns_text": {
+    "name": "usa_roadsigns_text",
+    "mapTo": "usa_roadsigns_text",
+    "class": "Material",
+    "persistentId": "b4c39e99-af58-4bf4-803b-36d24336ff80",
+    "Stages": [
+      {
+        "baseColorMap": "levels/Utah/art/shapes/buildings/usa_roadsigns_text.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          0.999989986,
+          0.999989986
+        ],
+        "emissiveMap": "/levels/Utah/art/shapes/buildings/t_usa_roadsigns_text_e.color.png",
+        "opacityMap": "/levels/Utah/art/shapes/buildings/t_usa_roadsigns_text_o.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 127,
+    "alphaTest": true,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "usa_roadsigns_turn_warn": {
+    "name": "usa_roadsigns_turn_warn",
+    "mapTo": "usa_roadsigns_turn_warn",
+    "class": "Material",
+    "persistentId": "150e0ac4-c0ab-47b4-bd73-9fc612234062",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/usa_roadsigns_turn_warning.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_metalRusted_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_metalRusted_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 107,
+    "alphaTest": true,
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None"
+  },
+  "ut_asphalt_mesh": {
+    "name": "ut_asphalt_mesh",
+    "mapTo": "ut_asphalt_mesh",
+    "class": "Material",
+    "persistentId": "c2e86c78-8c94-4ea8-a90c-1b80ce13b5cc",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/levels/utah/art/road/t_asphalt_ao.data.png",
+        "baseColorFactor": [
+          0.935832024,
+          0.928852022,
+          0.917353988,
+          1
+        ],
+        "baseColorMap": "/levels/utah/art/road/t_asphalt_b.color.png",
+        "detailScale": [
+          0.100000001,
+          0.100000001
+        ],
+        "normalMap": "/levels/utah/art/road/t_asphalt_nm.normal.png",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "roughnessMap": "/levels/utah/art/road/t_asphalt_r.data.png",
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "ASPHALT",
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "Industrial",
+    "materialTag2": "Industrial",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "ut_bld_clean_debris": {
+    "name": "ut_bld_clean_debris",
+    "mapTo": "ut_bld_clean_debris",
+    "class": "material",
+    "persistentId": "491ec2a3-679f-467c-88a5-a446b94194c2",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_clean_debris_d.dds",
+        "diffuseColor": [
+          0.800000072,
+          0.796078503,
+          0.792156935,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_clean_debris_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_clean_debris_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_concrete": {
+    "name": "ut_bld_concrete",
+    "mapTo": "ut_bld_concrete",
+    "class": "Material",
+    "persistentId": "491ec2a3-679f-467c-88a5-a446b94194c2",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_concrete_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_concrete_nm.normal.png",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_concrete_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "OBSTACLES",
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_concrete_cracks_decals": {
+    "name": "ut_bld_concrete_cracks_decals",
+    "mapTo": "ut_bld_concrete_cracks_decals",
+    "class": "Material",
+    "persistentId": "a9084d59-68ad-4f24-96ac-c17ee1b636b4",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_concrete_cracks_decals_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_concrete_cracks_decals_nm.normal.png",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_concrete_cracks_decals_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 45,
+    "alphaTest": true,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": 1041089536,
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "ut_bld_concrete_decals": {
+    "name": "ut_bld_concrete_decals",
+    "mapTo": "ut_bld_concrete_decals",
+    "class": "Material",
+    "persistentId": "974d02be-1415-4875-ac0a-6e68cb0382aa",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_concrete_decals_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_concrete_decals_nm.normal.png",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_concrete_decals_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 45,
+    "alphaTest": true,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": 1049664842,
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "ut_bld_concrete_large_decals": {
+    "name": "ut_bld_concrete_large_decals",
+    "mapTo": "ut_bld_concrete_large_decals",
+    "class": "Material",
+    "persistentId": "a167f8b5-bd89-423c-a1b0-02d07450b3da",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_concrete_large_decals_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_concrete_large_decals_nm.normal.png",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_concrete_large_decals_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 45,
+    "alphaTest": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": 1057209975,
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "ut_bld_debris": {
+    "name": "ut_bld_debris",
+    "mapTo": "ut_bld_debris",
+    "class": "Material",
+    "persistentId": "491ec2a3-679f-467c-88a5-a446b94194c2",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_debris_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_debris_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_debris_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_industrial_window": {
+    "name": "ut_bld_industrial_window",
+    "mapTo": "ut_bld_industrial_window",
+    "class": "material",
+    "persistentId": "bcd13290-b8f0-4646-a885-dd2f1347cfcc",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/Italy_bld_ind_windows_d.dds",
+        "detailNormalMapStrength": 0.5,
+        "detailScale": [
+          0.5,
+          0.5
+        ],
+        "diffuseColor": [
+          0.992156923,
+          0.992156923,
+          0.992156923,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/Italy_bld_ind_windows_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/Italy_bld_ind_windows_r.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "levels/Utah/art/shapes/buildings/Italy_bld_ind_windows_s.dds",
+        "specularPower": 19,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 60,
+    "alphaTest": true,
+    "annotation": "BUILDINGS",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "italy",
+    "materialTag2": "utah",
+    "specularStrength0": "0.490196"
+  },
+  "ut_bld_metal_clean": {
+    "name": "ut_bld_metal_clean",
+    "mapTo": "ut_bld_metal_clean",
+    "class": "Material",
+    "persistentId": "0020c3da-ab62-4a56-98c8-90774c5b6230",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_metal_clean_d.color.png",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_metal_clean_nm.normal.png",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_metal_clean_ref.data.png",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_metal_clean_s.color.png",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_metal_rust": {
+    "name": "ut_bld_metal_rust",
+    "mapTo": "ut_bld_metal_rust",
+    "class": "Material",
+    "persistentId": "3df38522-1f42-4cbe-929a-dc4e7f84d620",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_metal_rust_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_metal_rust_nm.normal.png",
+        "reflectivityMap": "/levels/Utah/art/shapes/buildings/ut_metal_rust_ref.data.png",
+        "reflectivityMapFactor": 0.200000003,
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_metal_rust_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": 1067860646,
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_bars": {
+    "name": "ut_bld_mill_bars",
+    "mapTo": "ut_bld_mill_bars",
+    "class": "Material",
+    "persistentId": "ed132717-c27b-45c3-8f2f-4c8c1410583b",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_big_twisted_bars_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_big_twisted_bars_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_big_twisted_bars_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_big_floor": {
+    "name": "ut_bld_mill_big_floor",
+    "mapTo": "ut_bld_mill_big_floor",
+    "class": "Material",
+    "persistentId": "bba5a448-2f62-4469-b9a5-6732cda6a576",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_big_floor_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_big_floor_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_decal": {
+    "name": "ut_bld_mill_decal",
+    "mapTo": "ut_bld_mill_decal",
+    "class": "Material",
+    "persistentId": "ed2e9c41-32aa-47c5-a169-afff0b232d3e",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_decal_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_decal_n.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 20,
+    "alphaTest": true,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "ut_bld_mill_floor": {
+    "name": "ut_bld_mill_floor",
+    "mapTo": "ut_bld_mill_floor",
+    "class": "Material",
+    "persistentId": "089a5279-5392-4a25-b317-066cf6dfa643",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_edges_cracks_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_edges_cracks_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_floor_cracks": {
+    "name": "ut_bld_mill_floor_cracks",
+    "mapTo": "ut_bld_mill_floor_cracks",
+    "class": "Material",
+    "persistentId": "8e95ad24-501f-4444-b46c-b80443e863d9",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_cracks_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_cracks_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_leaching_tank_01": {
+    "name": "ut_bld_mill_leaching_tank_01",
+    "mapTo": "ut_bld_mill_leaching_tank_01",
+    "class": "Material",
+    "persistentId": "36f202a4-7f4e-43ff-b097-822b02e67c89",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_01_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_01_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_leaching_tank_02": {
+    "name": "ut_bld_mill_leaching_tank_02",
+    "mapTo": "ut_bld_mill_leaching_tank_02",
+    "class": "Material",
+    "persistentId": "ab6c7fb8-9ae0-42e6-9de8-70849b67c9dd",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_02_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_02_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_leaching_tank_03": {
+    "name": "ut_bld_mill_leaching_tank_03",
+    "mapTo": "ut_bld_mill_leaching_tank_03",
+    "class": "Material",
+    "persistentId": "9ff0012b-0114-4e0d-82e8-e1bc11e29ce6",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_03_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_03_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_leaching_tank_04": {
+    "name": "ut_bld_mill_leaching_tank_04",
+    "mapTo": "ut_bld_mill_leaching_tank_04",
+    "class": "Material",
+    "persistentId": "6d7aa414-8615-4253-a486-fdea727770fe",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_04_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_04_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_leaching_tank_05": {
+    "name": "ut_bld_mill_leaching_tank_05",
+    "mapTo": "ut_bld_mill_leaching_tank_05",
+    "class": "Material",
+    "persistentId": "03fa10ea-30e6-47e9-92f7-3d906a76a9dd",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_05_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_leaching_tank_05_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_pillar_tank": {
+    "name": "ut_bld_mill_pillar_tank",
+    "mapTo": "ut_bld_mill_pillar_tank",
+    "class": "Material",
+    "persistentId": "d9a3cb31-226f-4830-965f-d7effc5e4b5d",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_pillar_tank_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_pillar_tank_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_pillars_body": {
+    "name": "ut_bld_mill_pillars_body",
+    "mapTo": "ut_bld_mill_pillars_body",
+    "class": "Material",
+    "persistentId": "885aa865-7ef9-409c-b62a-ccd9f9f6f770",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_pillar_body_d.dds",
+        "detailNormalMapStrength": 2,
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_pillar_body_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_02_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_wall": {
+    "name": "ut_bld_mill_wall",
+    "mapTo": "ut_bld_mill_wall",
+    "class": "Material",
+    "persistentId": "b29e9ff5-80ec-4fde-9cbb-7f42cb062782",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_wall_destroyed_01": {
+    "name": "ut_bld_mill_wall_destroyed_01",
+    "mapTo": "ut_bld_mill_wall_destroyed_01",
+    "class": "Material",
+    "persistentId": "c627502e-26fb-44cb-81af-a1f605c22f1f",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_destroyed_01_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_destroyed_01_n.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_wall_destroyed_02": {
+    "name": "ut_bld_mill_wall_destroyed_02",
+    "mapTo": "ut_bld_mill_wall_destroyed_02",
+    "class": "Material",
+    "persistentId": "70eb77db-e87c-43a1-a476-ccc3dcecc315",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_destroyed_02_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_destroyed_02_n.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_mill_wall_destroyed_03": {
+    "name": "ut_bld_mill_wall_destroyed_03",
+    "mapTo": "ut_bld_mill_wall_destroyed_03",
+    "class": "Material",
+    "persistentId": "a255fa5b-67f0-4ff7-b259-c40d8604ca44",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_destroyed_03_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_wall_destroyed_03_n.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_painted_numbers": {
+    "name": "ut_bld_painted_numbers",
+    "mapTo": "ut_bld_painted_numbers",
+    "class": "Material",
+    "persistentId": "e8510689-a867-4a5f-8077-1f35bbc92835",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_painted_numbers_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "utah",
+    "materialTag2": "east_coast_usa",
+    "specularStrength0": "0.196078",
+    "translucent": true
+  },
+  "ut_bld_pillars_top": {
+    "name": "ut_bld_pillars_top",
+    "mapTo": "ut_bld_pillars_top",
+    "class": "Material",
+    "persistentId": "a29894f7-c96d-4e8b-8acf-28f616a5c4e3",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_pillar_top_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_pillar_top_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_mill_dirt_02_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_plastic": {
+    "name": "ut_bld_plastic",
+    "mapTo": "ut_bld_plastic",
+    "class": "Material",
+    "persistentId": "ef96a782-fcb9-426d-aae7-b1c07b6c9666",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_plastic_d.color.png",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_plastic_nm.normal.png",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_plastic_s.color.png",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_rough_concrete": {
+    "name": "ut_bld_rough_concrete",
+    "mapTo": "ut_bld_rough_concrete",
+    "class": "Material",
+    "persistentId": "fc1ba162-84e3-4d1c-8b74-cda24144c13c",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_concrete_rough_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_concrete_rough_nm.normal.png",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_concrete_rough_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "OBSTACLES",
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_shed_drums": {
+    "name": "ut_bld_shed_drums",
+    "mapTo": "ut_bld_shed_drums",
+    "class": "Material",
+    "persistentId": "b8413bf6-7bd8-43d7-9531-bae425477051",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_metal_drum_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_metal_drum_NM.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_metal_drum_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "alphaTest": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_shed_fabric": {
+    "name": "ut_bld_shed_fabric",
+    "mapTo": "ut_bld_shed_fabric",
+    "class": "Material",
+    "persistentId": "65ba6000-3c34-40f5-92e9-e51dc705fa66",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_fabric_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_fabric_NM.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_fabric_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 208,
+    "alphaTest": true,
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucent": true,
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_shed_metal_can": {
+    "name": "ut_bld_shed_metal_can",
+    "mapTo": "ut_bld_shed_metal_can",
+    "class": "Material",
+    "persistentId": "726e9254-7367-4740-aa6e-aed7ea097ab5",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_metal_can_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_metal_can_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_metal_can_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 26,
+    "alphaTest": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_shed_overlappingwood": {
+    "name": "ut_bld_shed_overlappingwood",
+    "mapTo": "ut_bld_shed_overlappingwood",
+    "class": "Material",
+    "persistentId": "7c3ab3b9-c245-49f9-a58f-d89196769938",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_overlappingwood_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03_brown.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_overlappingwood_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_dirt_d.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_overlappingwood_s.dds"
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078"
+  },
+  "ut_bld_trim_broken_wood": {
+    "name": "ut_bld_trim_broken_wood",
+    "mapTo": "ut_bld_trim_broken_wood",
+    "class": "material",
+    "persistentId": "b6b67ea1-e9f0-45ad-b55e-9b808ab05ca5",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_trim_broken_wood_d.dds",
+        "detailNormalMapStrength": 0.5,
+        "detailScale": [
+          0.5,
+          0.5
+        ],
+        "diffuseColor": [
+          0.992156923,
+          0.992156923,
+          0.992156923,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_trim_broken_wood_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_trim_wood_s.color.png",
+        "specularPower": 19,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 115,
+    "alphaTest": true,
+    "annotation": "BUILDINGS",
+    "doubleSided": true,
+    "groundType": "WOOD",
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "italy",
+    "materialTag2": "utah",
+    "specularStrength0": "0.490196",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_trim_wood": {
+    "name": "ut_bld_trim_wood",
+    "mapTo": "ut_bld_trim_wood",
+    "class": "Material",
+    "persistentId": "359a8350-9b21-4abf-9092-247827ba9279",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_trim_wood_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_trim_wood_nm.normal.png",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_trim_wood_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": 1044938028,
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_wood_decals": {
+    "name": "ut_bld_wood_decals",
+    "mapTo": "ut_bld_wood_decals",
+    "class": "material",
+    "persistentId": "1756d1db-0ed1-482a-b202-2bb8f68edf3f",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_wood_decals_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_wood_decals_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_wood_decals_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_wood_decals_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 80,
+    "alphaTest": true,
+    "cubemap": "cubemap_utah_reflection",
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah"
+  },
+  "ut_bld_wood_new": {
+    "name": "ut_bld_wood_new",
+    "mapTo": "ut_bld_wood_new",
+    "class": "Material",
+    "persistentId": "859d6297-efb7-4364-aa55-1fdcd4c92c32",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_wood_new_d.color.png",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_wood_new_nm.normal.png",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_wood_new_s.color.png",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_bld_wood_old": {
+    "name": "ut_bld_wood_old",
+    "mapTo": "ut_bld_wood_old",
+    "class": "Material",
+    "persistentId": "87965296-eb41-4444-bd50-1f53e3b53523",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_wood_old_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_wood_old_nm.normal.png",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_wood_old_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": 1055107772,
+    "translucentBlendOp": "None"
+  },
+  "ut_building_decoration_1": {
+    "name": "ut_building_decoration_1",
+    "mapTo": "ut_building_decoration_1",
+    "class": "material",
+    "persistentId": "ab40a77f-a7f4-4f4d-b498-6ca1d691934a",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_building_decoration_1_d.dds",
+        "specular": [
+          0.9882349967956544,
+          0.9882349967956544,
+          0.9882349967956544,
+          1
+        ],
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 156,
+    "alphaTest": true,
+    "doubleSided": true,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "Natural",
+    "specularStrength0": "0.784314",
+    "translucentZWrite": true
+  },
+  "ut_building_decoration_2": {
+    "name": "ut_building_decoration_2",
+    "mapTo": "ut_building_decoration_2",
+    "class": "material",
+    "persistentId": "ab40a77f-a7f4-4f4d-b498-6ca1d691934a",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_building_decoration_2_d.dds",
+        "specular": [
+          0.9882349967956544,
+          0.9882349967956544,
+          0.9882349967956544,
+          1
+        ],
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 156,
+    "alphaTest": true,
+    "doubleSided": true,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "Natural",
+    "specularStrength0": "0.784314",
+    "translucentZWrite": true
+  },
+  "ut_busstop_old_sign": {
+    "name": "ut_busstop_old_sign",
+    "mapTo": "ut_busstop_old_sign",
+    "class": "Material",
+    "persistentId": "b900cf52-15ea-4cb2-87b3-052c12f4647e",
+    "Stages": [
+      {
+        "colorMap": "ut_busstop_old_sign_d.dds",
+        "diffuseColor": [
+          0.992156982,
+          0.992156982,
+          0.992156982,
+          1
+        ],
+        "normalMap": "ut_busstop_old_sign_n.dds",
+        "specularMap": "ut_busstop_old_sign_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng"
+  },
+  "ut_caravan_a": {
+    "name": "ut_caravan_a",
+    "mapTo": "ut_caravan_a",
+    "class": "Material",
+    "persistentId": "5ed8444a-5dc1-45ce-9657-acf3da507168",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_caravan_a_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_caravan_a_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_caravan_a_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_caravan_a_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "cubemap_utah_reflection",
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah"
+  },
+  "ut_con_site_addon": {
+    "name": "ut_con_site_addon",
+    "mapTo": "ut_con_site_addon",
+    "class": "Material",
+    "persistentId": "491ec2a3-679f-467c-88a5-a446b94194c2",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/construction_site_addon_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/construction_site_addon_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/construction_site_addon_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_corrugated_tin_V1": {
+    "name": "ut_corrugated_tin_V1",
+    "mapTo": "ut_corrugated_tin_V1",
+    "class": "material",
+    "persistentId": "64e5f1f5-8dda-4170-ab36-d874c9a5642d",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V1_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V1_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V1_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V1_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_corrugated_tin_V2": {
+    "name": "ut_corrugated_tin_V2",
+    "mapTo": "ut_corrugated_tin_V2",
+    "class": "material",
+    "persistentId": "1821c688-65a4-466c-9c40-a82496c84bd6",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V2_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V2_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V2_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V2_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_corrugated_tin_V3": {
+    "name": "ut_corrugated_tin_V3",
+    "mapTo": "ut_corrugated_tin_V3",
+    "class": "material",
+    "persistentId": "80fcc736-6566-41c1-852c-88013eb897ed",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V3_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V3_n.dds",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V3_r.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_corrugated_tin_V3_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "global_cubemap_metalblurred",
+    "doubleSided": true,
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_curb": {
+    "name": "ut_curb",
+    "mapTo": "ut_curb",
+    "class": "Material",
+    "persistentId": "d9674ffd-3b34-440d-ac7b-a998d5282d6d",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_curb_d.dds",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_curb_n.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_curb_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "BUILDINGS",
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "Utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_electric_wires": {
+    "name": "ut_electric_wires",
+    "mapTo": "ut_electric_wires",
+    "class": "Material",
+    "persistentId": "5b2d66c2-1a54-4f8d-8f87-9ddcaff484fd",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/Italy_bld_electric_wire_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/Italy_bld_electric_wire_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/Italy_bld_electric_wire_s.dds",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 45,
+    "alphaTest": true,
+    "annotation": "OBSTACLES",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392",
+    "translucentZWrite": true
+  },
+  "ut_graffiti": {
+    "name": "ut_graffiti",
+    "mapTo": "ut_graffiti",
+    "class": "material",
+    "persistentId": "974d02be-1415-4875-ac0a-6e68cb0382aa",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_graffiti_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 45,
+    "alphaTest": true,
+    "groundType": "ROCK",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "ut_metal_trim": {
+    "name": "ut_metal_trim",
+    "mapTo": "ut_metal_trim",
+    "class": "Material",
+    "persistentId": "23e33e13-be8b-46d7-9042-880eb6aef428",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_metal_trim_d.color.png",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_metal_trim_nm.normal.png",
+        "reflectivityMap": "levels/Utah/art/shapes/buildings/ut_metal_trim_ref.data.png",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_metal_trim_s.color.png",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "cubemap": "cubemap_utah_reflection",
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_normal_edges": {
+    "name": "ut_normal_edges",
+    "mapTo": "ut_normal_edges",
+    "class": "material",
+    "persistentId": "e28b2912-6323-431f-8e45-43fd166198e2",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_normal_edges_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_normal_edges_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_normal_edges_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaTest": true,
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucent": true,
+    "translucentZWrite": true
+  },
+  "ut_plastic_trim": {
+    "name": "ut_plastic_trim",
+    "mapTo": "ut_plastic_trim",
+    "class": "Material",
+    "persistentId": "9144b2ae-bdc5-4f50-bbea-ece11426f744",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/ut_plastic_trim_d.color.png",
+        "normalMap": "/levels/Utah/art/shapes/buildings/ut_plastic_trim_nm.normal.png",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "/levels/Utah/art/shapes/buildings/ut_plastic_trim_s.color.png",
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "order_simset": -1125201513,
+    "translucentBlendOp": "None"
+  },
+  "ut_signs": {
+    "name": "ut_signs",
+    "mapTo": "ut_signs",
+    "class": "Material",
+    "persistentId": "94f82c4f-730d-4bcf-b0a2-6896d4031f78",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_signs.dds",
+        "diffuseColor": [
+          1,
+          0.9999899864196776,
+          0.9999899864196776,
+          1
+        ],
+        "specularMap": "levels/Utah/art/shapes/buildings/Concrete-01_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_tarp_tents": {
+    "name": "ut_tarp_tents",
+    "mapTo": "ut_tarp_tents",
+    "class": "Material",
+    "persistentId": "7bd3ac43-1d33-4007-bc9d-2a6392151903",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_tarp_tents_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_tarp_tents_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_tarp_tents_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "groundType": "shock_absorber",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "ut_tourist_posters_etc": {
+    "name": "ut_tourist_posters_etc",
+    "mapTo": "ut_tourist_posters_etc",
+    "class": "Material",
+    "persistentId": "d64aecd1-a851-4b59-ba3c-fb0f6bb8f43e",
+    "Stages": [
+      {
+        "colorMap": "ut_tourist_posters_etc_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "pixelSpecular": true,
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_asphalt_road_gravel_edge_mesh": {
+    "name": "utah_asphalt_road_gravel_edge_mesh",
+    "mapTo": "utah_asphalt_road_gravel_edge_mesh",
+    "class": "Material",
+    "persistentId": "50530f22-41fa-473c-84c1-b89590c2051e",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/road/t_asphalt_gravel_edge_b.color.png",
+        "diffuseColor": [
+          0.996078491,
+          0.996078491,
+          0.996078491,
+          0.600000024
+        ],
+        "normalMap": "/levels/Utah/art/road/t_asphalt_gravel_edge_nm.normal.png",
+        "opacityMap": "/levels/utah/art/road/t_asphalt_gravel_edge_o.data.png",
+        "scrollSpeed": 4.11800003,
+        "specular": [
+          0.992156982,
+          0.992156982,
+          0.992156982,
+          1
+        ],
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 100,
+    "alphaTest": true,
+    "annotation": "ASPHALT",
+    "castShadows": false,
+    "materialTag0": "RoadAndPath",
+    "materialTag1": "beamng",
+    "materialTag2": "Industrial",
+    "specularStrength0": "0.490196",
+    "specularStrength1": "0.980392",
+    "translucent": true,
+    "translucentRecvShadows": true,
+    "translucentZWrite": true
+  },
+  "utah_bld_metalbeams": {
+    "name": "utah_bld_metalbeams",
+    "mapTo": "utah_mine_bld_metalbeams",
+    "class": "Material",
+    "persistentId": "0c0e4dae-4c24-4a53-bff5-50081ada3e26",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_pipe_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_01.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_pipe_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_pipe_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_concrete": {
+    "name": "utah_mine_bld_concrete",
+    "mapTo": "utah_mine_bld_concrete",
+    "class": "Material",
+    "persistentId": "08427812-42cb-45d0-aecf-e3ab59e3a4d0",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_concrete_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03_brown.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_concrete_d_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_concrete_d_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_concrete_bottom": {
+    "name": "utah_mine_bld_concrete_bottom",
+    "mapTo": "utah_mine_bld_concrete_bottom",
+    "class": "Material",
+    "persistentId": "c980622d-87d3-400c-b6ab-6f410aba4b66",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_concrete_dirt_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03_brown.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_concrete_d_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_concrete_d_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "ASPHALT_OLD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_doors": {
+    "name": "utah_mine_bld_doors",
+    "mapTo": "utah_mine_bld_doors",
+    "class": "Material",
+    "persistentId": "5f7ce235-4f34-4476-8a20-2ca99532b66c",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_doors_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_oldwood": {
+    "name": "utah_mine_bld_oldwood",
+    "mapTo": "utah_mine_bld_oldwood",
+    "class": "Material",
+    "persistentId": "8ef16656-682e-4d62-8fa2-cbf0bd1d98d0",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_woodplanks_d.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_woodplanks_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/Wood_old_dirt_d.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_woodPlanks_02_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "specularStrength1": "0.980392"
+  },
+  "utah_mine_bld_roof_plates": {
+    "name": "utah_mine_bld_roof_plates",
+    "mapTo": "utah_mine_bld_roof_plates",
+    "class": "Material",
+    "persistentId": "8412f811-5fcb-424f-9440-1e1055a26859",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_metalPlatesRusted_03_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_metalPlatesRusted_03_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_metalPlatesRusted_03_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_rusted_metal_tower": {
+    "name": "utah_mine_bld_rusted_metal_tower",
+    "mapTo": "utah_mine_bld_rusted_metal_tower",
+    "class": "Material",
+    "persistentId": "fc36f95d-70ed-4064-ade0-e2f5b9bc3dac",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_metalRusted_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_metalRusted_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_metalRusted_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_windows_old": {
+    "name": "utah_mine_bld_windows_old",
+    "mapTo": "utah_mine_bld_windows_old",
+    "class": "Material",
+    "persistentId": "4f18197f-3dd7-432c-8223-c018f9c455bc",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_windowsOld_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_windowsOld_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_windows_small": {
+    "name": "utah_mine_bld_windows_small",
+    "mapTo": "utah_mine_bld_windows_small",
+    "class": "Material",
+    "persistentId": "e3b41e83-2751-48f5-91a8-4ad59b9d8e27",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_windowsSmall_d.dds",
+        "detailScale": [
+          0.1000000014901161,
+          0.1000000014901161
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_windowsSmall_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_windowsSmall_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "METAL",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_wood_rough_tower": {
+    "name": "utah_mine_bld_wood_rough_tower",
+    "mapTo": "utah_mine_bld_wood_rough_tower",
+    "class": "Material",
+    "persistentId": "1ab2dfee-227e-45f4-a343-7c529452506b",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_woodrough_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03_brown.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_woodrough_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_woodrough_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_mine_bld_woodplanks_overlapping": {
+    "name": "utah_mine_bld_woodplanks_overlapping",
+    "mapTo": "utah_mine_bld_woodplanks_overlapping",
+    "class": "Material",
+    "persistentId": "21a16d78-b1c6-4a5f-9f2d-8ed59ba9d046",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_overlappingwood_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03_brown.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_overlappingwood_n.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_woodPlanks_02_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "utah_roof_shingles": {
+    "name": "utah_roof_shingles",
+    "mapTo": "utah_roof_shingles",
+    "class": "Material",
+    "persistentId": "031440a9-dd6f-47f2-a2d0-747fb9abe2f0",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/utah_roof_shingles_d.dds",
+        "normalMap": "levels/Utah/art/shapes/buildings/utah_roof_shingles_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/utah_breakup_texture.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/utah_roof_shingles_d.dds",
+        "specularPower": 1,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "annotation": "BUILDINGS",
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "translucentBlendOp": "None"
+  },
+  "utah_shed_bld_wood_rough": {
+    "name": "utah_shed_bld_wood_rough",
+    "mapTo": "utah_shed_bld_wood_rough",
+    "class": "Material",
+    "persistentId": "39535613-ed4b-4ecc-82e7-c38cd5b54992",
+    "Stages": [
+      {
+        "colorMap": "levels/Utah/art/shapes/buildings/ut_bld_woodrough_d.dds",
+        "detailMap": "levels/Utah/art/shapes/buildings/detail_grunge_03_brown.dds",
+        "detailScale": [
+          0.5,
+          0.5
+        ],
+        "normalMap": "levels/Utah/art/shapes/buildings/ut_bld_woodrough_n.dds",
+        "overlayMap": "levels/Utah/art/shapes/buildings/ut_bld_shed_dirt_d.dds",
+        "specularMap": "levels/Utah/art/shapes/buildings/ut_bld_woodrough_s.dds",
+        "specularPower": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "materialTag2": "utah",
+    "specularStrength0": "0.196078",
+    "translucentBlendOp": "None"
+  },
+  "vertcolor_glow": {
+    "name": "vertcolor_glow",
+    "mapTo": "vertcolor_glow",
+    "class": "Material",
+    "persistentId": "069e7d76-cbfb-4316-bdda-de4001c2afd1",
+    "Stages": [
+      {
+        "emissive": true,
+        "glow": true,
+        "pixelSpecular": true,
+        "specularPower": 32,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "annotation": "BUILDINGS",
+    "doubleSided": true,
+    "groundType": "WOOD",
+    "materialTag0": "beamng",
+    "materialTag1": "building",
+    "translucentBlendOp": "None"
+  },
+  "wires": {
+    "name": "wires",
+    "mapTo": "wires",
+    "class": "Material",
+    "persistentId": "e999f780-a860-440b-94e2-898647166473",
+    "Stages": [
+      {
+        "colorMap": "/levels/Utah/art/shapes/buildings/wires_d.dds",
+        "detailNormalMapStrength": 0.5,
+        "detailScale": [
+          0.5,
+          0.5
+        ],
+        "diffuseColor": [
+          0.992156923,
+          0.992156923,
+          0.992156923,
+          1
+        ],
+        "normalMap": "/levels/Utah/art/shapes/buildings/wires_n.dds",
+        "specular": [
+          0.9960780143737792,
+          0.9960780143737792,
+          0.9960780143737792,
+          1
+        ],
+        "specularMap": "/levels/Utah/art/shapes/buildings/wires_s.dds",
+        "specularPower": 19,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 60,
+    "alphaTest": true,
+    "annotation": "BUILDINGS",
+    "groundType": "PLASTIC",
+    "materialTag0": "beamng",
+    "materialTag1": "italy",
+    "materialTag2": "utah",
+    "specularStrength0": "0.490196"
+  }
+}

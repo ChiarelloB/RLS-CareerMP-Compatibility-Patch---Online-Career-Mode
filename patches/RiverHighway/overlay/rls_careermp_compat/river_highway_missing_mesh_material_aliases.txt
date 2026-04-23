@@ -1,0 +1,4 @@
+RLS CareerMP Compatibility - River Highway missing mesh/material aliases
+
+Adds legacy Cliff path aliases for River Highway forest meshes, DDS-to-PNG conversions for old material paths, and fallback maps for missing RLS/River assets reported by BeamNG 0.36.
+These aliases are map-scoped in the River delta so the main RLS CareerMP package stays focused on CareerMP compatibility.

@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.0-beta.3
+
+### Added
+
+- Added a builder-only River Highway compatibility workflow.
+- Added `build_river_highway_delta.py` to generate the River delta zip from user-provided original archives.
+- Added a River manifest and small overlay package for daylight startup, career map loading, forest cleanup, texture/material aliases, and floating West Coast object cleanup.
+- Added beginner-friendly River Highway build and server setup documentation.
+
+### Changed
+
+- Builders now preserve other files in the output directory instead of deleting the entire `built` folder.
+
 ## v1.0.0-beta.2
 
 ### Fixed
