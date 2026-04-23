@@ -12,6 +12,12 @@ RLS_REMOVE_PREFIXES = (
     "lua/ge/extensions/overrides/ui/apps/minimap/",
 )
 
+CAREERMP_REMOVE_PREFIXES = (
+    # BeamNG 0.34 can discover mod-provided files under /settings but return
+    # nil while reading them through jsonReadFile, which crashes ui/apps.lua.
+    "settings/ui_apps/layouts/default/careermp.uilayout.json",
+)
+
 
 def sha256sum(path: Path) -> str:
     h = hashlib.sha256()
@@ -87,7 +93,7 @@ def main() -> int:
     careermp_out = out_dir / "CareerMP.zip"
 
     rls_size, rls_hash = build_mod(rls_original, rls_patch_dir, rls_out, RLS_REMOVE_PREFIXES)
-    cmp_size, cmp_hash = build_mod(careermp_original, careermp_patch_dir, careermp_out)
+    cmp_size, cmp_hash = build_mod(careermp_original, careermp_patch_dir, careermp_out, CAREERMP_REMOVE_PREFIXES)
 
     checksums = out_dir / "checksums.txt"
     checksums.write_text(

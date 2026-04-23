@@ -28,6 +28,8 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 - Adds a defensive computer tether cleanup to avoid closing tuning, painting, or part-shopping screens when switching into the vehicle.
 - Removes the old RLS minimap app override from release builds so the vanilla/CareerMP minimap can load without `ui_apps_minimap_minimap` crashes.
 - Applies CareerMP server traffic settings on the client, including disabling road and parked AI traffic when the server config has them turned off.
+- Makes CareerMP pass the active multiplayer map into the RLS startup flow so River Highway sessions no longer fall back to West Coast.
+- Removes the old `careermp.uilayout.json` preset from the generated `CareerMP.zip` to avoid `ui/apps.lua` layout crashes on BeamNG 0.34.
 - Adds an optional River Highway builder workflow that creates a map delta locally without committing or redistributing large third-party map assets.
 
 ## Changed Files
@@ -215,10 +217,10 @@ Set the server map to:
 /levels/river_highway/info.json
 ```
 
-When updating from `v1.0.0-beta.1` or an older build, replace **both** generated files:
+When updating from `v1.0.0-beta.3` or an older build, replace **both** generated files:
 
 - Replace `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` to fix the minimap crash on rejoin.
-- Replace `CareerMP.zip` to enforce the server-side AI traffic settings on clients.
+- Replace `CareerMP.zip` to enforce the server-side AI traffic settings on clients, pass the active multiplayer map into RLS startup, and remove the old CareerMP UI layout preset.
 - For River Highway servers, also replace the generated River delta zip.
 
 Do not distribute these at the same time:
@@ -230,6 +232,7 @@ Do not distribute these at the same time:
 ## Troubleshooting
 
 - `ui_apps_minimap_minimap` fatal Lua error on rejoin: rebuild or download the latest compatible RLS zip. The old RLS minimap override must not be present in the final archive under `lua/ge/extensions/overrides/ui/apps/minimap/`.
+- `ui/apps.lua` fatal Lua error mentioning `layout` as nil: replace the generated `CareerMP.zip`. The builder removes the old CareerMP UI layout preset that can break BeamNG 0.34 layout discovery.
 - AI traffic appears even though CareerMP config disables it: make sure the updated generated `CareerMP.zip` is installed. The traffic config fix is in `lua/ge/extensions/careerMPEnabler.lua`, not in the RLS zip.
 - River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.5.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
 - River Highway has floating city pieces or floating trees: remove the original RLS River beta zip from the server/client mods and use only the generated River delta together with PHI.

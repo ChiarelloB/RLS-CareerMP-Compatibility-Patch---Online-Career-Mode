@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.0.0-beta.4
+
+### Fixed
+
+- CareerMP now passes the active multiplayer level into the RLS career startup call, preventing River Highway sessions from falling back to `west_coast_usa`.
+- The generated `CareerMP.zip` now removes the legacy `careermp.uilayout.json` preset to avoid `ui/apps.lua` nil layout crashes on BeamNG 0.34.
+
+### Validated
+
+- River Highway multiplayer smoke test passed for loading, minimap, rejoin, map integrity, and garage/computer interaction.
+
 ## v1.0.0-beta.3
 
 ### Added

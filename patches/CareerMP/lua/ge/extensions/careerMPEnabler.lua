@@ -422,7 +422,8 @@ local function rxCareerSync(data)
 		if clientConfig.serverSaveNameEnabled then
 			nickname = clientConfig.serverSaveName
 		end
-		career_career.createOrLoadCareerAndStart(nickname .. clientConfig.serverSaveSuffix, false, false)
+		local currentLevel = getCurrentLevelIdentifier and getCurrentLevelIdentifier() or nil
+		career_career.createOrLoadCareerAndStart(nickname .. clientConfig.serverSaveSuffix, false, false, nil, nil, nil, currentLevel)
 		careerMPActive = true
 	end
 end
