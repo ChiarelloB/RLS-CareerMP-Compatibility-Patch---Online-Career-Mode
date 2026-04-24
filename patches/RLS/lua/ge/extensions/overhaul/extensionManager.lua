@@ -60,6 +60,36 @@ local function loadExtensions()
     extensions.unload("career_saveSystem")
 end
 
+local function loadExtensionIfNeeded(extensionName)
+    if not extensionName or not extensions or not extensions.load then
+        return
+    end
+
+    setExtensionUnloadMode(extensionName, "manual")
+    if extensions.isExtensionLoaded and extensions.isExtensionLoaded(extensionName) then
+        return
+    end
+
+    pcall(extensions.load, extensionName)
+end
+
+local function ensureDragRuntimeExtensions()
+    -- The drag practice stack drives staging AI, tree lights, timeslips and
+    -- RLS drag payouts. Keeping it warm avoids BeamMP/CareerMP load-order
+    -- races where the opponent spawns but never receives staging commands.
+    local dragExtensions = {
+        "gameplay_drag_general",
+        "gameplay_drag_utils",
+        "gameplay_drag_times",
+        "gameplay_drag_display",
+        "gameplay_drag_dragTypes_dragPracticeRace",
+    }
+
+    for _, extensionName in ipairs(dragExtensions) do
+        loadExtensionIfNeeded(extensionName)
+    end
+end
+
 -- Unloads all career, gameplay, freeroam, and overhaul-related extensions used by the mod.
 -- 
 -- This forces removal of core game context, freeroam/events, gameplay modules (phone, repo, taxi, cab, ambulance, bus, beamEats),
@@ -141,6 +171,7 @@ local function startup()
     end)
 
     loadManualUnloadExtensions()
+    ensureDragRuntimeExtensions()
 end
 
 local function onModActivated(modData)
@@ -181,12 +212,67 @@ local function onModDeactivated(modData)
     end
 end
 
+local function getVehicleId(veh)
+    if not veh then return nil end
+
+    local ok, id = pcall(function()
+        if veh.getID then return veh:getID() end
+        if veh.getId then return veh:getId() end
+        if veh.id then return veh.id end
+        return nil
+    end)
+
+    if ok then
+        return id
+    end
+    return nil
+end
+
+local function isDragRacerVehicle(vehId)
+    if not vehId or not gameplay_drag_general or not gameplay_drag_general.getData then
+        return false
+    end
+
+    local ok, dragData = pcall(gameplay_drag_general.getData)
+    if not ok or not dragData or not dragData.racers then
+        return false
+    end
+
+    return dragData.racers[vehId] ~= nil
+end
+
+local function installVehicleAiOverride(veh, vehId)
+    if not veh then return end
+
+    -- Drag NPCs must stay on the vanilla drag AI controller. RLS overrideAI is
+    -- useful elsewhere, but on staged opponents it can swallow the drag strip's
+    -- ai.setTarget/ai.setSpeed flow and leave the car sitting at the line.
+    if isDragRacerVehicle(vehId) then
+        return
+    end
+
+    pcall(function()
+        veh:queueLuaCommand([[
+            extensions.load('overrideAI')
+            ai = overrideAI
+        ]])
+    end)
+end
+
 local function onVehicleSpawned(_, veh)
+    if not veh then return end
+
     veh:queueLuaCommand("extensions.load('fuelMultiplier')")
-    veh:queueLuaCommand([[
-        extensions.load('overrideAI')
-        ai = overrideAI
-    ]])
+
+    local vehId = getVehicleId(veh)
+    if core_jobsystem and core_jobsystem.create then
+        core_jobsystem.create(function(job)
+            job.sleep(0.5)
+            installVehicleAiOverride(veh, vehId)
+        end)
+    else
+        installVehicleAiOverride(veh, vehId)
+    end
 end
 
 local function updateEditorBlocking()
@@ -202,6 +288,7 @@ end
 
 M.onWorldReadyState = function(state)
     if state == 2 then
+        ensureDragRuntimeExtensions()
         updateEditorBlocking()
     end
 end

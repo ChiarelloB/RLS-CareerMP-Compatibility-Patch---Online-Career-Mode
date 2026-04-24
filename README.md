@@ -257,7 +257,7 @@ Do not distribute these at the same time:
 - AI traffic appears even though CareerMP config disables it: make sure both updated generated zips are installed. `CareerMP.zip` applies the server traffic flags on the client, and `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` fixes the RLS traffic bootstrap so it does not turn `0` back into auto-spawn traffic.
 - A tune or workshop action leaves you in AI traffic, recovery crashes after pressing `R`, or taxi to garage / last vehicle hangs: make sure both updated generated zips are installed. The current compatibility update bundles that workshop fix with the latest traffic fix.
 - Speed cameras do not fine players or cause Lua errors: replace the generated compatible RLS zip and the generated `CareerMP.zip`. The fix needs the safe RLS camera module and the safe CareerMP notification module.
-- Drag strip lights, dragstrip freeroam events, or tuning shop drag jobs do not work: replace the generated compatible RLS zip. The patch keeps the drag practice runtime loaded for online career sessions.
+- Drag strip lights, dragstrip freeroam events, tuning shop drag jobs, or Alder Dragway NPC staging do not work: replace the generated compatible RLS zip. The patch keeps the drag practice runtime loaded and prevents RLS `overrideAI` from taking over registered drag racer vehicles.
 - Parcel delivery hangs after confirming cargo: replace the generated compatible RLS zip. The patch adds a timeout fallback when BeamMP does not return the cargo-container callback.
 - Players, beamlings/unicycles, or parked cars show as grey orbs: replace the generated `CareerMP.zip` and keep `simplifyRemoteVehicles` effectively disabled for this compatibility build.
 - Server traffic settings seem to ignore your patch after some time: check `Resources/Server/CareerMP/config/config.json` and set `server.autoUpdate` to `false`.
@@ -268,5 +268,5 @@ Do not distribute these at the same time:
 ## Notes
 
 - This patch is intended for online career sessions, not standalone single-player use.
-- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
+- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, drag NPC staging fix, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
 - Because the original RLS mod is third-party content, the recommended distribution format is **patch + build script**, not the complete repacked RLS archive.

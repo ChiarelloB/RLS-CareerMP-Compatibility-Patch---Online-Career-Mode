@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.0-beta.9
+
+### Fixed
+
+- Fixed RLS drag events in online CareerMP sessions where the opponent NPC spawned at Alder Dragway but would not drive into staging or start the race.
+- Kept the drag runtime stack warm during world load so drag strip lights, staging logic, timeslips, and drag payout hooks are available before the event starts.
+- Prevented the RLS vehicle-side `overrideAI` from being installed on registered drag racer vehicles, preserving the vanilla drag AI command flow used by `ai.setTarget`, `ai.setSpeed`, and launch staging.
+
+### Validated
+
+- Rebuilt both generated zips and validated the generated RLS archive with `zipfile.testzip()`.
+- Confirmed the dedicated West Coast multiplayer test server loaded the updated RLS zip and CareerMP zip successfully.
+- Manual smoke test passed: the Alder Dragway opponent NPC staged and the drag event started correctly in the online CareerMP session.
+
 ## v1.0.0-beta.8
 
 ### Fixed
