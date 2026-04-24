@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.0-beta.7
+
+### Fixed
+
+- Added an RLS `overrides/career/modules/tuning.lua` compatibility override so multiplayer tuning no longer crashes on `getObjectByID(nil)` after applying changes.
+- Reacquired the tuned vehicle after respawn instead of continuing to use stale pre-respawn vehicle references during the tuning apply flow.
+- Added multiplayer-safe tuning UI exit handling so backing out of the tuning screen no longer leaves players stuck inside a frozen vehicle.
+- Reset tuning session state on close and after save completion so repeated tuning sessions can confirm purchases reliably instead of inheriting stale shopping state.
+
+### Validated
+
+- Validated the West Coast multiplayer tuning flow on the dedicated all-fixes test server: first tuning apply, confirm purchase, reopen tuning, and repeat tuning purchase all completed successfully in the final tested build.
+
 ## v1.0.0-beta.6
 
 ### Fixed
