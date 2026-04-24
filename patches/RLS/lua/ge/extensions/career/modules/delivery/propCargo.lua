@@ -26,7 +26,7 @@ local BOX_LAYER_HEIGHT = 0.40
 local BOX_SPAWN_LIFT = 0.30
 local CRATE_SPAWN_LIFT = 0.30
 local DELIVERY_RADIUS = 5.0
-local PLAYER_EXIT_RADIUS = 6.0
+local ARRIVAL_CONFIRM_TIME = 1.0
 local UPDATE_INTERVAL = 0.5
 local HEAVY_THRESHOLD_KG = 30.0
 
@@ -40,6 +40,7 @@ local LABEL_Z_OFFSET = 0.2
 
 local trackedProps = {}
 local deliveryQueue = {}
+local deliveryConfirmInProgress = false
 local updateTimer = 0
 
 local function getParkingSpotPos(location)
@@ -93,6 +94,54 @@ end
 
 local function destKey(dest)
   return (dest.facId or "") .. "|" .. (dest.psPath or "")
+end
+
+local function queueDelivery(cargoIds, destination)
+  local key = destKey(destination)
+  for _, item in ipairs(deliveryQueue) do
+    if destKey(item.destination) == key then
+      for _, id in ipairs(cargoIds) do
+        table.insert(item.cargoIds, id)
+      end
+      return
+    end
+  end
+
+  table.insert(deliveryQueue, {
+    cargoIds = deepcopy(cargoIds),
+    destination = destination,
+  })
+end
+
+local function processDeliveryQueue()
+  if deliveryConfirmInProgress or #deliveryQueue == 0 then
+    return
+  end
+  if not ensureDeps() then
+    return
+  end
+
+  local item = table.remove(deliveryQueue, 1)
+  local confirmedCargoIds = {}
+  for _, id in ipairs(item.cargoIds) do
+    table.insert(confirmedCargoIds, {id = id})
+  end
+
+  deliveryConfirmInProgress = true
+  log("I", "propCargo", string.format("Confirming %d cargo to %s/%s", #item.cargoIds, item.destination.facId, item.destination.psPath))
+  local ok, err = pcall(function()
+    dProgress.confirmDropOffData(
+      {confirmedCargoIds = confirmedCargoIds, confirmedOfferIds = {}},
+      item.destination.facId,
+      item.destination.psPath
+    )
+  end)
+
+  if not ok then
+    deliveryConfirmInProgress = false
+    table.insert(deliveryQueue, 1, item)
+    log("E", "propCargo", "Failed to confirm prop cargo delivery: " .. tostring(err))
+  end
 end
 
 local function boxSlotPos(groupCentre, index)
@@ -289,11 +338,6 @@ M.onUpdate = function(dt)
   end
   updateTimer = UPDATE_INTERVAL
 
-  local playerVehId = be:getPlayerVehicleID(0)
-  local playerVeh = playerVehId and scenetree.findObjectById(playerVehId)
-  local playerPos = playerVeh and vec3(playerVeh:getPosition())
-  local walking = gameplay_walk and gameplay_walk.isWalking and gameplay_walk.isWalking()
-
   for index = #trackedProps, 1, -1 do
     local entry = trackedProps[index]
     local propPos = getObjectPos(entry.propId)
@@ -307,35 +351,23 @@ M.onUpdate = function(dt)
 
       if entry.destinationPos then
         local distToDest = (propPos - entry.destinationPos):length()
-        local inVehicle = not walking
-        local playerGone = not playerPos or (playerPos - entry.destinationPos):length() > PLAYER_EXIT_RADIUS
+        if distToDest <= DELIVERY_RADIUS then
+          entry.arrivalTimer = (entry.arrivalTimer or 0) + UPDATE_INTERVAL
+        else
+          entry.arrivalTimer = 0
+        end
 
-        if distToDest <= DELIVERY_RADIUS and playerGone and inVehicle then
-          log("I", "propCargo", string.format("Prop %d arrived (dist=%.1fm), queuing %d cargo", entry.propId, distToDest, #entry.cargoIds))
+        if entry.arrivalTimer >= ARRIVAL_CONFIRM_TIME then
+          log("I", "propCargo", string.format("Prop %d arrived (dist=%.1fm), confirming %d cargo", entry.propId, distToDest, #entry.cargoIds))
           deleteProp(entry.propId)
           table.remove(trackedProps, index)
-          table.insert(deliveryQueue, {
-            cargoIds = entry.cargoIds,
-            destination = entry.destination,
-          })
+          queueDelivery(entry.cargoIds, entry.destination)
         end
       end
     end
   end
 
-  if #deliveryQueue > 0 then
-    local item = table.remove(deliveryQueue, 1)
-    local confirmedCargoIds = {}
-    for _, id in ipairs(item.cargoIds) do
-      table.insert(confirmedCargoIds, {id = id})
-    end
-    log("I", "propCargo", string.format("Confirming %d cargo to %s/%s", #item.cargoIds, item.destination.facId, item.destination.psPath))
-    dProgress.confirmDropOffData(
-      {confirmedCargoIds = confirmedCargoIds, confirmedOfferIds = {}},
-      item.destination.facId,
-      item.destination.psPath
-    )
-  end
+  processDeliveryQueue()
 end
 
 M.onDeliveryModeStopped = function()
@@ -344,8 +376,14 @@ M.onDeliveryModeStopped = function()
   end
   table.clear(trackedProps)
   table.clear(deliveryQueue)
+  deliveryConfirmInProgress = false
   updateTimer = 0
   log("I", "propCargo", "Delivery mode stopped - all props removed.")
+end
+
+M.onDeliveryRewardsPopupClosed = function()
+  deliveryConfirmInProgress = false
+  processDeliveryQueue()
 end
 
 M.getPropTasks = function()

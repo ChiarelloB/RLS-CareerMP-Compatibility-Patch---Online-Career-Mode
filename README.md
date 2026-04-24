@@ -261,12 +261,12 @@ Do not distribute these at the same time:
 - Parcel delivery hangs after confirming cargo: replace the generated compatible RLS zip. The patch adds a timeout fallback when BeamMP does not return the cargo-container callback.
 - Players, beamlings/unicycles, or parked cars show as grey orbs: replace the generated `CareerMP.zip` and keep `simplifyRemoteVehicles` effectively disabled for this compatibility build.
 - Server traffic settings seem to ignore your patch after some time: check `Resources/Server/CareerMP/config/config.json` and set `server.autoUpdate` to `false`.
-- `Prop Cargo` will not turn in: the physical prop must reach the destination area, and then the player should be back in a vehicle and move away from the drop-off area so the delivery can confirm.
+- `Prop Cargo` will not turn in: replace the generated compatible RLS zip. The current patch confirms prop cargo automatically after the physical prop stays inside the destination radius for a short moment.
 - River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.5.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
 - River Highway has floating city pieces or floating trees: remove the original RLS River beta zip from the server/client mods and use only the generated River delta together with PHI.
 
 ## Notes
 
 - This patch is intended for online career sessions, not standalone single-player use.
-- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, drag NPC staging fix, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
+- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, prop cargo turn-in fix, drag NPC staging fix, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
 - Because the original RLS mod is third-party content, the recommended distribution format is **patch + build script**, not the complete repacked RLS archive.

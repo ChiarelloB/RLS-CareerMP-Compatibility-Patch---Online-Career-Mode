@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.10
+
+### Fixed
+
+- Fixed Prop Cargo deliveries that routed correctly but would not turn in when the physical prop reached the destination.
+- Prop Cargo now confirms automatically after the prop stays inside the destination radius for a short moment instead of requiring the player to leave the drop-off area and re-enter a vehicle.
+- Batched Prop Cargo turn-ins by destination and guarded the reward confirmation flow so multiple props cannot drop a second confirmation while the previous reward popup is still active.
+
 ## v1.0.0-beta.9
 
 ### Fixed
