@@ -12,6 +12,14 @@ M.onCareerActivated = function()
   dGeneral = career_modules_delivery_general
 end
 
+local function ensureDeps()
+  dParcelManager = dParcelManager or career_modules_delivery_parcelManager
+  dGenerator = dGenerator or career_modules_delivery_generator
+  dProgress = dProgress or career_modules_delivery_progress
+  dGeneral = dGeneral or career_modules_delivery_general
+  return dParcelManager and dGenerator and dProgress and dGeneral
+end
+
 local PROP_RIGHT_OFFSET = 3.0
 local BOX_GRID_SPACING = 0.55
 local BOX_LAYER_HEIGHT = 0.40
@@ -99,6 +107,10 @@ local function boxSlotPos(groupCentre, index)
 end
 
 M.spawnPropsForCargo = function(batch, facId, psPath)
+  if not ensureDeps() then
+    log("W", "propCargo", "Cannot spawn prop cargo yet: delivery modules are not ready.")
+    return
+  end
   if not batch or #batch == 0 then
     return
   end
@@ -199,6 +211,9 @@ M.spawnPropsForCargo = function(batch, facId, psPath)
 end
 
 M.onPreRender = function()
+  if not ensureDeps() then
+    return
+  end
   if #trackedProps == 0 then
     return
   end
@@ -261,6 +276,9 @@ M.onPreRender = function()
 end
 
 M.onUpdate = function(dt)
+  if not ensureDeps() then
+    return
+  end
   if #trackedProps == 0 and #deliveryQueue == 0 then
     return
   end

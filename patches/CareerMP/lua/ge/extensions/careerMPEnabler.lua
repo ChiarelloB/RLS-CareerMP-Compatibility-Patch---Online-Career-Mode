@@ -17,6 +17,7 @@ end
 local careerMPActive = false
 local syncRequested = false
 local trafficRuntimeTimer = 0
+local remoteGhostRefreshTimer = 0
 
 local originalMPOnUpdate
 local originalGetDriverData
@@ -84,6 +85,70 @@ local function setGameplaySettings(gameplaySettings)
 	for setting, value in pairs(gameplaySettings) do
 		settings.setValue(setting, value)
 	end
+end
+
+local function safeIsOwn(gameVehicleID)
+	return gameVehicleID and MPVehicleGE and MPVehicleGE.isOwn and MPVehicleGE.isOwn(gameVehicleID)
+end
+
+local function safeGetServerVehicleID(gameVehicleID)
+	if not (gameVehicleID and MPVehicleGE and MPVehicleGE.getServerVehicleID) then
+		return nil
+	end
+	return MPVehicleGE.getServerVehicleID(gameVehicleID)
+end
+
+local function syncVehicleActiveState(gameVehicleID, active)
+	if not safeIsOwn(gameVehicleID) then
+		return
+	end
+
+	local serverVehicleID = safeGetServerVehicleID(gameVehicleID)
+	if not serverVehicleID then
+		return
+	end
+
+	local data = {}
+	data.active = active
+	data.serverVehicleID = serverVehicleID
+	TriggerServerEvent("careerVehicleActiveHandler", jsonEncode(data))
+end
+
+local function getVehicleLicenseText(veh)
+	if not veh then
+		return "Illegible"
+	end
+	return veh:getDynDataFieldbyName("licenseText", 0) or "Illegible"
+end
+
+local function getVehicleModelName(veh)
+	if not veh then
+		return "Unknown"
+	end
+
+	if core_vehicles and core_vehicles.getModel and veh.JBeam then
+		local ok, modelData = pcall(core_vehicles.getModel, veh.JBeam)
+		if ok and modelData and modelData.model and modelData.model.Name then
+			return modelData.model.Name
+		end
+	end
+
+	return veh.JBeam or "Unknown"
+end
+
+local function applyRemoteGhostState(veh)
+	if not (veh and clientConfig) then
+		return
+	end
+
+	if veh.JBeam == "unicycle" then
+		-- Remote walking players should stay visible. Ghosting unicycles can
+		-- make BeamMP render them as grey placeholder orbs for late joiners.
+		veh:queueLuaCommand('careerMPEnabler.setUnicycleGhost(false)')
+		return
+	end
+
+	veh:queueLuaCommand('careerMPEnabler.setAllGhost(' .. tostring(clientConfig.allGhost == true) .. ')')
 end
 
 --Hidden Nametags by Vehicle Model
@@ -180,16 +245,19 @@ local function rxCareerVehSync(data)
 			if vehicles[serverVehicleID] then
 				local gameVehicleID = vehicles[serverVehicleID].gameVehicleID
 				if gameVehicleID ~= -1 then
-					if not MPVehicleGE.isOwn(gameVehicleID) then
-						if not state.active then
-							be:getObjectByID(gameVehicleID):setActive(0)
-							vehicles[serverVehicleID].hideNametag = true
-						else
-							be:getObjectByID(gameVehicleID):setActive(1)
-							if hiddens[vehicles[serverVehicleID].jbeam] then
+					if not safeIsOwn(gameVehicleID) then
+						local veh = be:getObjectByID(gameVehicleID)
+						if veh then
+							if not state.active then
+								veh:setActive(0)
 								vehicles[serverVehicleID].hideNametag = true
 							else
-								vehicles[serverVehicleID].hideNametag = false
+								veh:setActive(1)
+								if hiddens[vehicles[serverVehicleID].jbeam] then
+									vehicles[serverVehicleID].hideNametag = true
+								else
+									vehicles[serverVehicleID].hideNametag = false
+								end
 							end
 						end
 					end
@@ -201,14 +269,8 @@ end
 
 local function onVehicleActiveChanged(gameVehicleID, active)
 	if gameVehicleID then
-		if MPVehicleGE.isOwn(gameVehicleID) then
-			local serverVehicleID = MPVehicleGE.getServerVehicleID(gameVehicleID)
-			if serverVehicleID then
-				local data = {}
-				data.active = active
-				data.serverVehicleID = serverVehicleID
-				TriggerServerEvent("careerVehicleActiveHandler", jsonEncode(data))
-			end
+		if safeIsOwn(gameVehicleID) then
+			syncVehicleActiveState(gameVehicleID, active)
 		else
 			TriggerServerEvent("careerVehSyncRequested", "")
 		end
@@ -221,25 +283,20 @@ local function onVehicleSpawned(gameVehicleID)
 		if veh then
 			veh:queueLuaCommand('careerMPEnabler.onVehicleReady()')
 		end
-		if not MPVehicleGE.isOwn(gameVehicleID) then
+		if not safeIsOwn(gameVehicleID) then
 			TriggerServerEvent("careerVehSyncRequested", "")
 		end
 	end
 end
 
 local function onVehicleReady(gameVehicleID)
-	local serverVehicleID = MPVehicleGE.getServerVehicleID(gameVehicleID)
+	local serverVehicleID = safeGetServerVehicleID(gameVehicleID)
 	if serverVehicleID then
 		local veh = be:getObjectByID(gameVehicleID)
 		if veh then
-			if not MPVehicleGE.isOwn(gameVehicleID) then
+			if not safeIsOwn(gameVehicleID) then
 				local vehicles = MPVehicleGE.getVehicles()
-				if clientConfig then
-					if veh.JBeam == "unicycle" then
-						veh:queueLuaCommand('careerMPEnabler.setUnicycleGhost(' .. tostring(clientConfig.unicycleGhost) .. ')')
-					end
-					veh:queueLuaCommand('careerMPEnabler.setAllGhost(' .. tostring(clientConfig.allGhost) .. ')')
-				end
+				applyRemoteGhostState(veh)
 				if hiddens[veh.JBeam] then
 					vehicles[serverVehicleID].hideNametag = true
 				else
@@ -254,9 +311,12 @@ end
 local function onVehicleSwitched(oldGameVehicleID, newGameVehicleID)
 	local newVeh = be:getObjectByID(newGameVehicleID)
 	local oldVeh = be:getObjectByID(oldGameVehicleID)
+	if oldVeh and oldVeh.JBeam == "unicycle" then
+		syncVehicleActiveState(oldGameVehicleID, false)
+	end
 	if newVeh then
 		if hiddens[newVeh.JBeam] then
-			if not MPVehicleGE.isOwn(newGameVehicleID) then
+			if not safeIsOwn(newGameVehicleID) then
 				be:enterNextVehicle(0, 1)
 			end
 		end
@@ -272,31 +332,30 @@ end
 --Traffic Signals and Cameras
 
 local function onSpeedTrapTriggered(speedTrapData, playerSpeed, overSpeed)
-	if MPVehicleGE.isOwn(speedTrapData.subjectID) then
+	if speedTrapData and safeIsOwn(speedTrapData.subjectID) then
 		local veh = be:getObjectByID(speedTrapData.subjectID)
-		local highscore, leaderboard = gameplay_speedTrapLeaderboards.addRecord(speedTrapData, playerSpeed, overSpeed, veh)
-		speedTrapData.licensePlate = veh:getDynDataFieldbyName("licenseText", 0) or "Illegible"
-		speedTrapData.vehicleModel = core_vehicles.getModel(veh.JBeam).model.Name
+		speedTrapData.licensePlate = getVehicleLicenseText(veh)
+		speedTrapData.vehicleModel = getVehicleModelName(veh)
 		speedTrapData.playerSpeed = playerSpeed
 		speedTrapData.overSpeed = overSpeed
-		speedTrapData.highscore = highscore
-		speedTrapData.leaderboard = leaderboard
 		TriggerServerEvent("speedTrap", jsonEncode( speedTrapData ) )
 	end
 end
 
 local function onRedLightCamTriggered(redLightData, playerSpeed)
-	if MPVehicleGE.isOwn(redLightData.subjectID) then
+	if redLightData and safeIsOwn(redLightData.subjectID) then
 		local veh = be:getObjectByID(redLightData.subjectID)
-		redLightData.licensePlate = veh:getDynDataFieldbyName("licenseText", 0) or "Illegible"
-		redLightData.vehicleModel = core_vehicles.getModel(veh.JBeam).model.Name
+		redLightData.licensePlate = getVehicleLicenseText(veh)
+		redLightData.vehicleModel = getVehicleModelName(veh)
 		redLightData.playerSpeed = playerSpeed
 		TriggerServerEvent("redLight", jsonEncode( redLightData ) )
 	end
 end
 
 local function rxTrafficSignalTimer(data)
-	core_trafficSignals.setTimer(tonumber(data))
+	if core_trafficSignals and core_trafficSignals.setTimer and tonumber(data) then
+		core_trafficSignals.setTimer(tonumber(data))
+	end
 end
 
 --Garage / Office Computer Handling
@@ -406,7 +465,9 @@ local function settingsCheck()
 	careerMPTrafficSettings.trafficParkedVehicles = clientConfig.parkedTrafficEnabled == true
 	setTrafficSettings(careerMPTrafficSettings)
 	applyTrafficRuntimeState()
-	careerMPGameplaySettings.simplifyRemoteVehicles = clientConfig.simplifyRemoteVehicles
+	-- Simple remote vehicles can appear as grey placeholder orbs for players,
+	-- walking unicycles, and parked cars when BeamMP streams them late.
+	careerMPGameplaySettings.simplifyRemoteVehicles = false
 	careerMPGameplaySettings.spawnVehicleIgnitionLevel = clientConfig.spawnVehicleIgnitionLevel
 	careerMPGameplaySettings.skipOtherPlayersVehicles = clientConfig.skipOtherPlayersVehicles
 	setGameplaySettings(careerMPGameplaySettings)
@@ -473,15 +534,17 @@ local function onUpdate(dtReal, dtSim, dtRaw)
 	end
 	if worldReadyState == 2 then
 		if clientConfig then
+			remoteGhostRefreshTimer = remoteGhostRefreshTimer + (dtReal or 0)
+			if remoteGhostRefreshTimer <= 2 then
+				return
+			end
+			remoteGhostRefreshTimer = 0
 			local vehicles = MPVehicleGE.getVehicles()
 			for serverVehicleID in pairs(vehicles) do
 				local veh = be:getObjectByID(vehicles[serverVehicleID].gameVehicleID)
 				if veh then
-					if not MPVehicleGE.isOwn(vehicles[serverVehicleID].gameVehicleID) then
-						if veh.JBeam == "unicycle" then
-							veh:queueLuaCommand('careerMPEnabler.setUnicycleGhost(' .. tostring(clientConfig.unicycleGhost) .. ')')
-						end
-						veh:queueLuaCommand('careerMPEnabler.setAllGhost(' .. tostring(clientConfig.allGhost) .. ')')
+					if not safeIsOwn(vehicles[serverVehicleID].gameVehicleID) then
+						applyRemoteGhostState(veh)
 					end
 				end
 			end

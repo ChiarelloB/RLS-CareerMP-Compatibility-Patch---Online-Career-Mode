@@ -1872,7 +1872,37 @@ local function commitDeliveryConfiguration()
     core_vehicleBridge.executeAction(veh, "setCargoContainers", containerData or {}, "updateAll")
     core_vehicleBridge.executeAction(veh, 'setFreeze', true)
 
+    local completed = false
+    local requestReturned = false
+    local function finishLoad()
+      if completed then
+        return
+      end
+      completed = true
+
+      local v = scenetree.findObjectById(vehId)
+      if v then
+        core_vehicleBridge.executeAction(v, 'setFreeze', false)
+      end
+      gameplay_markerInteraction.setForceReevaluateOpenPrompt()
+      if callback then callback() end
+    end
+
+    if core_jobsystem then
+      core_jobsystem.create(function(job)
+        job.sleep(3)
+        if not requestReturned and not completed then
+          log("W", "", string.format("Vehicle %d: cargo container callback timed out in CareerMP, continuing safely.", vehId))
+          finishLoad()
+        end
+      end)
+    end
+
     core_vehicleBridge.requestValue(veh, function(vehCargoContainerData)
+      requestReturned = true
+      if completed then
+        return
+      end
       local maxForContainer = 0
       if vehCargoContainerData and vehCargoContainerData[1] then
         for _, container in ipairs(vehCargoContainerData[1]) do
@@ -1899,8 +1929,7 @@ local function commitDeliveryConfiguration()
       end))
 
       step.startStepSequence(sequence, function()
-        gameplay_markerInteraction.setForceReevaluateOpenPrompt()
-        if callback then callback() end
+        finishLoad()
       end)
 
       if delay > 0 then

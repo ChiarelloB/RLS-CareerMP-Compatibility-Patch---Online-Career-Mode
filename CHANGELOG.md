@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.0.0-beta.8
+
+### Fixed
+
+- Added a multiplayer-safe RLS speed/red-light camera override so speed cameras can issue fines again without crashing when traffic data is missing or AI traffic is disabled.
+- Hardened CareerMP speed/red-light notifications so nil vehicles, missing model data, or missing traffic signal timers no longer crash the client.
+- Kept the RLS drag practice runtime loaded in CareerMP sessions, restoring the dependency used by drag strip lights, dragstrip freeroam events, and tuning shop drag jobs.
+- Added a parcel loading timeout fallback so delivery commits do not hang forever if BeamMP does not return the vehicle cargo-container callback.
+- Added defensive prop cargo dependency refreshes so prop delivery can recover when the module is loaded before all career delivery modules are ready.
+- Forced full remote vehicle rendering in the CareerMP client patch to avoid grey placeholder orbs for players, walking beamlings/unicycles, and parked vehicles on late join.
+- Reduced remote ghost refresh spam and explicitly syncs the walking unicycle inactive when a player enters a vehicle, helping prevent the beamling from staying behind.
+
+### Validated
+
+- Rebuilt both generated zips and validated the final archives with `zipfile.testzip()`.
+- Confirmed the generated RLS zip includes the new safe `speedTraps.lua`, no longer unloads `gameplay_drag_dragTypes_dragPracticeRace`, still removes the legacy minimap override, and includes the cargo fallback changes.
+- Confirmed the generated CareerMP zip includes the safe camera notification path, forced full remote rendering, and still removes the old `careermp.uilayout.json` preset.
+
 ## v1.0.0-beta.7
 
 ### Fixed

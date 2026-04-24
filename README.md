@@ -37,6 +37,10 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 - Adds a defensive computer tether cleanup to avoid closing tuning, painting, or part-shopping screens when switching into the vehicle.
 - Consolidates the current compatibility update so one generated patch set covers both the traffic-disable fixes and the workshop respawn/recovery/taxi fixes.
 - Adds inventory and traffic compatibility guards so workshop respawns do not leave the player vehicle in AI traffic and stale vehicle references no longer break recovery or taxi prompts.
+- Restores RLS camera fines in CareerMP and guards speed/red-light camera notifications against nil vehicles or missing traffic data.
+- Keeps the RLS drag practice runtime loaded so drag strip lights, dragstrip freeroam events, and tuning shop drag jobs can run online.
+- Adds a safe parcel-loading fallback for multiplayer sessions where the vehicle cargo callback does not return.
+- Forces full remote vehicle rendering and refreshes remote ghost state less aggressively to avoid grey player/beamling/parked-car placeholder orbs.
 - Removes the old RLS minimap app override from release builds so the vanilla/CareerMP minimap can load without `ui_apps_minimap_minimap` crashes.
 - Applies CareerMP server traffic settings on the client, including disabling road and parked AI traffic when the server config has them turned off.
 - Makes CareerMP pass the active multiplayer map into the RLS startup flow so River Highway sessions no longer fall back to West Coast.
@@ -55,6 +59,7 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 - `lua/ge/extensions/overrides/career/modules/delivery/cargoCards.lua`
 - `lua/ge/extensions/overrides/career/modules/delivery/cargoScreen.lua`
 - `lua/ge/extensions/overrides/career/modules/playerDriving.lua`
+- `lua/ge/extensions/overrides/career/modules/speedTraps.lua`
 - `mod_info/RLSCO24/info.json`
 
 ### CareerMP
@@ -203,7 +208,7 @@ Do **not** also install the original `rls_career_overhaul_2.6.5.1.zip`, because 
 - `River Highway PHI original zip not found`: check that `--river-phi-original` points to `River_Highway_Rework_PHI.zip`.
 - The game still has the minimap crash: make sure you replaced the old generated RLS zip with the new one from `built`.
 - AI traffic still appears when disabled: make sure you replaced both generated zips from `built`. The latest fix needs the updated `CareerMP.zip` and the updated `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`.
-- Tune, recovery, or taxi still breaks after a workshop change: make sure you replaced both generated zips from `built`, because the current update ships the traffic fix and the workshop compatibility fix together.
+- Tune, recovery, taxi, speed cameras, drag jobs, parcel delivery, or grey player/parked-car orbs still break: make sure you replaced both generated zips from `built`, because the current update ships client and RLS-side fixes together.
 - If a server keeps going back to old behavior, set `server.autoUpdate` to `false` in `Resources/Server/CareerMP/config/config.json` so upstream CareerMP updates do not overwrite the patched files.
 
 ## Server Setup
@@ -251,6 +256,10 @@ Do not distribute these at the same time:
 - `ui/apps.lua` fatal Lua error mentioning `layout` as nil: replace the generated `CareerMP.zip`. The builder removes the old CareerMP UI layout preset that can break BeamNG 0.34 layout discovery.
 - AI traffic appears even though CareerMP config disables it: make sure both updated generated zips are installed. `CareerMP.zip` applies the server traffic flags on the client, and `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` fixes the RLS traffic bootstrap so it does not turn `0` back into auto-spawn traffic.
 - A tune or workshop action leaves you in AI traffic, recovery crashes after pressing `R`, or taxi to garage / last vehicle hangs: make sure both updated generated zips are installed. The current compatibility update bundles that workshop fix with the latest traffic fix.
+- Speed cameras do not fine players or cause Lua errors: replace the generated compatible RLS zip and the generated `CareerMP.zip`. The fix needs the safe RLS camera module and the safe CareerMP notification module.
+- Drag strip lights, dragstrip freeroam events, or tuning shop drag jobs do not work: replace the generated compatible RLS zip. The patch keeps the drag practice runtime loaded for online career sessions.
+- Parcel delivery hangs after confirming cargo: replace the generated compatible RLS zip. The patch adds a timeout fallback when BeamMP does not return the cargo-container callback.
+- Players, beamlings/unicycles, or parked cars show as grey orbs: replace the generated `CareerMP.zip` and keep `simplifyRemoteVehicles` effectively disabled for this compatibility build.
 - Server traffic settings seem to ignore your patch after some time: check `Resources/Server/CareerMP/config/config.json` and set `server.autoUpdate` to `false`.
 - `Prop Cargo` will not turn in: the physical prop must reach the destination area, and then the player should be back in a vehicle and move away from the drop-off area so the delivery can confirm.
 - River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.5.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
@@ -259,5 +268,5 @@ Do not distribute these at the same time:
 ## Notes
 
 - This patch is intended for online career sessions, not standalone single-player use.
-- The current combined update includes the traffic-disable fixes and the workshop respawn/recovery/taxi fixes. Painting and broader part-shopping permutations should still be validated in a live multiplayer session before calling the release fully stable.
+- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
 - Because the original RLS mod is third-party content, the recommended distribution format is **patch + build script**, not the complete repacked RLS archive.
