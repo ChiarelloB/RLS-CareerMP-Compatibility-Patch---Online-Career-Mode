@@ -12,7 +12,7 @@ If a server owner, friend, or Discord post already gave you these finished files
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 
 then you can skip the Python part completely.
 
@@ -23,10 +23,10 @@ If someone already gave you the finished compatible files:
 1. Install:
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 
 2. Do **not** also install:
-- `rls_career_overhaul_2.6.5.1.zip`
+- `rls_career_overhaul_2.6.5.2.zip`
 - `RLS_2.6.4_MPv3.8.zip`
 
 3. Launch BeamNG / BeamMP and join the server.
@@ -41,7 +41,7 @@ For a normal West Coast setup, the server should use:
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 
 Use only the compatible RLS zip, not the original RLS zip.
 
@@ -68,25 +68,25 @@ You only need this section if you do **not** already have the finished compatibl
 
 You will need:
 
-- the original `rls_career_overhaul_2.6.5.1.zip`
+- the original `rls_career_overhaul_2.6.5.2.zip`
 - the original `CareerMP.zip`
 - Python installed on Windows
 
 Then run:
 
 ```powershell
-python .\scripts\build_release.py --rls-original "C:\path\to\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\path\to\CareerMP.zip" --out-dir ".\built"
+python .\scripts\build_release.py --rls-original "C:\path\to\rls_career_overhaul_2.6.5.2.zip" --careermp-original "C:\path\to\CareerMP.zip" --out-dir ".\built"
 ```
 
 If `python` does not work, try:
 
 ```powershell
-py .\scripts\build_release.py --rls-original "C:\path\to\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\path\to\CareerMP.zip" --out-dir ".\built"
+py .\scripts\build_release.py --rls-original "C:\path\to\rls_career_overhaul_2.6.5.2.zip" --careermp-original "C:\path\to\CareerMP.zip" --out-dir ".\built"
 ```
 
 The script will create:
 
-- `built\rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `built\rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `built\CareerMP.zip`
 
 ## Add-on Maps
@@ -97,7 +97,7 @@ That means:
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - the RLS add-on map zip you want to use
 
 Example:
@@ -114,7 +114,7 @@ It needs:
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `River_Highway_Rework_PHI.zip`
 - `rls_career_overhaul_river_highway_beta_0.0.5_careermp_delta.zip`
 

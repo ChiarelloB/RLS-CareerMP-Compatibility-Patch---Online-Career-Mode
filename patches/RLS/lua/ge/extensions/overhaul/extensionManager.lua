@@ -55,6 +55,7 @@ local function loadExtensions()
 
     setExtensionUnloadMode("dynamicRoutes", "manual")
     setExtensionUnloadMode("editor_dynamicRoutesEditor", "manual")
+    setExtensionUnloadMode("vehicleMaintenance", "manual")
 
     extensions.unload("career_career")
     extensions.unload("career_saveSystem")
@@ -146,6 +147,7 @@ local function unloadAllExtensions()
     extensions.unload("career_challengeSeedEncoder")
     extensions.unload("dynamicRoutes")
     extensions.unload("editor_dynamicRoutesEditor")
+    extensions.unload("vehicleMaintenance")
 end
 
 local function startup()
@@ -158,6 +160,8 @@ local function startup()
     setExtensionUnloadMode("overhaul_maps", "manual")
     setExtensionUnloadMode("overhaul_clearLevels", "manual")
     setExtensionUnloadMode("overhaul_addMapChanges", "manual")
+    setExtensionUnloadMode("vehicleMaintenance", "manual")
+    extensions.load("vehicleMaintenance")
 
     if not core_gamestate.state or core_gamestate.state.state ~= "career" then
         loadExtensions()

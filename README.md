@@ -1,6 +1,6 @@
 # RLS CareerMP Compatibility Patch
 
-Compatibility patch for running `RLS Career Overhaul 2.6.5.1` together with `CareerMP` in BeamNG.drive multiplayer career sessions.
+Compatibility patch for running `RLS Career Overhaul 2.6.5.2` together with `CareerMP` in BeamNG.drive multiplayer career sessions.
 
 This repository **does not redistribute the full RLS mod**. It only contains the modified files, plus a build script that overlays those files onto the original mod archives to generate the final server/client zips.
 
@@ -15,11 +15,11 @@ Quick answer:
 
 ## Goal
 
-Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, while preserving the RLS overhaul features and removing the parts that break multiplayer loading.
+Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, while preserving the RLS overhaul features and removing the parts that break multiplayer loading.
 
 ## Base Versions
 
-- `rls_career_overhaul_2.6.5.1.zip`
+- `rls_career_overhaul_2.6.5.2.zip`
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
 - `rls_career_overhaul_river_highway_beta_0.0.5.zip`
@@ -30,7 +30,8 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 ## What This Patch Changes
 
 - Keeps `BeamMP` active when RLS starts.
-- Restores the `prop cargo` system in RLS `2.6.5.1`.
+- Restores the `prop cargo` system in the current RLS `2.6.5.x` compatibility build.
+- Preserves the RLS `2.6.5.2` maintenance and racing team modules while applying the online CareerMP overlay.
 - Makes the `career_careerMP` entrypoint reuse the RLS-overhauled career implementation.
 - Adds compatibility between the RLS computer menu hook and the hook used by `CareerMP`.
 - Fixes the `CareerMP.zip` packaging flow so `modScript.lua` loads correctly in BeamNG.
@@ -60,7 +61,6 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 - `lua/ge/extensions/overrides/career/modules/delivery/cargoScreen.lua`
 - `lua/ge/extensions/overrides/career/modules/playerDriving.lua`
 - `lua/ge/extensions/overrides/career/modules/speedTraps.lua`
-- `mod_info/RLSCO24/info.json`
 
 ### CareerMP
 
@@ -78,12 +78,12 @@ Adapt RLS `2.6.5.1` for the online career flow used by `BeamMP + CareerMP`, whil
 2. Run:
 
 ```bash
-python scripts/build_release.py --rls-original "C:\\path\\to\\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\\path\\to\\CareerMP.zip" --out-dir ".\\built"
+python scripts/build_release.py --rls-original "C:\\path\\to\\rls_career_overhaul_2.6.5.2.zip" --careermp-original "C:\\path\\to\\CareerMP.zip" --out-dir ".\\built"
 ```
 
 3. The script generates:
 
-- `built/rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `built/rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `built/CareerMP.zip`
 - `built/checksums.txt`
 
@@ -156,13 +156,13 @@ C:\RLS-CareerMP-Patch
 
 You need the original files:
 
-- `rls_career_overhaul_2.6.5.1.zip`
+- `rls_career_overhaul_2.6.5.2.zip`
 - `CareerMP.zip`
 
 Example:
 
 ```text
-C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip
+C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.2.zip
 C:\BeamNG-Mod-Build\CareerMP.zip
 ```
 
@@ -179,25 +179,25 @@ cd "C:\RLS-CareerMP-Patch"
 Run this command, changing the paths if your files are somewhere else:
 
 ```powershell
-python .\scripts\build_release.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --out-dir ".\built"
+python .\scripts\build_release.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.2.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --out-dir ".\built"
 ```
 
 If your computer uses the Python launcher instead of `python`, run:
 
 ```powershell
-py .\scripts\build_release.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --out-dir ".\built"
+py .\scripts\build_release.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.2.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --out-dir ".\built"
 ```
 
 ### 6. Use the generated files
 
 After the script finishes, open the `built` folder. These are the files you should use:
 
-- `built\rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `built\rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `built\CareerMP.zip`
 
 Use those generated files on the server/client setup together with `CareerMPBanking.zip`.
 
-Do **not** also install the original `rls_career_overhaul_2.6.5.1.zip`, because it will conflict with the compatible RLS zip.
+Do **not** also install the original `rls_career_overhaul_2.6.5.2.zip`, because it will conflict with the compatible RLS zip.
 
 ### Common Build Problems
 
@@ -207,7 +207,7 @@ Do **not** also install the original `rls_career_overhaul_2.6.5.1.zip`, because 
 - `BeamNG root not found`: pass `--beamng-root` with the folder that contains `BeamNG.drive\content`.
 - `River Highway PHI original zip not found`: check that `--river-phi-original` points to `River_Highway_Rework_PHI.zip`.
 - The game still has the minimap crash: make sure you replaced the old generated RLS zip with the new one from `built`.
-- AI traffic still appears when disabled: make sure you replaced both generated zips from `built`. The latest fix needs the updated `CareerMP.zip` and the updated `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`.
+- AI traffic still appears when disabled: make sure you replaced both generated zips from `built`. The latest fix needs the updated `CareerMP.zip` and the updated `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`.
 - Tune, recovery, taxi, speed cameras, drag jobs, parcel delivery, or grey player/parked-car orbs still break: make sure you replaced both generated zips from `built`, because the current update ships client and RLS-side fixes together.
 - If a server keeps going back to old behavior, set `server.autoUpdate` to `false` in `Resources/Server/CareerMP/config/config.json` so upstream CareerMP updates do not overwrite the patched files.
 
@@ -219,7 +219,7 @@ Distribute these mods:
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 
 ### River Highway Setup
 
@@ -227,7 +227,7 @@ Distribute these mods:
 
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_2.6.5.1_careermp_compatible.zip`
+- `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `River_Highway_Rework_PHI.zip`
 - `rls_career_overhaul_river_highway_beta_0.0.5_careermp_delta.zip`
 
@@ -239,22 +239,22 @@ Set the server map to:
 
 When updating from `v1.0.0-beta.3` or an older build, replace **both** generated files:
 
-- Replace `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` to fix the minimap crash on rejoin.
+- Replace `rls_career_overhaul_2.6.5.2_careermp_compatible.zip` to fix the minimap crash on rejoin.
 - Replace `CareerMP.zip` to enforce the server-side AI traffic settings on clients, pass the active multiplayer map into RLS startup, and remove the old CareerMP UI layout preset.
-- Replace `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` as well if you want traffic fully disabled when the server config uses `roadTrafficEnabled=false` / `parkedTrafficEnabled=false`, or if you need the workshop respawn/recovery/taxi fix, because the current compatibility update ships both fixes together in the generated RLS zip.
+- Replace `rls_career_overhaul_2.6.5.2_careermp_compatible.zip` as well if you want traffic fully disabled when the server config uses `roadTrafficEnabled=false` / `parkedTrafficEnabled=false`, or if you need the workshop respawn/recovery/taxi fix, because the current compatibility update ships both fixes together in the generated RLS zip.
 - For River Highway servers, also replace the generated River delta zip.
 
 Do not distribute these at the same time:
 
 - `RLS_2.6.4_MPv3.8.zip`
-- `rls_career_overhaul_2.6.5.1.zip`
+- `rls_career_overhaul_2.6.5.2.zip`
 - `rls_career_overhaul_river_highway_beta_0.0.5.zip`
 
 ## Troubleshooting
 
 - `ui_apps_minimap_minimap` fatal Lua error on rejoin: rebuild or download the latest compatible RLS zip. The old RLS minimap override must not be present in the final archive under `lua/ge/extensions/overrides/ui/apps/minimap/`.
 - `ui/apps.lua` fatal Lua error mentioning `layout` as nil: replace the generated `CareerMP.zip`. The builder removes the old CareerMP UI layout preset that can break BeamNG 0.34 layout discovery.
-- AI traffic appears even though CareerMP config disables it: make sure both updated generated zips are installed. `CareerMP.zip` applies the server traffic flags on the client, and `rls_career_overhaul_2.6.5.1_careermp_compatible.zip` fixes the RLS traffic bootstrap so it does not turn `0` back into auto-spawn traffic.
+- AI traffic appears even though CareerMP config disables it: make sure both updated generated zips are installed. `CareerMP.zip` applies the server traffic flags on the client, and `rls_career_overhaul_2.6.5.2_careermp_compatible.zip` fixes the RLS traffic bootstrap so it does not turn `0` back into auto-spawn traffic.
 - A tune or workshop action leaves you in AI traffic, recovery crashes after pressing `R`, or taxi to garage / last vehicle hangs: make sure both updated generated zips are installed. The current compatibility update bundles that workshop fix with the latest traffic fix.
 - Speed cameras do not fine players or cause Lua errors: replace the generated compatible RLS zip and the generated `CareerMP.zip`. The fix needs the safe RLS camera module and the safe CareerMP notification module.
 - Drag strip lights, dragstrip freeroam events, tuning shop drag jobs, repeated Alder Dragway runs, or NPC staging do not work: replace the generated compatible RLS zip. The patch keeps the drag practice runtime and POI alive between runs, resets stale drag flags, reacquires display/timer modules on every start, and forces drag NPCs back to vanilla vehicle AI before staging/countdown/race commands are sent.

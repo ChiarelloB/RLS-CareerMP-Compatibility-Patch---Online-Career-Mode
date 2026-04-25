@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 built/
+built-*/
 tmp/
 DISCORD_POST.md
 release/*.zip

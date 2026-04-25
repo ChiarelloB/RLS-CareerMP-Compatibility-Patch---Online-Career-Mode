@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import zipfile
 from pathlib import Path
 
 
+RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
+
 RLS_REMOVE_PREFIXES = (
-    # RLS 2.6.5.1 ships a legacy minimap app override that can remain in the
+    # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
     # final zip after patch overlay and crash BeamNG on rejoin.
     "lua/ge/extensions/overrides/ui/apps/minimap/",
 )
@@ -299,6 +302,18 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
         entries[player_list_html_path] = text.encode("utf-8")
 
 
+def patch_rls_entries(entries: dict[str, bytes], output_name: str) -> None:
+    """Keep BeamNG mod metadata aligned with the generated compatibility zip."""
+
+    info = entries.get(RLS_INFO_PATH)
+    if not info:
+        return
+
+    data = json.loads(info.decode("utf-8-sig"))
+    data["filename"] = output_name
+    entries[RLS_INFO_PATH] = (json.dumps(data, ensure_ascii=False, indent=4) + "\n").encode("utf-8")
+
+
 def write_zip(zip_path: Path, entries: dict[str, bytes]) -> None:
     zip_path.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
@@ -312,6 +327,8 @@ def build_mod(base_zip: Path, patch_dir: Path, output_zip: Path, remove_prefixes
     overlay_directory(entries, patch_dir)
     if patch_dir.name == "CareerMP":
         patch_careermp_entries(entries)
+    elif patch_dir.name == "RLS":
+        patch_rls_entries(entries, output_zip.name)
     write_zip(output_zip, entries)
     return output_zip.stat().st_size, sha256sum(output_zip)
 
@@ -320,7 +337,7 @@ def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent
 
     parser = argparse.ArgumentParser(description="Build the CareerMP-compatible RLS release zips.")
-    parser.add_argument("--rls-original", required=True, type=Path, help="Path to the original rls_career_overhaul_2.6.5.1.zip")
+    parser.add_argument("--rls-original", required=True, type=Path, help="Path to the original rls_career_overhaul zip")
     parser.add_argument("--careermp-original", required=True, type=Path, help="Path to the original CareerMP.zip")
     parser.add_argument("--out-dir", type=Path, default=repo_root / "built", help="Output directory for the generated zips")
     args = parser.parse_args()
@@ -339,7 +356,7 @@ def main() -> int:
     rls_patch_dir = repo_root / "patches" / "RLS"
     careermp_patch_dir = repo_root / "patches" / "CareerMP"
 
-    rls_out = out_dir / "rls_career_overhaul_2.6.5.1_careermp_compatible.zip"
+    rls_out = out_dir / f"{rls_original.stem}_careermp_compatible.zip"
     careermp_out = out_dir / "CareerMP.zip"
 
     rls_size, rls_hash = build_mod(rls_original, rls_patch_dir, rls_out, RLS_REMOVE_PREFIXES)

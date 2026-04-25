@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.0.0-beta.12
+
+### Changed
+
+- Rebased the compatibility builder and RLS overlay for `RLS Career Overhaul 2.6.5.2`.
+- Preserved the new RLS `2.6.5.2` vehicle maintenance and racing team modules while keeping the existing CareerMP compatibility fixes.
+- The release builder now names the generated compatible RLS zip from the source archive, so `rls_career_overhaul_2.6.5.2.zip` generates `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`.
+- The builder now patches the RLS mod metadata filename dynamically instead of carrying a stale `mod_info` overlay from an older RLS version.
+
 ## v1.0.0-beta.11
 
 ### Fixed
