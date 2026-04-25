@@ -80,6 +80,7 @@ local function ensureDragRuntimeExtensions()
     local dragExtensions = {
         "gameplay_drag_general",
         "gameplay_drag_utils",
+        "overhaul_dragAiCompat",
         "gameplay_drag_times",
         "gameplay_drag_display",
         "gameplay_drag_dragTypes_dragPracticeRace",

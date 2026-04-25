@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.0-beta.11
+
+### Fixed
+
+- Added an online-safe RLS drag timer override so multiplayer drag timeslips no longer report roughly double ET while trap speed remains correct.
+- The drag timer now ignores duplicated post-launch distance samples in BeamMP/CareerMP sessions and derives elapsed ET from real vehicle movement after the launch beam is crossed.
+- Hardened the Alder Dragway NPC startup path so registered drag opponents are forced back to vanilla vehicle AI before staging/countdown/race commands are sent.
+- Keeps the freeroam drag POI/runtime alive after a race finishes while still resetting race state immediately, so second and later Alder runs can trigger again without relogging.
+- Reapplies the drag NPC compatibility wrapper after BeamNG reloads `gameplay_drag_utils`, so second and later runs keep the same AI fix as the first run.
+- Force-clears the RLS freeroam drag session flags after a drag finish so the career POI system can show and trigger the staging marker again.
+- Wraps drag start detection and `startDragRaceActivity` to clear stale started/completed flags and reacquire the display/timer modules on every run.
+- Kept the fix RLS-side only so normal single-player drag timing remains untouched.
+- Restored BeamMP queue/restore controls inside the CareerMP player list and added a rate-limited late-join auto-queue pass so vehicles that existed before joining no longer stay as black/grey orbs.
+
 ## v1.0.0-beta.10
 
 ### Fixed
