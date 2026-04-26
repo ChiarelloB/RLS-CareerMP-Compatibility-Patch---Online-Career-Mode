@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.0.0-beta.13
+
+### Fixed
+
+- Removed the late-join auto-queue apply pass from the CareerMP player list. Queue/restore buttons are still available, but queued vehicle changes must now be applied manually so remote vehicle edits are not forced while another player is driving.
+- Added a visible `RLS CareerMP Patch v1.0.0-beta.13` marker to the CareerMP player list and a `rls_careermp_patch_version.txt` marker inside `CareerMP.zip` to help identify stale cached client files.
+- Hardened cargo loading so failed or timed-out cargo container updates always continue safely and unfreeze the vehicle instead of leaving the car unusable after a delivery.
+- Marked Prop Cargo tasks as owner-only in multiplayer. The player who accepted/spawned the prop cargo owns the turn-in flow; other clients should not try to complete half-synced prop cargo tasks.
+- Added local drag-session ownership guards so remote drag display/light sync no longer overwrites a client that already has its own local drag race active.
+- Fixed RLS drag override loading so `gameplay_drag_utils` is recognized correctly when the RLS override system is active, restoring free-drag lights/start behavior online.
+- Hardened Alder Dragway abort/retry cleanup so stale removed opponent vehicles no longer crash `dragAiCompat` and RLS free drag continues working after abandoning a drag mission.
+- Reset RLS drag practice state, HUD, traffic, and drag data safely when a drag mission is stopped, abandoned, disqualified, or fails mid-phase.
+
+### Notes
+
+- Modded vehicles and trailer extension mods can still be incompatible with RLS/CareerMP, but this build is designed to fail safely and log the vehicle/job context instead of killing the active vehicle.
+- Validated in the West Coast test server: RLS free drag started, Alder Dragway started with a new opponent, abandoning Alder no longer blocks the next RLS free-drag attempt.
+- If users see the old player list UI or no `v1.0.0-beta.13` marker, they are almost certainly running stale BeamMP client cache files and should clear cached server mods before rejoining.
+
 ## v1.0.0-beta.12
 
 ### Changed

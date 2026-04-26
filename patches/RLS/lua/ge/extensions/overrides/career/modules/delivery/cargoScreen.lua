@@ -1862,15 +1862,46 @@ local function commitDeliveryConfiguration()
   local parcelLoadQueue = {}
   local parcelLoadInProgress = false
 
+  local function describeVehicleForCargoLog(veh, vehId)
+    local jbeam = veh and veh.JBeam or nil
+    if veh and veh.getJBeamFilename then
+      local ok, filename = pcall(function() return veh:getJBeamFilename() end)
+      if ok and filename then
+        jbeam = filename
+      end
+    end
+    return string.format("id=%s, jbeam=%s", tostring(vehId), tostring(jbeam or "unknown"))
+  end
+
+  local function safeVehicleBridgeAction(veh, vehId, action, ...)
+    if not (core_vehicleBridge and core_vehicleBridge.executeAction) then
+      log("W", "cargoScreen", string.format("CareerMP cargo load skipped %s for %s: vehicle bridge unavailable.", tostring(action), describeVehicleForCargoLog(veh, vehId)))
+      return false
+    end
+    local ok, err = pcall(core_vehicleBridge.executeAction, veh, action, ...)
+    if not ok then
+      log("E", "cargoScreen", string.format("CareerMP cargo load failed %s for %s: %s", tostring(action), describeVehicleForCargoLog(veh, vehId), tostring(err)))
+      return false
+    end
+    return true
+  end
+
+  local function safeUnfreezeCargoVehicle(vehId, reason)
+    local v = scenetree.findObjectById(vehId)
+    if v then
+      safeVehicleBridgeAction(v, vehId, "setFreeze", false)
+      if reason then
+        log("I", "cargoScreen", string.format("CareerMP cargo load unfroze %s after %s.", describeVehicleForCargoLog(v, vehId), tostring(reason)))
+      end
+    end
+  end
+
   local function loadParcelsForVehicle(vehId, containerData, callback)
     local veh = scenetree.findObjectById(vehId)
     if not veh then
       if callback then callback() end
       return
     end
-
-    core_vehicleBridge.executeAction(veh, "setCargoContainers", containerData or {}, "updateAll")
-    core_vehicleBridge.executeAction(veh, 'setFreeze', true)
 
     local completed = false
     local requestReturned = false
@@ -1882,23 +1913,37 @@ local function commitDeliveryConfiguration()
 
       local v = scenetree.findObjectById(vehId)
       if v then
-        core_vehicleBridge.executeAction(v, 'setFreeze', false)
+        safeVehicleBridgeAction(v, vehId, "setFreeze", false)
       end
       gameplay_markerInteraction.setForceReevaluateOpenPrompt()
       if callback then callback() end
+    end
+
+    local cargoActionOk = safeVehicleBridgeAction(veh, vehId, "setCargoContainers", containerData or {}, "updateAll")
+    safeVehicleBridgeAction(veh, vehId, "setFreeze", true)
+    if not cargoActionOk then
+      finishLoad()
+      return
     end
 
     if core_jobsystem then
       core_jobsystem.create(function(job)
         job.sleep(3)
         if not requestReturned and not completed then
-          log("W", "", string.format("Vehicle %d: cargo container callback timed out in CareerMP, continuing safely.", vehId))
+          log("W", "cargoScreen", string.format("CareerMP cargo load timed out for %s, continuing safely.", describeVehicleForCargoLog(scenetree.findObjectById(vehId), vehId)))
           finishLoad()
         end
       end)
     end
 
-    core_vehicleBridge.requestValue(veh, function(vehCargoContainerData)
+    if not (core_vehicleBridge and core_vehicleBridge.requestValue) then
+      requestReturned = true
+      log("W", "cargoScreen", string.format("CareerMP cargo load cannot request container data for %s: vehicle bridge requestValue unavailable.", describeVehicleForCargoLog(veh, vehId)))
+      finishLoad()
+      return
+    end
+
+    local requestOk, requestErr = pcall(core_vehicleBridge.requestValue, veh, function(vehCargoContainerData)
       requestReturned = true
       if completed then
         return
@@ -1922,21 +1967,32 @@ local function commitDeliveryConfiguration()
       table.insert(sequence, step.makeStepReturnTrueFunction(function()
         local v = scenetree.findObjectById(vehId)
         if v then
-          core_vehicleBridge.executeAction(v, 'setFreeze', false)
+          safeVehicleBridgeAction(v, vehId, "setFreeze", false)
         end
         gameplay_markerInteraction.setForceReevaluateOpenPrompt()
         return true
       end))
 
-      step.startStepSequence(sequence, function()
+      local stepOk, stepErr = pcall(step.startStepSequence, sequence, function()
         finishLoad()
       end)
+      if not stepOk then
+        log("E", "cargoScreen", string.format("CareerMP cargo load step failed for %s: %s", describeVehicleForCargoLog(scenetree.findObjectById(vehId), vehId), tostring(stepErr)))
+        finishLoad()
+      end
 
       if delay > 0 then
         guihooks.trigger("OpenSimpleDelayPopup",{timer=delay, heading="Loading Cargo..."})
       end
-      log("I","",string.format("Vehicle %d: %0.2fs delay after adjusting weights for cargo.", vehId, delay))
+      log("I","cargoScreen",string.format("CareerMP cargo load for %s: %0.2fs delay after adjusting weights.", describeVehicleForCargoLog(scenetree.findObjectById(vehId), vehId), delay))
     end, "getCargoContainers")
+
+    if not requestOk then
+      requestReturned = true
+      log("E", "cargoScreen", string.format("CareerMP cargo load request failed for %s: %s", describeVehicleForCargoLog(veh, vehId), tostring(requestErr)))
+      safeUnfreezeCargoVehicle(vehId, "request failure")
+      finishLoad()
+    end
   end
 
   local function tryStartNextParcelLoad()

@@ -43,6 +43,13 @@ local deliveryQueue = {}
 local deliveryConfirmInProgress = false
 local updateTimer = 0
 
+local function getLocalOwnerName()
+  if MPConfig and MPConfig.getNickname then
+    return MPConfig.getNickname()
+  end
+  return "singleplayer"
+end
+
 local function getParkingSpotPos(location)
   if location and location.type == "facilityParkingspot" then
     local ps = dGenerator.getParkingSpotByPath(location.psPath)
@@ -110,6 +117,7 @@ local function queueDelivery(cargoIds, destination)
   table.insert(deliveryQueue, {
     cargoIds = deepcopy(cargoIds),
     destination = destination,
+    ownerName = getLocalOwnerName(),
   })
 end
 
@@ -122,6 +130,11 @@ local function processDeliveryQueue()
   end
 
   local item = table.remove(deliveryQueue, 1)
+  if item.ownerName and item.ownerName ~= getLocalOwnerName() then
+    log("W", "propCargo", string.format("Skipping prop cargo confirmation owned by %s on client %s", tostring(item.ownerName), tostring(getLocalOwnerName())))
+    return
+  end
+
   local confirmedCargoIds = {}
   for _, id in ipairs(item.cargoIds) do
     table.insert(confirmedCargoIds, {id = id})
@@ -230,9 +243,10 @@ M.spawnPropsForCargo = function(batch, facId, psPath)
       destination = destination,
       destinationPos = getParkingSpotPos(destination),
       label = label,
+      ownerName = getLocalOwnerName(),
     })
 
-    log("I", "propCargo", string.format("Spawned %s (id=%d, %d cargo) -> %s/%s", model, obj:getID(), #cargoIds, destination.facId, destination.psPath))
+    log("I", "propCargo", string.format("Spawned owner-only %s (id=%d, %d cargo, owner=%s) -> %s/%s", model, obj:getID(), #cargoIds, getLocalOwnerName(), destination.facId, destination.psPath))
   end
 
   for index, cargo in ipairs(lightItems) do
@@ -345,6 +359,12 @@ M.onUpdate = function(dt)
     if not propPos then
       table.remove(trackedProps, index)
     else
+      if entry.ownerName and entry.ownerName ~= getLocalOwnerName() then
+        log("W", "propCargo", string.format("Ignoring prop cargo %d owned by %s on client %s", entry.propId, tostring(entry.ownerName), tostring(getLocalOwnerName())))
+        table.remove(trackedProps, index)
+        goto continueTrackedProp
+      end
+
       if not entry.destinationPos then
         entry.destinationPos = getParkingSpotPos(entry.destination)
       end
@@ -365,6 +385,8 @@ M.onUpdate = function(dt)
         end
       end
     end
+
+    ::continueTrackedProp::
   end
 
   processDeliveryQueue()

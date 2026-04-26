@@ -3,6 +3,23 @@ local M = {}
 local originals = {}
 local wrappers = {}
 
+local function clearLocalDragOwner()
+    _G.RLSCareerMP_LocalDragOwnerVehId = nil
+end
+
+local function markLocalDragOwner(data)
+    if not data or not data.racers or not be then
+        return
+    end
+    local playerVehId = be:getPlayerVehicleID(0)
+    for vehId, racer in pairs(data.racers) do
+        if racer and (racer.isPlayable or vehId == playerVehId) then
+            _G.RLSCareerMP_LocalDragOwnerVehId = vehId
+            return
+        end
+    end
+end
+
 local function getFreeroamSession()
     return gameplay_events_freeroam_session
 end
@@ -42,6 +59,7 @@ local function normalizeCompletedDragState()
     -- next flowgraph start node then refuses to run, so the second run never
     -- stages the opponent or starts the UI tree.
     data.isStarted = false
+    clearLocalDragOwner()
 end
 
 local function resetCompletedDragDataBeforeStart()
@@ -59,6 +77,7 @@ local function resetCompletedDragDataBeforeStart()
         data.isStarted = false
         data.isCompleted = false
     end
+    clearLocalDragOwner()
     return data
 end
 
@@ -81,21 +100,50 @@ local function refreshDragPresentation()
     end
 end
 
-local function queueVehicleCommand(racer, command)
-    if racer and racer.vehObj and command then
-        racer.vehObj:queueLuaCommand(command)
+local function getLiveVehicle(racer)
+    if not racer or not racer.vehId or not scenetree or not scenetree.findObjectById then
+        return nil
     end
+
+    local ok, veh = pcall(scenetree.findObjectById, racer.vehId)
+    if ok and veh then
+        racer.vehObj = veh
+        return veh
+    end
+
+    racer.vehObj = nil
+    racer.isValid = false
+    return nil
+end
+
+local function queueVehicleCommand(racer, command)
+    local veh = getLiveVehicle(racer)
+    if not veh or not command then
+        return false
+    end
+
+    local ok = pcall(function()
+        veh:queueLuaCommand(command)
+    end)
+
+    if not ok then
+        racer.vehObj = nil
+        racer.isValid = false
+        return false
+    end
+
+    return true
 end
 
 local function restoreVanillaAiForDragRacer(racer, phaseName)
-    if not racer or racer.isPlayable or not racer.vehObj then
+    if not racer or racer.isPlayable then
         return
     end
 
     -- RLS can install vehicle-side overrideAI before the drag racer is fully
     -- registered. Keep correcting this during drag setup because the delayed
     -- vehicle-spawn hook may run after the first staging tick.
-    racer.vehObj:queueLuaCommand([[
+    queueVehicleCommand(racer, [[
         if overrideAI then
             extensions.unload("overrideAI")
             ai = require("ai")
@@ -167,7 +215,11 @@ local function rekickRaceAi(racer, dtSim)
 end
 
 local function rekickDragAiIfNeeded(phase, racer, dtSim)
-    if not phase or phase.completed or not racer or racer.isPlayable or not racer.vehObj then
+    if not phase or phase.completed or not racer or racer.isPlayable then
+        return
+    end
+
+    if not getLiveVehicle(racer) then
         return
     end
 
@@ -193,7 +245,18 @@ local function wrapDragPhaseFunction(name)
     originals[name] = original
     wrappers[name] = function(phase, racer, dtSim)
         restoreVanillaAiForDragRacer(racer, phase and phase.name or name)
-        local result = original(phase, racer, dtSim)
+        local ok, result = pcall(original, phase, racer, dtSim)
+        if not ok then
+            if racer then
+                racer.vehObj = nil
+                racer.isValid = false
+            end
+            clearLocalDragOwner()
+            if gameplay_drag_general and gameplay_drag_general.resetDragRace then
+                pcall(gameplay_drag_general.resetDragRace)
+            end
+            return nil
+        end
         restoreVanillaAiForDragRacer(racer, phase and phase.name or name)
         rekickDragAiIfNeeded(phase, racer, dtSim)
         return result
@@ -239,6 +302,7 @@ local function patchDragGeneral()
             end
             local result = originalStartDragRaceActivity(lane)
             if result then
+                markLocalDragOwner(getDragData())
                 refreshDragPresentation()
             end
             return result

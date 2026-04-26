@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
+PATCH_VERSION = "v1.0.0-beta.13"
 
 RLS_REMOVE_PREFIXES = (
     # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
@@ -60,6 +61,12 @@ def replace_required(text: str, old: str, new: str, path: str, label: str) -> st
     return text.replace(old, new, 1)
 
 
+def replace_required_unless(text: str, old: str, new: str, path: str, label: str, already_present: str) -> str:
+    if already_present in text:
+        return text
+    return replace_required(text, old, new, path, label)
+
+
 def patch_careermp_entries(entries: dict[str, bytes]) -> None:
     """Apply small generated safety fixes to CareerMP files.
 
@@ -106,6 +113,97 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
     sync = entries.get(sync_path)
     if sync:
         text = sync.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required(
+            text,
+            "local driverLightBlinkState = {\n"
+            "\tlane = nil,\n"
+            "\tisBlinking = false,\n"
+            "\ttimer = 0,\n"
+            "\tfrequency = 1/6,\n"
+            "\tisOn = false\n"
+            "}\n"
+            "\n",
+            "local driverLightBlinkState = {\n"
+            "\tlane = nil,\n"
+            "\tisBlinking = false,\n"
+            "\ttimer = 0,\n"
+            "\tfrequency = 1/6,\n"
+            "\tisOn = false\n"
+            "}\n"
+            "\n"
+            "local function hasLocalDragRaceActive()\n"
+            "\tif rawget(_G, \"RLSCareerMP_LocalDragOwnerVehId\") then\n"
+            "\t\treturn true\n"
+            "\tend\n"
+            "\tif not (gameplay_drag_general and gameplay_drag_general.getData) then\n"
+            "\t\treturn false\n"
+            "\tend\n"
+            "\tlocal ok, currentDragData = pcall(gameplay_drag_general.getData)\n"
+            "\tif not ok or not currentDragData or not currentDragData.racers then\n"
+            "\t\treturn false\n"
+            "\tend\n"
+            "\tlocal playerVehId = be and be.getPlayerVehicleID and be:getPlayerVehicleID(0) or nil\n"
+            "\tfor vehId, racer in pairs(currentDragData.racers) do\n"
+            "\t\tif racer and (racer.isPlayable or vehId == playerVehId) then\n"
+            "\t\t\treturn true\n"
+            "\t\tend\n"
+            "\tend\n"
+            "\treturn false\n"
+            "end\n"
+            "\n"
+            "local function isOwnServerVehicle(serverVehicleID)\n"
+            "\tif not (serverVehicleID and MPVehicleGE and MPVehicleGE.getGameVehicleID and MPVehicleGE.isOwn) then\n"
+            "\t\treturn false\n"
+            "\tend\n"
+            "\tlocal gameVehicleID = MPVehicleGE.getGameVehicleID(serverVehicleID)\n"
+            "\treturn gameVehicleID and MPVehicleGE.isOwn(gameVehicleID) or false\n"
+            "end\n"
+            "\n"
+            "local function shouldAdoptRemoteDragData(decodedData)\n"
+            "\tif not decodedData or not decodedData.dragData then\n"
+            "\t\treturn false\n"
+            "\tend\n"
+            "\tif decodedData.serverVehicleID and isOwnServerVehicle(decodedData.serverVehicleID) then\n"
+            "\t\treturn true\n"
+            "\tend\n"
+            "\treturn not hasLocalDragRaceActive()\n"
+            "end\n"
+            "\n",
+            sync_path,
+            "CareerMP drag display local session guard",
+        )
+        text = text.replace(
+            "\tif gameplay_drag_general then\n"
+            "\t\tif not dragData then\n"
+            "\t\t\tgameplay_drag_general.setDragRaceData(decodedData.dragData)\n"
+            "\t\t\tdragData = gameplay_drag_general.getData()\n"
+            "\t\tend\n"
+            "\tend\n",
+            "\tif gameplay_drag_general then\n"
+            "\t\tif not dragData and shouldAdoptRemoteDragData(decodedData) then\n"
+            "\t\t\tgameplay_drag_general.setDragRaceData(decodedData.dragData)\n"
+            "\t\t\tdragData = gameplay_drag_general.getData()\n"
+            "\t\telseif not dragData then\n"
+            "\t\t\treturn\n"
+            "\t\tend\n"
+            "\tend\n",
+        )
+        text = text.replace(
+            "local function rxClearAll()\n"
+            "\tif not dragData then\n"
+            "\t\tdragData = gameplay_drag_general.getData()\n"
+            "\t\treturn\n"
+            "\tend\n",
+            "local function rxClearAll()\n"
+            "\tlocal localDragStarted = gameplay_drag_general and gameplay_drag_general.getDragIsStarted and gameplay_drag_general.getDragIsStarted()\n"
+            "\tif localDragStarted then\n"
+            "\t\treturn\n"
+            "\tend\n"
+            "\tif not dragData then\n"
+            "\t\tdragData = gameplay_drag_general and gameplay_drag_general.getData and gameplay_drag_general.getData() or nil\n"
+            "\t\tif not dragData then return end\n"
+            "\tend\n",
+        )
         text = text.replace(
             "\tclearLights()\n"
             "\tclearDisplay()\n"
@@ -124,59 +222,17 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
     player_list = entries.get(player_list_path)
     if player_list:
         text = player_list.decode("utf-8").replace("\r\n", "\n")
-        text = replace_required(
+        text = replace_required_unless(
             text,
-            "\t$scope.playerlistLeftclick = 0;\n",
-            "\t$scope.playerlistLeftclick = 0;\n"
-            "\tconst autoQueueAttempts = {};\n"
-            "\tconst autoQueueTimers = {};\n"
-            "\tconst AUTO_QUEUE_RETRY_DELAY_MS = 750;\n"
-            "\tconst AUTO_QUEUE_MAX_ATTEMPTS = 3;\n",
+            "let pingList = [];\n",
+            "var pingList = [];\n",
             player_list_path,
-            "late-join queue state",
+            "CareerMP player list repeat-safe ping list global",
+            "var pingList = [];\n",
         )
         text = replace_required(
             text,
             "\tconst applyPlayerListStyle = function(useNewDesign) {\n",
-            "\tconst applyQueuedPlayerFromBeamMP = function(playerId) {\n"
-            "\t\tvar numericPlayerId = parseInt(playerId, 10);\n"
-            "\t\tif (isNaN(numericPlayerId)) return;\n"
-            "\t\tbngApi.engineLua(`\n"
-            "\t\t\tif MPVehicleGE and MPVehicleGE.applyPlayerQueues then\n"
-            "\t\t\t\tlocal playerId = ${numericPlayerId}\n"
-            "\t\t\t\tlocal players = MPVehicleGE.getPlayers and MPVehicleGE.getPlayers() or {}\n"
-            "\t\t\t\tlocal player = players[playerId] or players[tostring(playerId)]\n"
-            "\t\t\t\tlocal ownName = MPConfig and MPConfig.getNickname and MPConfig.getNickname() or nil\n"
-            "\t\t\t\tif player and player.name ~= ownName then\n"
-            "\t\t\t\t\tMPVehicleGE.applyPlayerQueues(playerId)\n"
-            "\t\t\t\tend\n"
-            "\t\t\tend\n"
-            "\t\t`);\n"
-            "\t};\n"
-            "\n"
-            "\tconst scheduleAutoQueueApply = function(queuedPlayers) {\n"
-            "\t\tif (!queuedPlayers) return;\n"
-            "\t\tfor (var key in queuedPlayers) {\n"
-            "\t\t\tif (!queuedPlayers[key]) {\n"
-            "\t\t\t\tdelete autoQueueAttempts[key];\n"
-            "\t\t\t\tcontinue;\n"
-            "\t\t\t}\n"
-            "\t\t\tif (autoQueueTimers[key]) continue;\n"
-            "\t\t\tautoQueueAttempts[key] = autoQueueAttempts[key] || 0;\n"
-            "\t\t\tif (autoQueueAttempts[key] >= AUTO_QUEUE_MAX_ATTEMPTS) continue;\n"
-            "\t\t\tautoQueueAttempts[key] += 1;\n"
-            "\t\t\tautoQueueTimers[key] = setTimeout(function(playerKey) {\n"
-            "\t\t\t\tdelete autoQueueTimers[playerKey];\n"
-            "\t\t\t\tapplyQueuedPlayerFromBeamMP(playerKey);\n"
-            "\t\t\t\tif (autoQueueAttempts[playerKey] < AUTO_QUEUE_MAX_ATTEMPTS) {\n"
-            "\t\t\t\t\tvar retryQueuedPlayers = {};\n"
-            "\t\t\t\t\tretryQueuedPlayers[playerKey] = true;\n"
-            "\t\t\t\t\tscheduleAutoQueueApply(retryQueuedPlayers);\n"
-            "\t\t\t\t}\n"
-            "\t\t\t}, AUTO_QUEUE_RETRY_DELAY_MS, key);\n"
-            "\t\t}\n"
-            "\t};\n"
-            "\n"
             "\tconst hideContextMenu = function() {\n"
             "\t\tconst menu = document.getElementById(\"playerlist-contextmenu\");\n"
             "\t\tif (menu) menu.style.display = \"none\";\n"
@@ -193,7 +249,29 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\n"
             "\tconst applyPlayerListStyle = function(useNewDesign) {\n",
             player_list_path,
-            "late-join auto queue helpers",
+            "CareerMP player list context helpers",
+        )
+        text = replace_required_unless(
+            text,
+            "\t\tif (localStorage.getItem('plShown') == 1) showList();\n",
+            "\t\tshowList();\n"
+            "\t\tlocalStorage.setItem('plShown', 1);\n",
+            player_list_path,
+            "CareerMP player list auto-open on login",
+            "\t\tshowList();\n"
+            "\t\tlocalStorage.setItem('plShown', 1);\n"
+            "\t\tsetTimeout(showList, 250);\n",
+        )
+        text = replace_required(
+            text,
+            "\t\tlocalStorage.setItem('plShown', 1);\n"
+            "\t\tbngApi.engineLua(\"guihooks.trigger('updateCustomButtons', UI.getCustomButtonNames())\")\n",
+            "\t\tlocalStorage.setItem('plShown', 1);\n"
+            "\t\tsetTimeout(showList, 250);\n"
+            "\t\tsetTimeout(showList, 1000);\n"
+            "\t\tbngApi.engineLua(\"guihooks.trigger('updateCustomButtons', UI.getCustomButtonNames())\")\n",
+            player_list_path,
+            "CareerMP player list delayed auto-open retries",
         )
         text = replace_required(
             text,
@@ -219,42 +297,6 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\n",
             player_list_path,
             "CareerMP player list queue context menu",
-        )
-        text = replace_required(
-            text,
-            "\t\tif (!data.queuedPlayers) {\n"
-            "\t\t\tvar rows = document.querySelectorAll('[id^=\"playerlist-row-\"]');\n",
-            "\t\tif (!data.queuedPlayers) {\n"
-            "\t\t\tfor (var autoKey in autoQueueTimers) {\n"
-            "\t\t\t\tclearTimeout(autoQueueTimers[autoKey]);\n"
-            "\t\t\t\tdelete autoQueueTimers[autoKey];\n"
-            "\t\t\t}\n"
-            "\t\t\tfor (var attemptKey in autoQueueAttempts) {\n"
-            "\t\t\t\tdelete autoQueueAttempts[attemptKey];\n"
-            "\t\t\t}\n"
-            "\t\t\tvar rows = document.querySelectorAll('[id^=\"playerlist-row-\"]');\n",
-            player_list_path,
-            "CareerMP player list auto queue reset",
-        )
-        text = replace_required(
-            text,
-            "\t\tfor (var key in data.queuedPlayers) {\n"
-            "\t\t\t$scope.queuedPlayers[key] = data.queuedPlayers[key]\n"
-            "\t\t\tvar playerrow = document.getElementById(\"playerlist-row-\" + key)\n"
-            "\t\t\tif (playerrow) {\n"
-            "\t\t\t\tplayerrow.style.setProperty('background-color', data.queuedPlayers[key] ? 'var(--bng-orange-shade1)' : 'transparent')\n"
-            "\t\t\t}\n"
-            "\t\t}\n",
-            "\t\tfor (var key in data.queuedPlayers) {\n"
-            "\t\t\t$scope.queuedPlayers[key] = data.queuedPlayers[key]\n"
-            "\t\t\tvar playerrow = document.getElementById(\"playerlist-row-\" + key)\n"
-            "\t\t\tif (playerrow) {\n"
-            "\t\t\t\tplayerrow.style.setProperty('background-color', data.queuedPlayers[key] ? 'var(--bng-orange-shade1)' : 'transparent')\n"
-            "\t\t\t}\n"
-            "\t\t}\n"
-            "\t\tscheduleAutoQueueApply(data.queuedPlayers);\n",
-            player_list_path,
-            "CareerMP player list automatic queue apply",
         )
         text = replace_required(
             text,
@@ -285,6 +327,42 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
         )
         entries[player_list_path] = text.encode("utf-8")
 
+    ui_apps_path = "lua/ge/extensions/careerMPUIApps.lua"
+    ui_apps = entries.get(ui_apps_path)
+    if ui_apps:
+        text = ui_apps.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required_unless(
+            text,
+            "\tmultiseatscenario = { filename = \"multiseatscenario\" },\n",
+            "\tmultiseatscenario = { filename = \"multiseatscenario\" },\n"
+            "\tmultiplayer = { filename = \"multiplayer\" },\n",
+            ui_apps_path,
+            "CareerMP UI multiplayer layout coverage",
+            "\tmultiplayer = { filename = \"multiplayer\" },\n",
+        )
+        text = replace_required(
+            text,
+            "\tif not firstIndex then\n"
+            "\t\ttable.insert(layout.apps, deepcopy(appData))\n"
+            "\t\treturn true\n"
+            "\tend\n"
+            "\treturn removed\n",
+            "\tif not firstIndex then\n"
+            "\t\ttable.insert(layout.apps, deepcopy(appData))\n"
+            "\t\treturn true\n"
+            "\tend\n"
+            "\tlocal existing = layout.apps[firstIndex]\n"
+            "\tlocal changedPlacement = false\n"
+            "\tif appData.placement then\n"
+            "\t\texisting.placement = deepcopy(appData.placement)\n"
+            "\t\tchangedPlacement = true\n"
+            "\tend\n"
+            "\treturn removed or changedPlacement\n",
+            ui_apps_path,
+            "CareerMP UI app placement refresh",
+        )
+        entries[ui_apps_path] = text.encode("utf-8")
+
     player_list_html_path = "ui/modules/apps/CareerMP-PlayerList/app.html"
     player_list_html = entries.get(player_list_html_path)
     if player_list_html:
@@ -299,11 +377,150 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             player_list_html_path,
             "CareerMP player list BeamMP context buttons",
         )
+        text = replace_required(
+            text,
+            "\t\t<button class=\"buttons\" id=\"show-button\" onclick=\"toggleList()\">&lt;</button>\n",
+            "\t\t<button class=\"buttons\" id=\"show-button\" onclick=\"toggleList()\">&lt;</button>\n"
+            f"\t\t<div id=\"rls-careermp-patch-version\" title=\"If this does not say {PATCH_VERSION}, clear your BeamMP client mod cache and rejoin.\" style=\"font-size: 10px; color: #ff8c2a; background: rgba(0, 0, 0, 0.65); padding: 2px 5px; margin-top: 2px; border-left: 2px solid #ff8c2a; white-space: nowrap;\">RLS CareerMP Patch {PATCH_VERSION}</div>\n",
+            player_list_html_path,
+            "CareerMP player list visible patch version marker",
+        )
         entries[player_list_html_path] = text.encode("utf-8")
+
+    entries["rls_careermp_patch_version.txt"] = (
+        f"RLS CareerMP Compatibility Patch {PATCH_VERSION}\n"
+        "Queue apply is manual by default in this build.\n"
+    ).encode("utf-8")
 
 
 def patch_rls_entries(entries: dict[str, bytes], output_name: str) -> None:
     """Keep BeamNG mod metadata aligned with the generated compatibility zip."""
+
+    override_manager_path = "lua/ge/extensions/overhaul/overrideManager.lua"
+    override_manager = entries.get(override_manager_path)
+    if override_manager:
+        text = override_manager.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required(
+            text,
+            "local originalLoad = nil\n"
+            "local originalReload = nil\n",
+            "local originalLoad = nil\n"
+            "local originalReload = nil\n"
+            "local originalIsExtensionLoaded = nil\n",
+            override_manager_path,
+            "RLS override manager isExtensionLoaded storage",
+        )
+        text = replace_required(
+            text,
+            "local function clearDirectory(dirPath)\n",
+            "local function extensionGlobalName(path)\n"
+            "  return (path or ''):gsub('[^%w_]', '_')\n"
+            "end\n"
+            "\n"
+            "local function exposeOriginalExtensionGlobal(entry)\n"
+            "  if not entry or not entry.isExtension then\n"
+            "    return\n"
+            "  end\n"
+            "\n"
+            "  local originalGlobal = extensionGlobalName(entry.originalFormat)\n"
+            "  if rawget(_G, originalGlobal) then\n"
+            "    return\n"
+            "  end\n"
+            "\n"
+            "  local module = rawget(_G, extensionGlobalName(entry.override)) or rawget(_G, extensionGlobalName(entry.convertedFormat))\n"
+            "  if not module then\n"
+            "    local success, result = pcall(require, entry.override)\n"
+            "    if success then\n"
+            "      module = result\n"
+            "    end\n"
+            "  end\n"
+            "\n"
+            "  if module then\n"
+            "    rawset(_G, originalGlobal, module)\n"
+            "  end\n"
+            "end\n"
+            "\n"
+            "local function overrideIsExtensionLoaded(extPath)\n"
+            "  if originalIsExtensionLoaded and originalIsExtensionLoaded(extPath) then\n"
+            "    return true\n"
+            "  end\n"
+            "\n"
+            "  local entry = overrides[extPath]\n"
+            "  if not entry then\n"
+            "    return false\n"
+            "  end\n"
+            "\n"
+            "  if originalIsExtensionLoaded and (originalIsExtensionLoaded(entry.override) or originalIsExtensionLoaded(entry.convertedFormat)) then\n"
+            "    exposeOriginalExtensionGlobal(entry)\n"
+            "    return true\n"
+            "  end\n"
+            "\n"
+            "  if rawget(_G, extensionGlobalName(entry.originalFormat)) or rawget(_G, extensionGlobalName(entry.override)) then\n"
+            "    exposeOriginalExtensionGlobal(entry)\n"
+            "    return true\n"
+            "  end\n"
+            "\n"
+            "  return false\n"
+            "end\n"
+            "\n"
+            "local function clearDirectory(dirPath)\n",
+            override_manager_path,
+            "RLS override manager original extension aliases",
+        )
+        text = replace_required(
+            text,
+            "  return originalLoad(unpack(modifiedArgs))\n"
+            "end\n",
+            "  local result = originalLoad(unpack(modifiedArgs))\n"
+            "  for _, arg in ipairs(args) do\n"
+            "    if type(arg) == 'string' then\n"
+            "      exposeOriginalExtensionGlobal(overrides[arg])\n"
+            "    end\n"
+            "  end\n"
+            "  return result\n"
+            "end\n",
+            override_manager_path,
+            "RLS override manager exposes original extension globals after load",
+        )
+        text = replace_required(
+            text,
+            "  if originalReload then\n"
+            "    extensions.reload = overrideReload\n"
+            "  end\n"
+            "\n"
+            "  local overridesDir = '/lua/ge/extensions/overrides/'\n",
+            "  if originalReload then\n"
+            "    extensions.reload = overrideReload\n"
+            "  end\n"
+            "\n"
+            "  originalIsExtensionLoaded = extensions.isExtensionLoaded\n"
+            "  if originalIsExtensionLoaded then\n"
+            "    extensions.isExtensionLoaded = overrideIsExtensionLoaded\n"
+            "  end\n"
+            "\n"
+            "  local overridesDir = '/lua/ge/extensions/overrides/'\n",
+            override_manager_path,
+            "RLS override manager wraps isExtensionLoaded",
+        )
+        text = replace_required(
+            text,
+            "  extensions.reload = originalReload\n"
+            "  originalReload = nil\n"
+            "\n"
+            "  local pathsToClear = {}\n",
+            "  extensions.reload = originalReload\n"
+            "  originalReload = nil\n"
+            "\n"
+            "  if originalIsExtensionLoaded then\n"
+            "    extensions.isExtensionLoaded = originalIsExtensionLoaded\n"
+            "    originalIsExtensionLoaded = nil\n"
+            "  end\n"
+            "\n"
+            "  local pathsToClear = {}\n",
+            override_manager_path,
+            "RLS override manager restores isExtensionLoaded",
+        )
+        entries[override_manager_path] = text.encode("utf-8")
 
     info = entries.get(RLS_INFO_PATH)
     if not info:

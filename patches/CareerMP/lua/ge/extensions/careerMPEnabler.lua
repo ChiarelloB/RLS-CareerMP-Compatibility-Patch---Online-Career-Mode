@@ -24,6 +24,17 @@ local originalGetDriverData
 
 local inComputerMenus = false
 
+local function countTableEntries(t)
+	if type(t) ~= "table" then return 0 end
+	local count = 0
+	for _ in pairs(t) do count = count + 1 end
+	return count
+end
+
+local function diag(message)
+	log('W', 'CareerMP-DIAG', tostring(message))
+end
+
 --Settings
 
 local userTrafficSettings = {}
@@ -111,6 +122,7 @@ local function syncVehicleActiveState(gameVehicleID, active)
 	local data = {}
 	data.active = active
 	data.serverVehicleID = serverVehicleID
+	diag('tx vehicle active state serverVehicleID=' .. tostring(serverVehicleID) .. ' gameVehicleID=' .. tostring(gameVehicleID) .. ' active=' .. tostring(active))
 	TriggerServerEvent("careerVehicleActiveHandler", jsonEncode(data))
 end
 
@@ -240,6 +252,7 @@ local hiddens = {
 local function rxCareerVehSync(data)
 	if data ~= "null" then
 		local vehicleStates = jsonDecode(data)
+		diag('rx vehicle sync states=' .. tostring(countTableEntries(vehicleStates)))
 		local vehicles = MPVehicleGE.getVehicles()
 		for serverVehicleID, state in pairs(vehicleStates) do
 			if vehicles[serverVehicleID] then
@@ -269,6 +282,7 @@ end
 
 local function onVehicleActiveChanged(gameVehicleID, active)
 	if gameVehicleID then
+		diag('vehicle active changed gameVehicleID=' .. tostring(gameVehicleID) .. ' own=' .. tostring(safeIsOwn(gameVehicleID)) .. ' active=' .. tostring(active))
 		if safeIsOwn(gameVehicleID) then
 			syncVehicleActiveState(gameVehicleID, active)
 		else
@@ -279,6 +293,7 @@ end
 
 local function onVehicleSpawned(gameVehicleID)
 	if gameVehicleID then
+		diag('vehicle spawned gameVehicleID=' .. tostring(gameVehicleID) .. ' own=' .. tostring(safeIsOwn(gameVehicleID)))
 		local veh = be:getObjectByID(gameVehicleID)
 		if veh then
 			veh:queueLuaCommand('careerMPEnabler.onVehicleReady()')
@@ -294,6 +309,7 @@ local function onVehicleReady(gameVehicleID)
 	if serverVehicleID then
 		local veh = be:getObjectByID(gameVehicleID)
 		if veh then
+			diag('vehicle ready serverVehicleID=' .. tostring(serverVehicleID) .. ' gameVehicleID=' .. tostring(gameVehicleID) .. ' jbeam=' .. tostring(veh.JBeam) .. ' own=' .. tostring(safeIsOwn(gameVehicleID)))
 			if not safeIsOwn(gameVehicleID) then
 				local vehicles = MPVehicleGE.getVehicles()
 				applyRemoteGhostState(veh)
@@ -309,6 +325,7 @@ local function onVehicleReady(gameVehicleID)
 end
 
 local function onVehicleSwitched(oldGameVehicleID, newGameVehicleID)
+	diag('vehicle switched old=' .. tostring(oldGameVehicleID) .. ' new=' .. tostring(newGameVehicleID))
 	local newVeh = be:getObjectByID(newGameVehicleID)
 	local oldVeh = be:getObjectByID(oldGameVehicleID)
 	if oldVeh and oldVeh.JBeam == "unicycle" then
@@ -385,6 +402,9 @@ end
 --Patch BeamMP behavior and topBar
 
 local function patchTopBar()
+	if not (ui_topBar and ui_topBar.getEntries and ui_topBar.removeEntry and ui_topBar.updateEntries and ui_topBar.updateVisibleItems) then
+		return
+	end
 	local entries = ui_topBar.getEntries()
 	ui_topBar.removeEntry("environment")
 	ui_topBar.removeEntry("mods")
@@ -471,10 +491,12 @@ local function settingsCheck()
 	careerMPGameplaySettings.spawnVehicleIgnitionLevel = clientConfig.spawnVehicleIgnitionLevel
 	careerMPGameplaySettings.skipOtherPlayersVehicles = clientConfig.skipOtherPlayersVehicles
 	setGameplaySettings(careerMPGameplaySettings)
+	diag('settings applied roadTrafficEnabled=' .. tostring(clientConfig.roadTrafficEnabled) .. ' roadTrafficAmount=' .. tostring(clientConfig.roadTrafficAmount) .. ' parkedTrafficEnabled=' .. tostring(clientConfig.parkedTrafficEnabled) .. ' parkedTrafficAmount=' .. tostring(clientConfig.parkedTrafficAmount) .. ' simplifyRemoteVehicles=false skipOtherPlayersVehicles=' .. tostring(clientConfig.skipOtherPlayersVehicles))
 end
 
 local function rxCareerSync(data)
 	clientConfig = jsonDecode(data)
+	diag('rx career sync payload=' .. tostring(data))
 	nickname = MPConfig.getNickname()
 	blockedInputActions = {}
 	settingsCheck()
@@ -491,6 +513,7 @@ end
 
 local function rxClientConfigUpdate(data)
 	clientConfig = jsonDecode(data)
+	diag('rx config update payload=' .. tostring(data))
 	blockedInputActions = {}
 	settingsCheck()
 	actionsCheck()
@@ -512,6 +535,7 @@ end
 local function onWorldReadyState(state)
 	if state == 2 then
 		if not syncRequested then
+			diag('world ready: requesting prefab/career sync')
 			TriggerServerEvent("prefabSyncRequested", "")
 			TriggerServerEvent("careerSyncRequested", "")
 			syncRequested = true
@@ -562,6 +586,9 @@ local function onExtensionLoaded()
 	AddEventHandler("rxCareerVehSync", rxCareerVehSync)
 	AddEventHandler("rxTrafficSignalTimer", rxTrafficSignalTimer)
 	career_career = extensions.career_careerMP
+	if extensions.disableSerialization then
+		extensions.disableSerialization("career_career")
+	end
 	log('W', 'careerMP', 'CareerMP Enabler LOADED!')
 end
 
@@ -570,6 +597,7 @@ local function onExtensionUnloaded()
 end
 
 local function onServerLeave()
+	diag('server leave: restoring local settings and BeamMP hooks')
 	unPatchBeamMP()
 	blockedInputActions = {}
 	extensions.core_input_actionFilter.setGroup('careerMP', blockedInputActions)

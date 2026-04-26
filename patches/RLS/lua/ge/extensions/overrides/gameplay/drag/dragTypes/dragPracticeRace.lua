@@ -17,24 +17,43 @@ local raceSession
 local freeroamSession
 local hasActivityStarted = false
 local dqTimer = 0
+local clearDelayTimer = 0
+local shouldClearAfterFinish = false
 
 local function clearLocalState()
   dragData = nil
   hasActivityStarted = false
   dqTimer = 0
+  clearDelayTimer = 0
+  shouldClearAfterFinish = false
+  _G.RLSCareerMP_LocalDragOwnerVehId = nil
 end
 
-local function onExtensionLoaded()
-  dGeneral = gameplay_drag_general
-  dUtils = gameplay_drag_utils
-  raceSession = gameplay_events_freeroam_raceSession
-  freeroamSession = gameplay_events_freeroam_session
-  clearLocalState()
+local function safeCall(fn, ...)
+  if type(fn) ~= "function" then return nil end
+  local ok, result = pcall(fn, ...)
+  if ok then return result end
+  log('E', logTag, tostring(result))
+  return nil
 end
 
-local function resetDragRace()
+local function getDragContext()
+  if gameplay_drag_general and gameplay_drag_general.getGameplayContext then
+    return safeCall(gameplay_drag_general.getGameplayContext)
+  end
+end
+
+local function scheduleFreeroamClearIfNeeded()
+  if getDragContext() == "freeroam" then
+    shouldClearAfterFinish = true
+    clearDelayTimer = 0
+  end
+end
+
+local function clearRacePresentation()
+  _G.RLSCareerMP_LocalDragOwnerVehId = nil
   if raceSession then
-    raceSession.endDragPracticeFreeroamHud()
+    safeCall(raceSession.endDragPracticeFreeroamHud)
   end
   if freeroamSession then
     freeroamSession.dragPracticeFlow = false
@@ -46,23 +65,41 @@ local function resetDragRace()
     freeroamSession.maxSpeed = 0
   end
   if gameplay_drag_general and gameplay_drag_general._setGameplayContext then
-    gameplay_drag_general._setGameplayContext("freeroam")
+    safeCall(gameplay_drag_general._setGameplayContext, "freeroam")
   end
-  if not dragData then return end
-
-  gameplay_drag_general.resetDragRace()
-
-  hasActivityStarted = false
-  dqTimer = 0
   if guihooks then
     guihooks.trigger('updateTreeLightStaging', false)
     guihooks.trigger('ChangeState', {state = 'freeroam'})
   end
-  dragData = dGeneral.getData()
 end
 
-local function finishAndResetRace()
+local function onExtensionLoaded()
+  dGeneral = gameplay_drag_general
+  dUtils = gameplay_drag_utils
+  raceSession = gameplay_events_freeroam_raceSession
+  freeroamSession = gameplay_events_freeroam_session
+  clearLocalState()
+end
+
+local function resetDragRace()
+  clearRacePresentation()
+
+  if gameplay_drag_general and gameplay_drag_general.resetDragRace then
+    safeCall(gameplay_drag_general.resetDragRace)
+  end
+
+  hasActivityStarted = false
+  dqTimer = 0
+  if dGeneral and dGeneral.getData then
+    dragData = safeCall(dGeneral.getData)
+  end
+end
+
+local function finishAndResetRace(clearFreeroamData)
   resetDragRace()
+  if clearFreeroamData then
+    scheduleFreeroamClearIfNeeded()
+  end
 end
 
 local function startActivity()
@@ -76,19 +113,25 @@ local function startActivity()
   dragData.isStarted = true
   hasActivityStarted = dragData.isStarted
   dqTimer = 0
+  _G.RLSCareerMP_LocalDragOwnerVehId = nil
 
   local dials = {}
   if dragData.racers then
     for _,racer in pairs(dragData.racers) do
       table.insert(dials, {vehId = racer.vehId, dial = 0})
+      if racer.isPlayable then
+        _G.RLSCareerMP_LocalDragOwnerVehId = racer.vehId
+      end
     end
   end
-  dUtils.setDialsData(dials)
+  if #dials > 0 then
+    safeCall(dUtils.setDialsData, dials)
+  end
 
   if raceSession and dragData.racers then
     for _, racer in pairs(dragData.racers) do
       if racer.isPlayable then
-        raceSession.beginDragPracticeFreeroamHud(racer.vehId)
+        safeCall(raceSession.beginDragPracticeFreeroamHud, racer.vehId)
         break
       end
     end
@@ -96,13 +139,28 @@ local function startActivity()
 end
 
 local function onUpdate(dtReal, dtSim, dtRaw)
+  if shouldClearAfterFinish then
+    clearDelayTimer = clearDelayTimer + dtSim
+    if clearDelayTimer >= 1.0 then
+      shouldClearAfterFinish = false
+      clearDelayTimer = 0
+      if gameplay_drag_general and gameplay_drag_general.clearDragData then
+        safeCall(gameplay_drag_general.clearDragData)
+      end
+      dragData = nil
+      return
+    end
+  end
+
   if hasActivityStarted then
     if not dragData then
       log('E', logTag, 'No drag data found!')
+      finishAndResetRace(true)
       return
     end
     if not dragData.racers then
       log('E', logTag, 'There is no racers in the drag data.')
+      finishAndResetRace(true)
       return
     end
 
@@ -120,14 +178,24 @@ local function onUpdate(dtReal, dtSim, dtRaw)
     for vehId, racer in pairs(dragData.racers) do
       if racer.isFinished then
         dragData.isCompleted = true
-        finishAndResetRace()
+        finishAndResetRace(true)
         return
       end
 
-      dUtils.updateRacer(racer)
+      safeCall(dUtils.updateRacer, racer)
 
       local phase = racer.phases[racer.currentPhase]
-      dUtils[phase.name](phase, racer, dtSim)
+      if not phase or type(dUtils[phase.name]) ~= "function" then
+        log('E', logTag, 'Invalid drag phase, resetting drag race.')
+        finishAndResetRace(true)
+        return
+      end
+      local ok, err = pcall(dUtils[phase.name], phase, racer, dtSim)
+      if not ok then
+        log('E', logTag, 'Drag phase failed: ' .. tostring(err))
+        finishAndResetRace(true)
+        return
+      end
 
       if racer.isPlayable and phase.name == "race" and racer.timersStarted and freeroamSession then
         freeroamSession.in_race_time = racer.timers.timer.value or 0
@@ -146,7 +214,7 @@ local function onUpdate(dtReal, dtSim, dtRaw)
         elseif phase.name == "countdown" then
           freeroamUtils.saveAndSetTrafficAmount(0)
           if raceSession and raceSession.isRaceHudShown() then
-            raceSession.beginDragPracticeFreeroamRace(racer.vehId)
+            safeCall(raceSession.beginDragPracticeFreeroamRace, racer.vehId)
           else
             freeroamUtils.displayStartMessage("drag")
           end
@@ -159,14 +227,14 @@ local function onUpdate(dtReal, dtSim, dtRaw)
         dUtils.changeRacerPhase(racer)
         if racer.isFinished then
           dragData.isCompleted = true
-          finishAndResetRace()
+          finishAndResetRace(true)
           return
         end
       end
 
       if not dUtils.isRacerInsideBoundary(racer) then
         freeroamUtils.restoreTrafficAmount()
-        finishAndResetRace()
+        finishAndResetRace(true)
         return
       end
     end
@@ -177,15 +245,26 @@ local function onUpdate(dtReal, dtSim, dtRaw)
         dqTimer = 0
         dragData.isCompleted = true
         freeroamUtils.restoreTrafficAmount()
-        finishAndResetRace()
+        finishAndResetRace(true)
         return
       end
     end
   end
 end
 
+local function resetIfDragMissionStopped()
+  if hasActivityStarted or dragData or (gameplay_drag_general and gameplay_drag_general.getDragIsStarted and gameplay_drag_general.getDragIsStarted()) then
+    if freeroamUtils and freeroamUtils.restoreTrafficAmount then
+      safeCall(freeroamUtils.restoreTrafficAmount)
+    end
+    finishAndResetRace(true)
+  end
+end
+
 M.onExtensionLoaded = onExtensionLoaded
 M.onUpdate = onUpdate
+M.onMissionAbandoned = resetIfDragMissionStopped
+M.onMissionStopped = resetIfDragMissionStopped
 M.startActivity = startActivity
 M.resetDragRace = resetDragRace
 
