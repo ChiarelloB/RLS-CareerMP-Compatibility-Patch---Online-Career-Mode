@@ -8,7 +8,6 @@ from pathlib import Path
 
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
-PATCH_VERSION = "v1.0.0-beta.13"
 
 RLS_REMOVE_PREFIXES = (
     # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
@@ -107,97 +106,6 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
     sync = entries.get(sync_path)
     if sync:
         text = sync.decode("utf-8").replace("\r\n", "\n")
-        text = replace_required(
-            text,
-            "local driverLightBlinkState = {\n"
-            "\tlane = nil,\n"
-            "\tisBlinking = false,\n"
-            "\ttimer = 0,\n"
-            "\tfrequency = 1/6,\n"
-            "\tisOn = false\n"
-            "}\n"
-            "\n",
-            "local driverLightBlinkState = {\n"
-            "\tlane = nil,\n"
-            "\tisBlinking = false,\n"
-            "\ttimer = 0,\n"
-            "\tfrequency = 1/6,\n"
-            "\tisOn = false\n"
-            "}\n"
-            "\n"
-            "local function hasLocalDragRaceActive()\n"
-            "\tif rawget(_G, \"RLSCareerMP_LocalDragOwnerVehId\") then\n"
-            "\t\treturn true\n"
-            "\tend\n"
-            "\tif not (gameplay_drag_general and gameplay_drag_general.getData) then\n"
-            "\t\treturn false\n"
-            "\tend\n"
-            "\tlocal ok, currentDragData = pcall(gameplay_drag_general.getData)\n"
-            "\tif not ok or not currentDragData or not currentDragData.racers then\n"
-            "\t\treturn false\n"
-            "\tend\n"
-            "\tlocal playerVehId = be and be.getPlayerVehicleID and be:getPlayerVehicleID(0) or nil\n"
-            "\tfor vehId, racer in pairs(currentDragData.racers) do\n"
-            "\t\tif racer and (racer.isPlayable or vehId == playerVehId) then\n"
-            "\t\t\treturn true\n"
-            "\t\tend\n"
-            "\tend\n"
-            "\treturn false\n"
-            "end\n"
-            "\n"
-            "local function isOwnServerVehicle(serverVehicleID)\n"
-            "\tif not (serverVehicleID and MPVehicleGE and MPVehicleGE.getGameVehicleID and MPVehicleGE.isOwn) then\n"
-            "\t\treturn false\n"
-            "\tend\n"
-            "\tlocal gameVehicleID = MPVehicleGE.getGameVehicleID(serverVehicleID)\n"
-            "\treturn gameVehicleID and MPVehicleGE.isOwn(gameVehicleID) or false\n"
-            "end\n"
-            "\n"
-            "local function shouldAdoptRemoteDragData(decodedData)\n"
-            "\tif not decodedData or not decodedData.dragData then\n"
-            "\t\treturn false\n"
-            "\tend\n"
-            "\tif decodedData.serverVehicleID and isOwnServerVehicle(decodedData.serverVehicleID) then\n"
-            "\t\treturn true\n"
-            "\tend\n"
-            "\treturn not hasLocalDragRaceActive()\n"
-            "end\n"
-            "\n",
-            sync_path,
-            "CareerMP drag display local session guard",
-        )
-        text = text.replace(
-            "\tif gameplay_drag_general then\n"
-            "\t\tif not dragData then\n"
-            "\t\t\tgameplay_drag_general.setDragRaceData(decodedData.dragData)\n"
-            "\t\t\tdragData = gameplay_drag_general.getData()\n"
-            "\t\tend\n"
-            "\tend\n",
-            "\tif gameplay_drag_general then\n"
-            "\t\tif not dragData and shouldAdoptRemoteDragData(decodedData) then\n"
-            "\t\t\tgameplay_drag_general.setDragRaceData(decodedData.dragData)\n"
-            "\t\t\tdragData = gameplay_drag_general.getData()\n"
-            "\t\telseif not dragData then\n"
-            "\t\t\treturn\n"
-            "\t\tend\n"
-            "\tend\n",
-        )
-        text = text.replace(
-            "local function rxClearAll()\n"
-            "\tif not dragData then\n"
-            "\t\tdragData = gameplay_drag_general.getData()\n"
-            "\t\treturn\n"
-            "\tend\n",
-            "local function rxClearAll()\n"
-            "\tlocal localDragStarted = gameplay_drag_general and gameplay_drag_general.getDragIsStarted and gameplay_drag_general.getDragIsStarted()\n"
-            "\tif localDragStarted then\n"
-            "\t\treturn\n"
-            "\tend\n"
-            "\tif not dragData then\n"
-            "\t\tdragData = gameplay_drag_general and gameplay_drag_general.getData and gameplay_drag_general.getData() or nil\n"
-            "\t\tif not dragData then return end\n"
-            "\tend\n",
-        )
         text = text.replace(
             "\tclearLights()\n"
             "\tclearDisplay()\n"
@@ -218,7 +126,57 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
         text = player_list.decode("utf-8").replace("\r\n", "\n")
         text = replace_required(
             text,
+            "\t$scope.playerlistLeftclick = 0;\n",
+            "\t$scope.playerlistLeftclick = 0;\n"
+            "\tconst autoQueueAttempts = {};\n"
+            "\tconst autoQueueTimers = {};\n"
+            "\tconst AUTO_QUEUE_RETRY_DELAY_MS = 750;\n"
+            "\tconst AUTO_QUEUE_MAX_ATTEMPTS = 3;\n",
+            player_list_path,
+            "late-join queue state",
+        )
+        text = replace_required(
+            text,
             "\tconst applyPlayerListStyle = function(useNewDesign) {\n",
+            "\tconst applyQueuedPlayerFromBeamMP = function(playerId) {\n"
+            "\t\tvar numericPlayerId = parseInt(playerId, 10);\n"
+            "\t\tif (isNaN(numericPlayerId)) return;\n"
+            "\t\tbngApi.engineLua(`\n"
+            "\t\t\tif MPVehicleGE and MPVehicleGE.applyPlayerQueues then\n"
+            "\t\t\t\tlocal playerId = ${numericPlayerId}\n"
+            "\t\t\t\tlocal players = MPVehicleGE.getPlayers and MPVehicleGE.getPlayers() or {}\n"
+            "\t\t\t\tlocal player = players[playerId] or players[tostring(playerId)]\n"
+            "\t\t\t\tlocal ownName = MPConfig and MPConfig.getNickname and MPConfig.getNickname() or nil\n"
+            "\t\t\t\tif player and player.name ~= ownName then\n"
+            "\t\t\t\t\tMPVehicleGE.applyPlayerQueues(playerId)\n"
+            "\t\t\t\tend\n"
+            "\t\t\tend\n"
+            "\t\t`);\n"
+            "\t};\n"
+            "\n"
+            "\tconst scheduleAutoQueueApply = function(queuedPlayers) {\n"
+            "\t\tif (!queuedPlayers) return;\n"
+            "\t\tfor (var key in queuedPlayers) {\n"
+            "\t\t\tif (!queuedPlayers[key]) {\n"
+            "\t\t\t\tdelete autoQueueAttempts[key];\n"
+            "\t\t\t\tcontinue;\n"
+            "\t\t\t}\n"
+            "\t\t\tif (autoQueueTimers[key]) continue;\n"
+            "\t\t\tautoQueueAttempts[key] = autoQueueAttempts[key] || 0;\n"
+            "\t\t\tif (autoQueueAttempts[key] >= AUTO_QUEUE_MAX_ATTEMPTS) continue;\n"
+            "\t\t\tautoQueueAttempts[key] += 1;\n"
+            "\t\t\tautoQueueTimers[key] = setTimeout(function(playerKey) {\n"
+            "\t\t\t\tdelete autoQueueTimers[playerKey];\n"
+            "\t\t\t\tapplyQueuedPlayerFromBeamMP(playerKey);\n"
+            "\t\t\t\tif (autoQueueAttempts[playerKey] < AUTO_QUEUE_MAX_ATTEMPTS) {\n"
+            "\t\t\t\t\tvar retryQueuedPlayers = {};\n"
+            "\t\t\t\t\tretryQueuedPlayers[playerKey] = true;\n"
+            "\t\t\t\t\tscheduleAutoQueueApply(retryQueuedPlayers);\n"
+            "\t\t\t\t}\n"
+            "\t\t\t}, AUTO_QUEUE_RETRY_DELAY_MS, key);\n"
+            "\t\t}\n"
+            "\t};\n"
+            "\n"
             "\tconst hideContextMenu = function() {\n"
             "\t\tconst menu = document.getElementById(\"playerlist-contextmenu\");\n"
             "\t\tif (menu) menu.style.display = \"none\";\n"
@@ -235,7 +193,7 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\n"
             "\tconst applyPlayerListStyle = function(useNewDesign) {\n",
             player_list_path,
-            "CareerMP player list context helpers",
+            "late-join auto queue helpers",
         )
         text = replace_required(
             text,
@@ -261,6 +219,42 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\n",
             player_list_path,
             "CareerMP player list queue context menu",
+        )
+        text = replace_required(
+            text,
+            "\t\tif (!data.queuedPlayers) {\n"
+            "\t\t\tvar rows = document.querySelectorAll('[id^=\"playerlist-row-\"]');\n",
+            "\t\tif (!data.queuedPlayers) {\n"
+            "\t\t\tfor (var autoKey in autoQueueTimers) {\n"
+            "\t\t\t\tclearTimeout(autoQueueTimers[autoKey]);\n"
+            "\t\t\t\tdelete autoQueueTimers[autoKey];\n"
+            "\t\t\t}\n"
+            "\t\t\tfor (var attemptKey in autoQueueAttempts) {\n"
+            "\t\t\t\tdelete autoQueueAttempts[attemptKey];\n"
+            "\t\t\t}\n"
+            "\t\t\tvar rows = document.querySelectorAll('[id^=\"playerlist-row-\"]');\n",
+            player_list_path,
+            "CareerMP player list auto queue reset",
+        )
+        text = replace_required(
+            text,
+            "\t\tfor (var key in data.queuedPlayers) {\n"
+            "\t\t\t$scope.queuedPlayers[key] = data.queuedPlayers[key]\n"
+            "\t\t\tvar playerrow = document.getElementById(\"playerlist-row-\" + key)\n"
+            "\t\t\tif (playerrow) {\n"
+            "\t\t\t\tplayerrow.style.setProperty('background-color', data.queuedPlayers[key] ? 'var(--bng-orange-shade1)' : 'transparent')\n"
+            "\t\t\t}\n"
+            "\t\t}\n",
+            "\t\tfor (var key in data.queuedPlayers) {\n"
+            "\t\t\t$scope.queuedPlayers[key] = data.queuedPlayers[key]\n"
+            "\t\t\tvar playerrow = document.getElementById(\"playerlist-row-\" + key)\n"
+            "\t\t\tif (playerrow) {\n"
+            "\t\t\t\tplayerrow.style.setProperty('background-color', data.queuedPlayers[key] ? 'var(--bng-orange-shade1)' : 'transparent')\n"
+            "\t\t\t}\n"
+            "\t\t}\n"
+            "\t\tscheduleAutoQueueApply(data.queuedPlayers);\n",
+            player_list_path,
+            "CareerMP player list automatic queue apply",
         )
         text = replace_required(
             text,
@@ -305,20 +299,7 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             player_list_html_path,
             "CareerMP player list BeamMP context buttons",
         )
-        text = replace_required(
-            text,
-            "\t\t<button class=\"buttons\" id=\"show-button\" onclick=\"toggleList()\">&lt;</button>\n",
-            "\t\t<button class=\"buttons\" id=\"show-button\" onclick=\"toggleList()\">&lt;</button>\n"
-            f"\t\t<div id=\"rls-careermp-patch-version\" title=\"If this does not say {PATCH_VERSION}, clear your BeamMP client mod cache and rejoin.\" style=\"font-size: 10px; color: #ff8c2a; background: rgba(0, 0, 0, 0.65); padding: 2px 5px; margin-top: 2px; border-left: 2px solid #ff8c2a; white-space: nowrap;\">RLS CareerMP Patch {PATCH_VERSION}</div>\n",
-            player_list_html_path,
-            "CareerMP player list visible patch version marker",
-        )
         entries[player_list_html_path] = text.encode("utf-8")
-
-    entries["rls_careermp_patch_version.txt"] = (
-        f"RLS CareerMP Compatibility Patch {PATCH_VERSION}\n"
-        "Queue apply is manual by default in this build.\n"
-    ).encode("utf-8")
 
 
 def patch_rls_entries(entries: dict[str, bytes], output_name: str) -> None:

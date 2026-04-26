@@ -1,20 +1,5 @@
 # Changelog
 
-## v1.0.0-beta.13
-
-### Fixed
-
-- Removed the late-join auto-queue apply pass from the CareerMP player list. Queue/restore buttons are still available, but queued vehicle changes must now be applied manually so remote vehicle edits are not forced while another player is driving.
-- Added a visible `RLS CareerMP Patch v1.0.0-beta.13` marker to the CareerMP player list and a `rls_careermp_patch_version.txt` marker inside `CareerMP.zip` to help identify stale cached client files.
-- Hardened cargo loading so failed or timed-out cargo container updates always continue safely and unfreeze the vehicle instead of leaving the car unusable after a delivery.
-- Marked Prop Cargo tasks as owner-only in multiplayer. The player who accepted/spawned the prop cargo owns the turn-in flow; other clients should not try to complete half-synced prop cargo tasks.
-- Added local drag-session ownership guards so remote drag display/light sync no longer overwrites a client that already has its own local drag race active.
-
-### Notes
-
-- Modded vehicles and trailer extension mods can still be incompatible with RLS/CareerMP, but this build is designed to fail safely and log the vehicle/job context instead of killing the active vehicle.
-- If users see the old player list UI or no `v1.0.0-beta.13` marker, they are almost certainly running stale BeamMP client cache files and should clear cached server mods before rejoining.
-
 ## v1.0.0-beta.12
 
 ### Changed

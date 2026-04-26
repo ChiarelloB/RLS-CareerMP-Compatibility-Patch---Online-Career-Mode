@@ -76,15 +76,11 @@ local function startActivity()
   dragData.isStarted = true
   hasActivityStarted = dragData.isStarted
   dqTimer = 0
-  _G.RLSCareerMP_LocalDragOwnerVehId = nil
 
   local dials = {}
   if dragData.racers then
     for _,racer in pairs(dragData.racers) do
       table.insert(dials, {vehId = racer.vehId, dial = 0})
-      if racer.isPlayable then
-        _G.RLSCareerMP_LocalDragOwnerVehId = racer.vehId
-      end
     end
   end
   dUtils.setDialsData(dials)
