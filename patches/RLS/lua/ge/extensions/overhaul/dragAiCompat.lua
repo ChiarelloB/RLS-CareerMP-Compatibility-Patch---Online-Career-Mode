@@ -3,6 +3,23 @@ local M = {}
 local originals = {}
 local wrappers = {}
 
+local function clearLocalDragOwner()
+    _G.RLSCareerMP_LocalDragOwnerVehId = nil
+end
+
+local function markLocalDragOwner(data)
+    if not data or not data.racers or not be then
+        return
+    end
+    local playerVehId = be:getPlayerVehicleID(0)
+    for vehId, racer in pairs(data.racers) do
+        if racer and (racer.isPlayable or vehId == playerVehId) then
+            _G.RLSCareerMP_LocalDragOwnerVehId = vehId
+            return
+        end
+    end
+end
+
 local function getFreeroamSession()
     return gameplay_events_freeroam_session
 end
@@ -42,6 +59,7 @@ local function normalizeCompletedDragState()
     -- next flowgraph start node then refuses to run, so the second run never
     -- stages the opponent or starts the UI tree.
     data.isStarted = false
+    clearLocalDragOwner()
 end
 
 local function resetCompletedDragDataBeforeStart()
@@ -59,6 +77,7 @@ local function resetCompletedDragDataBeforeStart()
         data.isStarted = false
         data.isCompleted = false
     end
+    clearLocalDragOwner()
     return data
 end
 
@@ -239,6 +258,7 @@ local function patchDragGeneral()
             end
             local result = originalStartDragRaceActivity(lane)
             if result then
+                markLocalDragOwner(getDragData())
                 refreshDragPresentation()
             end
             return result
