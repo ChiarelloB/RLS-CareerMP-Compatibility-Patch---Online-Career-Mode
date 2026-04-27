@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "mode": "localJson",
+  "serverId": "server-progress-alpha",
+  "allowRegistration": true,
+  "requireLogin": true,
+  "saveNamePrefix": "RLSOnline",
+  "uploadIntervalSeconds": 60,
+  "maxSnapshotBytes": 180000,
+  "serverSecret": "CHANGE_ME"
+}

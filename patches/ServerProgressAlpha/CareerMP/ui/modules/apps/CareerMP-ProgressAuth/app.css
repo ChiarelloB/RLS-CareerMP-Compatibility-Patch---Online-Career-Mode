@@ -1,0 +1,95 @@
+.career-progress-auth {
+  font-family: "Rajdhani", "Noto Sans", sans-serif;
+  color: #f8fbff;
+  pointer-events: auto;
+}
+
+.career-progress-auth .auth-card {
+  background: linear-gradient(145deg, rgba(7, 13, 24, 0.96), rgba(20, 39, 55, 0.94));
+  border: 1px solid rgba(255, 140, 42, 0.72);
+  border-left: 5px solid #ff8c2a;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+  padding: 18px;
+}
+
+.career-progress-auth .auth-kicker {
+  color: #ffb15e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.career-progress-auth .auth-title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.career-progress-auth .auth-copy {
+  color: #c8d4e2;
+  font-size: 13px;
+  margin: 10px 0 14px;
+}
+
+.career-progress-auth label {
+  color: #e9eef7;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 8px 0 4px;
+  text-transform: uppercase;
+}
+
+.career-progress-auth input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  padding: 9px 10px;
+  width: calc(100% - 22px);
+}
+
+.career-progress-auth input:focus {
+  border-color: #ff8c2a;
+  box-shadow: 0 0 0 2px rgba(255, 140, 42, 0.22);
+}
+
+.career-progress-auth .auth-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.career-progress-auth button {
+  background: #ff7a18;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 10px 12px;
+}
+
+.career-progress-auth button.secondary {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.career-progress-auth button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.career-progress-auth .auth-status {
+  color: #dbe7f6;
+  font-size: 12px;
+  margin-top: 10px;
+  min-height: 16px;
+}
+
+.career-progress-auth .auth-status.is-error {
+  color: #ff8d7c;
+}

@@ -1,0 +1,16 @@
+{
+  "domElement": "<careermpprogressauth></careermpprogressauth>",
+  "name": "CareerMP Progress Auth",
+  "types": [
+    "ui.apps.categories.career"
+  ],
+  "description": "Server-controlled CareerMP progress alpha login panel.",
+  "css": {
+    "height": "270px",
+    "width": "380px",
+    "top": "90px",
+    "left": "calc(50% - 190px)",
+    "position": "absolute"
+  },
+  "author": "RLS CareerMP Compatibility Patch"
+}

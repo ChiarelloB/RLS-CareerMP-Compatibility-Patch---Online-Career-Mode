@@ -12,6 +12,7 @@ Quick answer:
 
 - If someone already gave you the finished compatible zip files, you do **not** need Python.
 - Python is only needed if you are generating the compatible files yourself from the original mod archives.
+- The experimental login/server-save build is separate. Read [SERVER_PROGRESS_ALPHA.md](SERVER_PROGRESS_ALPHA.md) before testing it.
 
 ## Goal
 
@@ -56,6 +57,7 @@ Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, whil
 - Guards drag display/light sync so remote drag sessions do not overwrite a player who already has a local drag race active.
 - Cleans up Alder Dragway and RLS drag-practice state after abort/retry so removed opponent vehicles do not crash `dragAiCompat` and free drag remains usable without relogging.
 - Adds an optional River Highway builder workflow that creates a map delta locally without committing or redistributing large third-party map assets.
+- Adds a separate server-controlled progress alpha workflow that gates CareerMP startup behind a server login and stores online-save snapshots on the BeamMP server.
 
 ## Changed Files
 
@@ -86,6 +88,13 @@ Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, whil
 - `manifests/river_highway_delta_manifest.json`
 - `patches/RiverHighway/overlay`
 
+### Server Progress Alpha
+
+- `scripts/build_server_progress_alpha.py`
+- `patches/ServerProgressAlpha/CareerMP`
+- `server_resources/CareerMPProgressAuth`
+- `SERVER_PROGRESS_ALPHA.md`
+
 ## Build The Release Zips
 
 1. Make sure you have the original RLS and CareerMP zip files.
@@ -108,6 +117,25 @@ python .\scripts\apply_server_hotfix.py --server-root "C:\Path\To\Your\BeamMP-Se
 ```
 
 If `python` does not work, use `py` instead. This patches `Resources\Server\CareerMP\careerMP.lua` so disconnects/crashes clear stale vehicle sync state.
+
+## Experimental Server Progress Alpha
+
+This workflow is separate from the stable release line. It creates a login-gated test server where RLS/CareerMP loads a server-controlled online save instead of a normal single-player save.
+
+```powershell
+python .\scripts\build_server_progress_alpha.py --rls-original "C:\BeamNG-Mod-Build\rls_career_overhaul_2.6.5.1.zip" --careermp-original "C:\BeamNG-Mod-Build\CareerMP.zip" --server-template "C:\Users\bruni\Documents\PROJETOS\Jogos\BEANG\servers\main\onlinecareer-west-coast-complete" --server-dir "C:\Users\bruni\Documents\PROJETOS\Jogos\BEANG\servers\tests\server-progress-alpha" --out-dir ".\built-server-progress-alpha"
+```
+
+Generated alpha outputs:
+
+- `built-server-progress-alpha\CareerMP_server_progress_alpha.zip`
+- `built-server-progress-alpha\rls_career_overhaul_2.6.5.1_server_progress_alpha.zip`
+- `built-server-progress-alpha\ready-to-use-server-progress-alpha.zip`
+- `servers\tests\server-progress-alpha`
+
+This alpha reduces casual save abuse, but it is not a full anti-cheat system yet. Critical transactions still need a future server-authoritative phase. See [SERVER_PROGRESS_ALPHA.md](SERVER_PROGRESS_ALPHA.md).
+
+The isolated local alpha server uses port `30848` by default. Pass `--port <number>` to the builder if your machine already has another test server on that port.
 
 ## Optional River Highway Compatibility
 

@@ -1,0 +1,25 @@
+<div class="career-progress-auth" ng-controller="CareerMPProgressAuthController" ng-init="init()" ng-show="state.enabled && !state.authenticated">
+  <link rel="stylesheet" type="text/css" href="/ui/modules/apps/CareerMP-ProgressAuth/app.css">
+  <div class="auth-card">
+    <div class="auth-kicker">RLS Online Career</div>
+    <div class="auth-title">Server Progress Login</div>
+    <div class="auth-copy">
+      This server uses a separate online save. Single-player saves will not be loaded here.
+    </div>
+
+    <label>Username</label>
+    <input type="text" ng-model="form.username" ng-focus="engageFocus()" ng-blur="releaseFocus()" placeholder="your online name">
+
+    <label>Password</label>
+    <input type="password" ng-model="form.password" ng-focus="engageFocus()" ng-blur="releaseFocus()" placeholder="server password">
+
+    <div class="auth-actions">
+      <button ng-click="login()" ng-disabled="state.inFlight">Login</button>
+      <button class="secondary" ng-click="register()" ng-disabled="state.inFlight || state.registrationDisabled">Register</button>
+    </div>
+
+    <div class="auth-status" ng-class="{'is-error': state.lastError}">
+      {{ state.message || 'Waiting for server...' }}
+    </div>
+  </div>
+</div>

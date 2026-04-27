@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.1.0-auth-alpha.1
+
+### Added
+
+- Added a separate server-controlled progress alpha on branch `feature/server-progress-alpha`.
+- Added `CareerMPProgressAuth`, a BeamMP server resource with account registration/login, active sessions, local JSON save snapshots, revision checks, and basic admin commands.
+- Added `CareerMP-ProgressAuth`, a small client UI app that blocks CareerMP startup until the player logs in or registers.
+- Added a client progress bridge that applies the server snapshot into a separate online save slot and uploads JSON save snapshots after normal career saves.
+- Added `scripts/build_server_progress_alpha.py` to generate isolated alpha artifacts and prepare a dedicated test server folder.
+- Added `SERVER_PROGRESS_ALPHA.md` with beginner-friendly build, setup, test, and troubleshooting notes.
+
+### Notes
+
+- This alpha is intentionally separate from the stable `v1.0.0-beta.14` line.
+- The alpha blocks casual single-player save reuse, but it is not a complete anti-cheat system until critical money, garage, repair, tuning, delivery, fines, banking, and marketplace transactions become server-authoritative.
+- Passwords are not stored as plain text, but the alpha hash is a lightweight BeamMP-Lua-compatible implementation and should be replaced by a stronger backend provider in a production phase.
+
 ## v1.0.0-beta.14
 
 ### Fixed
