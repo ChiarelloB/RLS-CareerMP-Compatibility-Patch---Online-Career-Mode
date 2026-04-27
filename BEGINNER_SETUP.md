@@ -59,7 +59,7 @@ The current compatibility update bundles two fixes together:
 - the traffic-disable fix for servers that want `roadTrafficEnabled=false` / `parkedTrafficEnabled=false`
 - the workshop compatibility fix for tune and part-shopping flows that could otherwise leave the player vehicle in AI traffic or break recovery / taxi
 - the multiplayer camera, drag, parcel delivery, and grey-orb fixes
-- the beta13 manual queue fix, cargo fail-safe unfreeze, drag abort cleanup, and visible UI version marker
+- the beta14 manual queue/resync fix, cargo fail-safe unfreeze, drag abort cleanup, and visible UI version marker
 
 Because those fixes are split between both generated files, update both zips together.
 
@@ -146,7 +146,7 @@ Open the CareerMP player list in-game.
 The newest build should show:
 
 ```text
-RLS CareerMP Patch v1.0.0-beta.13
+RLS CareerMP Patch v1.0.0-beta.14
 ```
 
 If you do not see that marker, your client is probably still using old cached files.
@@ -160,8 +160,9 @@ Fix:
 
 Also important:
 
-- vehicle queue/sync actions are manual in beta13
+- vehicle queue/sync actions are manual in beta14
 - right-click a player and use `Queue Events` only when you actually want to apply queued vehicle changes
+- right-click a player and use `Force Re-Sync Vehicles` if their remote vehicles are stuck/desynced after a leave, crash, or reconnect
 - do not expect queued changes to auto-apply while someone is driving
 
 ## Common Beginner Mistakes
@@ -170,7 +171,7 @@ Also important:
 - Thinking Python is required even when the finished compatible files are already provided.
 - Using old `2.6.4` multiplayer RLS files together with the new compatible build.
 - Forgetting `CareerMPBanking.zip`.
-- Not checking the `RLS CareerMP Patch v1.0.0-beta.13` marker after updating.
+- Not checking the `RLS CareerMP Patch v1.0.0-beta.14` marker after updating.
 - For River Highway, installing the original old River RLS beta together with the generated River delta.
 
 ## If Something Still Does Not Work
@@ -184,7 +185,8 @@ Check these first:
 - If traffic is supposed to be off, did you replace both generated zips and not only `CareerMP.zip`?
 - If tune, recovery, or taxi still breaks after a workshop change, did you replace both generated zips and not only one of them?
 - If speed cameras, drag jobs, Alder aborts, parcel delivery, or grey player/parked-car orbs still happen, did you replace both generated zips from the newest build?
-- If old UI or instant vehicle sync still happens, does the CareerMP player list show `RLS CareerMP Patch v1.0.0-beta.13`?
+- If old UI, missing force resync, or instant vehicle sync still happens, does the CareerMP player list show `RLS CareerMP Patch v1.0.0-beta.14`?
+- If players desync after someone leaves/crashes, did the server owner run `scripts\apply_server_hotfix.py` on the BeamMP server folder?
 - If traffic is still wrong on a server, is `autoUpdate` turned off in the CareerMP server config?
 
 If you are still stuck, send:

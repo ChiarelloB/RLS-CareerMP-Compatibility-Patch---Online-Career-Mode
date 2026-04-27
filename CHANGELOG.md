@@ -1,5 +1,20 @@
 # Changelog
 
+## v1.0.0-beta.14
+
+### Fixed
+
+- Added a manual `Force Re-Sync Vehicles` action to the CareerMP player list for recovering stale/desynced remote vehicles without bringing back unsafe automatic queue applies.
+- Added a server-side stability hotfix script that cleans all stale `vehicleStates` owned by a player when they leave, crash, reconnect, or are manually force-resynced.
+- Guarded CareerMP server JSON/event sends so bad payloads or disconnected player IDs do not cascade into server restarts during 3+ player sessions.
+- Hardened client vehicle sync handling so malformed state packets are ignored and remote vehicle cleanup only happens when the server explicitly requests a force resync.
+- Kept Prop Cargo owner-only online and documented that shared/half-synced turn-ins are intentionally blocked for stability.
+
+### Notes
+
+- This build should be tested locally before publishing. Do not call it stable until the two-player resync, three-player leave/crash, and owner-only cargo tests pass.
+- If users see no `Force Re-Sync Vehicles` button or no `v1.0.0-beta.14` marker, they are still running stale cached `CareerMP.zip` files.
+
 ## v1.0.0-beta.13
 
 ### Fixed

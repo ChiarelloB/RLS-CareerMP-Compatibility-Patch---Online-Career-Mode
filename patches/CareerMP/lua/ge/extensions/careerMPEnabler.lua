@@ -109,6 +109,18 @@ local function safeGetServerVehicleID(gameVehicleID)
 	return MPVehicleGE.getServerVehicleID(gameVehicleID)
 end
 
+local function safeJsonDecode(data)
+	if not data or data == "null" then
+		return nil
+	end
+	local ok, decoded = pcall(jsonDecode, data)
+	if not ok or type(decoded) ~= "table" then
+		diag('json decode failed: ' .. tostring(decoded))
+		return nil
+	end
+	return decoded
+end
+
 local function syncVehicleActiveState(gameVehicleID, active)
 	if not safeIsOwn(gameVehicleID) then
 		return
@@ -124,6 +136,71 @@ local function syncVehicleActiveState(gameVehicleID, active)
 	data.serverVehicleID = serverVehicleID
 	diag('tx vehicle active state serverVehicleID=' .. tostring(serverVehicleID) .. ' gameVehicleID=' .. tostring(gameVehicleID) .. ' active=' .. tostring(active))
 	TriggerServerEvent("careerVehicleActiveHandler", jsonEncode(data))
+end
+
+local function serverVehicleMatchesPlayer(serverVehicleID, targetPlayerID)
+	if not targetPlayerID then
+		return false
+	end
+	local prefix = tostring(targetPlayerID) .. "-"
+	return tostring(serverVehicleID):sub(1, #prefix) == prefix
+end
+
+local function rxCareerForceDeleteVehicles(data)
+	local payload = safeJsonDecode(data) or {}
+	local targetPlayerID = payload.playerID
+	local removed = 0
+	if not targetPlayerID then
+		diag('force delete ignored: missing target player id')
+		return
+	end
+	if not (MPVehicleGE and MPVehicleGE.getVehicles) then
+		return
+	end
+
+	local vehicles = MPVehicleGE.getVehicles()
+	for serverVehicleID, vehicle in pairs(vehicles) do
+		if serverVehicleMatchesPlayer(serverVehicleID, targetPlayerID) then
+			local gameVehicleID = vehicle and vehicle.gameVehicleID
+			if gameVehicleID and gameVehicleID ~= -1 and not safeIsOwn(gameVehicleID) then
+				local veh = be:getObjectByID(gameVehicleID)
+				if veh then
+					diag('force deleting stale remote vehicle serverVehicleID=' .. tostring(serverVehicleID) .. ' reason=' .. tostring(payload.reason))
+					veh:delete()
+					removed = removed + 1
+				end
+			end
+			if vehicle then
+				vehicle.hideNametag = true
+			end
+		end
+	end
+	diag('force delete complete target=' .. tostring(targetPlayerID) .. ' removed=' .. tostring(removed))
+end
+
+local function rxCareerForceResyncOwnVehicles(data)
+	if not (MPVehicleGE and MPVehicleGE.getVehicles) then
+		return
+	end
+
+	local count = 0
+	local vehicles = MPVehicleGE.getVehicles()
+	for _, vehicle in pairs(vehicles) do
+		local gameVehicleID = vehicle and vehicle.gameVehicleID
+		if gameVehicleID and gameVehicleID ~= -1 and safeIsOwn(gameVehicleID) then
+			syncVehicleActiveState(gameVehicleID, true)
+			count = count + 1
+		end
+	end
+	diag('resent own vehicle states count=' .. tostring(count))
+end
+
+local function forceResyncPlayerVehicles(targetPlayerName)
+	if not targetPlayerName or targetPlayerName == "" then
+		return
+	end
+	diag('requesting force resync for player=' .. tostring(targetPlayerName))
+	TriggerServerEvent("careerForceResyncRequested", jsonEncode({targetName = targetPlayerName}))
 end
 
 local function getVehicleLicenseText(veh)
@@ -250,28 +327,29 @@ local hiddens = {
 --Vehicles and part paints
 
 local function rxCareerVehSync(data)
-	if data ~= "null" then
-		local vehicleStates = jsonDecode(data)
-		diag('rx vehicle sync states=' .. tostring(countTableEntries(vehicleStates)))
-		local vehicles = MPVehicleGE.getVehicles()
-		for serverVehicleID, state in pairs(vehicleStates) do
-			if vehicles[serverVehicleID] then
-				local gameVehicleID = vehicles[serverVehicleID].gameVehicleID
-				if gameVehicleID ~= -1 then
-					if not safeIsOwn(gameVehicleID) then
-						local veh = be:getObjectByID(gameVehicleID)
-						if veh then
-							if not state.active then
-								veh:setActive(0)
-								vehicles[serverVehicleID].hideNametag = true
-							else
-								veh:setActive(1)
-								if hiddens[vehicles[serverVehicleID].jbeam] then
-									vehicles[serverVehicleID].hideNametag = true
-								else
-									vehicles[serverVehicleID].hideNametag = false
-								end
-							end
+	local vehicleStates = safeJsonDecode(data)
+	if not vehicleStates then
+		return
+	end
+
+	diag('rx vehicle sync states=' .. tostring(countTableEntries(vehicleStates)))
+	local vehicles = MPVehicleGE and MPVehicleGE.getVehicles and MPVehicleGE.getVehicles() or {}
+	for serverVehicleID, state in pairs(vehicleStates) do
+		local vehicle = vehicles[serverVehicleID]
+		if type(state) == "table" and vehicle then
+			local gameVehicleID = vehicle.gameVehicleID
+			if gameVehicleID and gameVehicleID ~= -1 and not safeIsOwn(gameVehicleID) then
+				local veh = be:getObjectByID(gameVehicleID)
+				if veh then
+					if not state.active then
+						veh:setActive(0)
+						vehicle.hideNametag = true
+					else
+						veh:setActive(1)
+						if hiddens[vehicle.jbeam] then
+							vehicle.hideNametag = true
+						else
+							vehicle.hideNametag = false
 						end
 					end
 				end
@@ -584,6 +662,8 @@ local function onExtensionLoaded()
 	AddEventHandler("rxCareerSync", rxCareerSync)
 	AddEventHandler("rxClientConfigUpdate", rxClientConfigUpdate)
 	AddEventHandler("rxCareerVehSync", rxCareerVehSync)
+	AddEventHandler("rxCareerForceDeleteVehicles", rxCareerForceDeleteVehicles)
+	AddEventHandler("rxCareerForceResyncOwnVehicles", rxCareerForceResyncOwnVehicles)
 	AddEventHandler("rxTrafficSignalTimer", rxTrafficSignalTimer)
 	career_career = extensions.career_careerMP
 	if extensions.disableSerialization then
@@ -609,6 +689,7 @@ end
 --Access
 
 M.getClientConfig = getClientConfig
+M.forceResyncPlayerVehicles = forceResyncPlayerVehicles
 
 M.onCareerActive = onCareerActive
 

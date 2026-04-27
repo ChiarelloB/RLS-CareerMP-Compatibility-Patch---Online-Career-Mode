@@ -6,3 +6,4 @@ tmp/
 DISCORD_POST.md
 release/*.zip
 release/HOW_TO_INSTALL_*.txt
+release/checksums-*.txt

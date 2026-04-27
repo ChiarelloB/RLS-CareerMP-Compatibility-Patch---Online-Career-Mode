@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
-PATCH_VERSION = "v1.0.0-beta.13"
+PATCH_VERSION = "v1.0.0-beta.14"
 
 RLS_REMOVE_PREFIXES = (
     # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
@@ -291,6 +291,10 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\t\t\t\t\t\trestorePlayerVehicle(parsedList[i].name);\n"
             "\t\t\t\t\t});\n"
             "\n"
+            "\t\t\t\t\tbindContextButton(\"pl-context-ForceResyncVehicles\", function() {\n"
+            "\t\t\t\t\t\tforceResyncPlayerVehicles(parsedList[i].name);\n"
+            "\t\t\t\t\t});\n"
+            "\n"
             "\t\t\t\t\tbindContextButton(\"pl-context-OpenProfileButton\", function() {\n"
             "\t\t\t\t\t\tviewPlayer(parsedList[i].name);\n"
             "\t\t\t\t\t});\n"
@@ -314,6 +318,10 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\n"
             "function restorePlayerVehicle(targetPlayerName) {\n"
             "\tbngApi.engineLua('MPVehicleGE.restorePlayerVehicle(\"' + targetPlayerName + '\")')\n"
+            "}\n"
+            "\n"
+            "function forceResyncPlayerVehicles(targetPlayerName) {\n"
+            "\tbngApi.engineLua('careerMPEnabler.forceResyncPlayerVehicles(\"' + targetPlayerName + '\")')\n"
             "}\n"
             "\n"
             "function applyQueuesForPlayer(targetPlayerID) {\n"
@@ -373,6 +381,7 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
             "\t\t<button id=\"pl-context-Pay100000Button\">Pay $100000</button>\n"
             "\t\t<button id=\"pl-context-QueueEventsButton\">Queue Events</button>\n"
             "\t\t<button id=\"pl-context-RestoreVehicles\">Restore Vehicles</button>\n"
+            "\t\t<button id=\"pl-context-ForceResyncVehicles\">Force Re-Sync Vehicles</button>\n"
             "\t\t<button id=\"pl-context-OpenProfileButton\">Open Profile</button>\n",
             player_list_html_path,
             "CareerMP player list BeamMP context buttons",
@@ -390,6 +399,7 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
     entries["rls_careermp_patch_version.txt"] = (
         f"RLS CareerMP Compatibility Patch {PATCH_VERSION}\n"
         "Queue apply is manual by default in this build.\n"
+        "Force Re-Sync Vehicles is available from the player list context menu.\n"
     ).encode("utf-8")
 
 

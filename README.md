@@ -48,7 +48,9 @@ Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, whil
 - Makes CareerMP pass the active multiplayer map into the RLS startup flow so River Highway sessions no longer fall back to West Coast.
 - Removes the old `careermp.uilayout.json` preset from the generated `CareerMP.zip` to avoid `ui/apps.lua` layout crashes on BeamNG 0.34.
 - Keeps CareerMP player vehicle queue actions manual by default so queued remote vehicle changes are not force-applied while another player is driving.
-- Adds a visible `RLS CareerMP Patch v1.0.0-beta.13` marker to the CareerMP player list so users can quickly spot stale cached client files.
+- Adds a visible `RLS CareerMP Patch v1.0.0-beta.14` marker to the CareerMP player list so users can quickly spot stale cached client files.
+- Adds a manual `Force Re-Sync Vehicles` player-list action for clearing stale remote vehicle state after desync, disconnects, or crashes.
+- Adds a server-side stability hotfix script for cleaning stale CareerMP vehicle state on disconnect/reconnect without re-enabling risky automatic queue applies.
 - Hardens cargo loading so failed cargo-container callbacks unfreeze the vehicle and continue safely instead of leaving the car unusable.
 - Treats Prop Cargo as owner-only online: the player who accepted/spawned the prop cargo owns the turn-in flow.
 - Guards drag display/light sync so remote drag sessions do not overwrite a player who already has a local drag race active.
@@ -98,6 +100,14 @@ python scripts/build_release.py --rls-original "C:\\path\\to\\rls_career_overhau
 - `built/rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `built/CareerMP.zip`
 - `built/checksums.txt`
+
+4. If you are updating an existing BeamMP server folder, also apply the server Lua hotfix:
+
+```powershell
+python .\scripts\apply_server_hotfix.py --server-root "C:\Path\To\Your\BeamMP-Server"
+```
+
+If `python` does not work, use `py` instead. This patches `Resources\Server\CareerMP\careerMP.lua` so disconnects/crashes clear stale vehicle sync state.
 
 ## Optional River Highway Compatibility
 
@@ -221,7 +231,8 @@ Do **not** also install the original `rls_career_overhaul_2.6.5.2.zip`, because 
 - The game still has the minimap crash: make sure you replaced the old generated RLS zip with the new one from `built`.
 - AI traffic still appears when disabled: make sure you replaced both generated zips from `built`. The latest fix needs the updated `CareerMP.zip` and the updated `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`.
 - Tune, recovery, taxi, speed cameras, drag jobs, parcel delivery, or grey player/parked-car orbs still break: make sure you replaced both generated zips from `built`, because the current update ships client and RLS-side fixes together.
-- The CareerMP player list does not show `RLS CareerMP Patch v1.0.0-beta.13`: your client is using stale cached files. Clear BeamMP's downloaded server mod cache, reconnect, and make sure the server is distributing the newest `CareerMP.zip`.
+- The CareerMP player list does not show `RLS CareerMP Patch v1.0.0-beta.14`: your client is using stale cached files. Clear BeamMP's downloaded server mod cache, reconnect, and make sure the server is distributing the newest `CareerMP.zip`.
+- The server keeps desyncing after a player leaves/crashes, or `Restore Vehicles` says vehicles have not despawned yet forever: apply `scripts\apply_server_hotfix.py` to the server folder and use the player-list `Force Re-Sync Vehicles` action on the affected player.
 - If a server keeps going back to old behavior, set `server.autoUpdate` to `false` in `Resources/Server/CareerMP/config/config.json` so upstream CareerMP updates do not overwrite the patched files.
 
 ## Server Setup
@@ -275,15 +286,15 @@ Do not distribute these at the same time:
 - Parcel delivery hangs after confirming cargo: replace the generated compatible RLS zip. The patch adds a timeout fallback when BeamMP does not return the cargo-container callback.
 - Vehicle becomes unusable after finishing cargo or a cargo/trailer job: replace the generated compatible RLS zip. This build logs cargo load failures and always attempts to unfreeze the vehicle before continuing.
 - Players, beamlings/unicycles, or parked cars show as grey orbs: replace the generated `CareerMP.zip` and keep `simplifyRemoteVehicles` effectively disabled for this compatibility build. Do not delete the CareerMP UI folder as a workaround; the compatibility build keeps that UI and restores the BeamMP queue/restore controls needed to load vehicles that existed before you joined.
-- Remote vehicle edits apply instantly while another player is driving: replace `CareerMP.zip`. Queue actions are manual by default in `v1.0.0-beta.13`; right-click a player and use `Queue Events` only when you intentionally want to apply their queued changes.
+- Remote vehicle edits apply instantly while another player is driving: replace `CareerMP.zip`. Queue actions are manual by default in `v1.0.0-beta.14`; right-click a player and use `Queue Events` only when you intentionally want to apply their queued changes.
 - Server traffic settings seem to ignore your patch after some time: check `Resources/Server/CareerMP/config/config.json` and set `server.autoUpdate` to `false`.
 - `Prop Cargo` will not turn in: replace the generated compatible RLS zip. Prop Cargo is owner-only online, so the player who accepted/spawned the physical prop cargo must be the one to complete it.
-- Old UI, missing `Queue Events`, missing `Restore Vehicles`, or no beta13 marker after updating: clear stale BeamMP client cache files and rejoin. The server may be correct while your client is still using an old downloaded `CareerMP.zip`.
+- Old UI, missing `Queue Events`, missing `Restore Vehicles`, missing `Force Re-Sync Vehicles`, or no beta14 marker after updating: clear stale BeamMP client cache files and rejoin. The server may be correct while your client is still using an old downloaded `CareerMP.zip`.
 - River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.5.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
 - River Highway has floating city pieces or floating trees: remove the original RLS River beta zip from the server/client mods and use only the generated River delta together with PHI.
 
 ## Notes
 
 - This patch is intended for online career sessions, not standalone single-player use.
-- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, prop cargo turn-in fix, cargo fail-safe unfreeze, drag NPC staging fix, online drag timeslip timing fix, manual player queue/restore controls, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
+- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, prop cargo turn-in fix, cargo fail-safe unfreeze, drag NPC staging fix, online drag timeslip timing fix, manual player queue/restore/resync controls, stale vehicle cleanup, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
 - Because the original RLS mod is third-party content, the recommended distribution format is **patch + build script**, not the complete repacked RLS archive.
