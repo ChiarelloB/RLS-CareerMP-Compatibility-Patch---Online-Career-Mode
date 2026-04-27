@@ -13,7 +13,7 @@
 ### Notes
 
 - This build should be tested locally before publishing. Do not call it stable until the two-player resync, three-player leave/crash, and owner-only cargo tests pass.
-- If users see no `Force Re-Sync Vehicles` button or no `v1.0.0-beta.14` marker, they are still running stale cached `CareerMP.zip` files.
+- Missing `Force Re-Sync Vehicles` or the `v1.0.0-beta.14` marker means stale cached `CareerMP.zip` files are still being loaded.
 
 ## v1.0.0-beta.13
 
@@ -32,7 +32,7 @@
 
 - Modded vehicles and trailer extension mods can still be incompatible with RLS/CareerMP, but this build is designed to fail safely and log the vehicle/job context instead of killing the active vehicle.
 - Validated in the West Coast test server: RLS free drag started, Alder Dragway started with a new opponent, abandoning Alder no longer blocks the next RLS free-drag attempt.
-- If users see the old player list UI or no `v1.0.0-beta.13` marker, they are almost certainly running stale BeamMP client cache files and should clear cached server mods before rejoining.
+- Old player list UI or no `v1.0.0-beta.13` marker usually means stale BeamMP client cache files are still loaded. Clear cached server mods before rejoining.
 
 ## v1.0.0-beta.12
 
