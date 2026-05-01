@@ -48,13 +48,14 @@ Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, whil
 - Makes CareerMP pass the active multiplayer map into the RLS startup flow so River Highway sessions no longer fall back to West Coast.
 - Removes the old `careermp.uilayout.json` preset from the generated `CareerMP.zip` to avoid `ui/apps.lua` layout crashes on BeamNG 0.34.
 - Keeps CareerMP player vehicle queue actions manual by default so queued remote vehicle changes are not force-applied while another player is driving.
-- Adds a visible `RLS CareerMP Patch v1.0.0-beta.14` marker to the CareerMP player list so users can quickly spot stale cached client files.
+- Adds a visible `RLS CareerMP Patch v1.0.0-beta.15` marker to the CareerMP player list so users can quickly spot stale cached client files.
 - Adds a manual `Force Re-Sync Vehicles` player-list action for clearing stale remote vehicle state after desync, disconnects, or crashes.
 - Adds a server-side stability hotfix script for cleaning stale CareerMP vehicle state on disconnect/reconnect without re-enabling risky automatic queue applies.
 - Hardens cargo loading so failed cargo-container callbacks unfreeze the vehicle and continue safely instead of leaving the car unusable.
 - Treats Prop Cargo as owner-only online: the player who accepted/spawned the prop cargo owns the turn-in flow.
 - Guards drag display/light sync so remote drag sessions do not overwrite a player who already has a local drag race active.
 - Cleans up Alder Dragway and RLS drag-practice state after abort/retry so removed opponent vehicles do not crash `dragAiCompat` and free drag remains usable without relogging.
+- Defers immediate RLS job/freeroam-event autosaves in BeamMP sessions, matching the safer RLS 2.6.4 MP behavior and avoiding save callbacks during event reward/cleanup synchronization.
 - Adds an optional River Highway builder workflow that creates a map delta locally without committing or redistributing large third-party map assets.
 
 ## Changed Files
@@ -73,6 +74,7 @@ Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, whil
 - `lua/ge/extensions/overhaul/dragAiCompat.lua`
 - `lua/ge/extensions/overrides/gameplay/drag/dragTypes/dragPracticeRace.lua`
 - `lua/ge/extensions/overrides/gameplay/drag/times.lua`
+- generated save-timing guards inside `gameplay/beamEats.lua`, `gameplay/events/freeroam/raceSession.lua`, and `overrides/career/modules/missionWrapper.lua`
 
 ### CareerMP
 
@@ -296,5 +298,5 @@ Do not distribute these at the same time:
 ## Notes
 
 - This patch is intended for online career sessions, not standalone single-player use.
-- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, prop cargo turn-in fix, cargo fail-safe unfreeze, drag NPC staging fix, online drag timeslip timing fix, manual player queue/restore/resync controls, stale vehicle cleanup, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
+- The current combined update includes the traffic-disable fixes, workshop respawn/recovery/taxi fixes, tuning fixes, camera/drag/delivery fixes, prop cargo turn-in fix, cargo fail-safe unfreeze, drag NPC staging fix, online drag timeslip timing fix, job/freeroam save-timing guards, manual player queue/restore/resync controls, stale vehicle cleanup, and grey-orb remote vehicle mitigation. Multi-player edge cases should still be validated in a live session before calling the release fully stable.
 - Because the original RLS mod is third-party content, the recommended distribution format is **patch + build script**, not the complete repacked RLS archive.

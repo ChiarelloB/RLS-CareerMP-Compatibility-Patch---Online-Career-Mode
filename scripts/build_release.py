@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
-PATCH_VERSION = "v1.0.0-beta.14"
+PATCH_VERSION = "v1.0.0-beta.15"
 
 RLS_REMOVE_PREFIXES = (
     # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
@@ -65,6 +65,120 @@ def replace_required_unless(text: str, old: str, new: str, path: str, label: str
     if already_present in text:
         return text
     return replace_required(text, old, new, path, label)
+
+
+def patch_rls_online_save_timing(entries: dict[str, bytes]) -> None:
+    """Defer event-completion saves that desync online jobs and freeroam events.
+
+    RLS 2.6.4 MP builds had these mission/freeroam save calls commented out.
+    In 2.6.5.x they were re-enabled, and in CareerMP/BeamMP sessions they can
+    fire while rewards, mission cleanup, or the next freeroam event are still
+    being synchronized. Keep normal single-player autosave behavior, but do not
+    call saveCurrent immediately from these callbacks during an MP session.
+    """
+
+    beam_eats_path = "lua/ge/extensions/gameplay/beamEats.lua"
+    beam_eats = entries.get(beam_eats_path)
+    if beam_eats:
+        text = beam_eats.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required_unless(
+            text,
+            "    if career_career.isAutosaveEnabled() then\n"
+            "        career_saveSystem.saveCurrent()\n"
+            "    end\n",
+            "    -- In online CareerMP, saving inside completion can desync job cleanup/reward state.\n"
+            "    if career_career.isAutosaveEnabled() and not (MPCoreNetwork and MPCoreNetwork.isMPSession and MPCoreNetwork.isMPSession()) then\n"
+            "        career_saveSystem.saveCurrent()\n"
+            "    end\n",
+            beam_eats_path,
+            "RLS BeamEats online save timing guard",
+            "saving inside completion can desync job cleanup/reward state",
+        )
+        entries[beam_eats_path] = text.encode("utf-8")
+
+    race_session_path = "lua/ge/extensions/gameplay/events/freeroam/raceSession.lua"
+    race_session = entries.get(race_session_path)
+    if race_session:
+        text = race_session.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required_unless(
+            text,
+            "            career_saveSystem.saveCurrent()\n",
+            "            -- RLS 2.6.4 MP avoided immediate saves here; keep that behavior online.\n"
+            "            if not (MPCoreNetwork and MPCoreNetwork.isMPSession and MPCoreNetwork.isMPSession()) then\n"
+            "                career_saveSystem.saveCurrent()\n"
+            "            end\n",
+            race_session_path,
+            "RLS freeroam race reward online save timing guard",
+            "RLS 2.6.4 MP avoided immediate saves here",
+        )
+        text = replace_required_unless(
+            text,
+            "    career_saveSystem.saveCurrent()\n"
+            "    notifyFreRaceCompleted(raceName, raceData, raceData.label, finishTime, vehId, completionMeta)\n",
+            "    -- Avoid saving mid-completion in online CareerMP; this can desync follow-up event state.\n"
+            "    if not (MPCoreNetwork and MPCoreNetwork.isMPSession and MPCoreNetwork.isMPSession()) then\n"
+            "        career_saveSystem.saveCurrent()\n"
+            "    end\n"
+            "    notifyFreRaceCompleted(raceName, raceData, raceData.label, finishTime, vehId, completionMeta)\n",
+            race_session_path,
+            "RLS freeroam completion online save timing guard",
+            "Avoid saving mid-completion in online CareerMP",
+        )
+        entries[race_session_path] = text.encode("utf-8")
+
+    mission_wrapper_path = "lua/ge/extensions/overrides/career/modules/missionWrapper.lua"
+    mission_wrapper = entries.get(mission_wrapper_path)
+    if mission_wrapper:
+        text = mission_wrapper.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required_unless(
+            text,
+            "local preMissionCycle = nil\n"
+            "\n"
+            "local function init() end\n",
+            "local preMissionCycle = nil\n"
+            "\n"
+            "local function shouldDeferCareerMPSave()\n"
+            "  return MPCoreNetwork and MPCoreNetwork.isMPSession and MPCoreNetwork.isMPSession()\n"
+            "end\n"
+            "\n"
+            "local function init() end\n",
+            mission_wrapper_path,
+            "RLS mission wrapper online save guard helper",
+            "local function shouldDeferCareerMPSave()",
+        )
+        text = replace_required(
+            text,
+            "local function saveMission(id)\n"
+            "  cacheMissionData(id)\n"
+            "  career_saveSystem.saveCurrent()\n"
+            "end\n",
+            "local function saveMission(id)\n"
+            "  cacheMissionData(id)\n"
+            "  if not shouldDeferCareerMPSave() then\n"
+            "    career_saveSystem.saveCurrent()\n"
+            "  end\n"
+            "end\n",
+            mission_wrapper_path,
+            "RLS mission stop online save timing guard",
+        )
+        text = replace_required(
+            text,
+            "  if career_career.isAutosaveEnabled() then\n"
+            "    career_saveSystem.saveCurrent()\n"
+            "  else\n"
+            "    missionStartStep.handlingComplete = true\n"
+            "    missionStartStep = nil\n"
+            "  end\n",
+            "  if career_career.isAutosaveEnabled() and not shouldDeferCareerMPSave() then\n"
+            "    career_saveSystem.saveCurrent()\n"
+            "  else\n"
+            "    missionStartStep.handlingComplete = true\n"
+            "    missionStartStep = nil\n"
+            "  end\n",
+            mission_wrapper_path,
+            "RLS mission start online save timing guard",
+        )
+        entries[mission_wrapper_path] = text.encode("utf-8")
 
 
 def patch_careermp_entries(entries: dict[str, bytes]) -> None:
@@ -405,6 +519,8 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
 
 def patch_rls_entries(entries: dict[str, bytes], output_name: str) -> None:
     """Keep BeamNG mod metadata aligned with the generated compatibility zip."""
+
+    patch_rls_online_save_timing(entries)
 
     override_manager_path = "lua/ge/extensions/overhaul/overrideManager.lua"
     override_manager = entries.get(override_manager_path)

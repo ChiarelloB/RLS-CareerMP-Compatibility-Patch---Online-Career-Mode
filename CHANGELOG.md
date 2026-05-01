@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.0-beta.15
+
+### Fixed
+
+- Deferred immediate `career_saveSystem.saveCurrent()` calls from RLS BeamEats, freeroam race completion, and mission start/stop callbacks while running in BeamMP/CareerMP sessions.
+- Restored the safer RLS 2.6.4 MP behavior for those job/freeroam-event save timing points, without disabling normal single-player autosaves.
+- Marked mission start handling complete immediately online when the autosave is deferred, avoiding mission-start stalls while preventing mid-sync save callbacks.
+
+### Notes
+
+- This targets reports where jobs/freeroam events desync or fail on later attempts after completion/reward cleanup.
+- The fix is intentionally narrow and does not disable garage, tuning, repair, insurance, marketplace, business, or general career saves.
+
 ## v1.0.0-beta.14
 
 ### Fixed
