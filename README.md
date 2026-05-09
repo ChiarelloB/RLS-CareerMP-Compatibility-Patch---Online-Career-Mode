@@ -23,7 +23,7 @@ Adapt RLS `2.6.5.2` for the online career flow used by `BeamMP + CareerMP`, whil
 - `rls_career_overhaul_2.6.5.2.zip`
 - `CareerMP.zip`
 - `CareerMPBanking.zip`
-- `rls_career_overhaul_river_highway_beta_0.0.5.zip`
+- `rls_career_overhaul_river_highway_beta_0.0.6.zip`
 - `River_Highway_Rework_PHI.zip`
 - BeamNG.drive `0.38.5`
 - BeamMP `3.9.x`
@@ -143,25 +143,25 @@ River Highway support is builder-only. This repository does **not** include the 
 
 You must provide:
 
-- `rls_career_overhaul_river_highway_beta_0.0.5.zip`
+- `rls_career_overhaul_river_highway_beta_0.0.6.zip`
 - `River_Highway_Rework_PHI.zip`
 - A local BeamNG.drive installation folder, so the builder can read vanilla content archives when creating texture/material aliases.
 
 Run:
 
 ```powershell
-python .\scripts\build_river_highway_delta.py --rls-river-original "C:\BeamNG-Mod-Build\rls_career_overhaul_river_highway_beta_0.0.5.zip" --river-phi-original "C:\BeamNG-Mod-Build\River_Highway_Rework_PHI.zip" --beamng-root "D:\SteamLibrary\steamapps\common\BeamNG.drive" --out-dir ".\built"
+python .\scripts\build_river_highway_delta.py --rls-river-original "C:\BeamNG-Mod-Build\rls_career_overhaul_river_highway_beta_0.0.6.zip" --river-phi-original "C:\BeamNG-Mod-Build\River_Highway_Rework_PHI.zip" --beamng-root "D:\SteamLibrary\steamapps\common\BeamNG.drive" --out-dir ".\built"
 ```
 
 If `python` does not work, use:
 
 ```powershell
-py .\scripts\build_river_highway_delta.py --rls-river-original "C:\BeamNG-Mod-Build\rls_career_overhaul_river_highway_beta_0.0.5.zip" --river-phi-original "C:\BeamNG-Mod-Build\River_Highway_Rework_PHI.zip" --beamng-root "D:\SteamLibrary\steamapps\common\BeamNG.drive" --out-dir ".\built"
+py .\scripts\build_river_highway_delta.py --rls-river-original "C:\BeamNG-Mod-Build\rls_career_overhaul_river_highway_beta_0.0.6.zip" --river-phi-original "C:\BeamNG-Mod-Build\River_Highway_Rework_PHI.zip" --beamng-root "D:\SteamLibrary\steamapps\common\BeamNG.drive" --out-dir ".\built"
 ```
 
 The script generates:
 
-- `built\rls_career_overhaul_river_highway_beta_0.0.5_careermp_delta.zip`
+- `built\rls_career_overhaul_river_highway_beta_0.0.6_careermp_delta.zip`
 - `built\river_highway_checksums.txt`
 
 The River builder:
@@ -281,7 +281,7 @@ Distribute these mods:
 - `CareerMPBanking.zip`
 - `rls_career_overhaul_2.6.5.2_careermp_compatible.zip`
 - `River_Highway_Rework_PHI.zip`
-- `rls_career_overhaul_river_highway_beta_0.0.5_careermp_delta.zip`
+- `rls_career_overhaul_river_highway_beta_0.0.6_careermp_delta.zip`
 
 Set the server map to:
 
@@ -300,7 +300,7 @@ Do not distribute these at the same time:
 
 - `RLS_2.6.4_MPv3.8.zip`
 - `rls_career_overhaul_2.6.5.2.zip`
-- `rls_career_overhaul_river_highway_beta_0.0.5.zip`
+- `rls_career_overhaul_river_highway_beta_0.0.6.zip`
 
 ## Troubleshooting
 
@@ -318,7 +318,7 @@ Do not distribute these at the same time:
 - Server traffic settings seem to ignore your patch after some time: check `Resources/Server/CareerMP/config/config.json` and set `server.autoUpdate` to `false`.
 - `Prop Cargo` will not turn in: replace the generated compatible RLS zip. Prop Cargo is owner-only online, so the player who accepted/spawned the physical prop cargo must be the one to complete it.
 - Old UI, missing `Queue Events`, missing `Restore Vehicles`, missing `Force Re-Sync Vehicles`, or no beta14 marker after updating: clear stale BeamMP client cache files and rejoin. The server may be correct while your client is still using an old downloaded `CareerMP.zip`.
-- River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.5.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
+- River Highway has red or missing textures: rebuild the River delta with the correct `rls_career_overhaul_river_highway_beta_0.0.6.zip`, `River_Highway_Rework_PHI.zip`, and `--beamng-root`.
 - River Highway has floating city pieces or floating trees: remove the original RLS River beta zip from the server/client mods and use only the generated River delta together with PHI.
 
 ## Notes

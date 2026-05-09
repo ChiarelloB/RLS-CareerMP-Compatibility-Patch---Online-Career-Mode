@@ -1829,7 +1829,7 @@
       "target": "vehicles/common/trailers/flat_bed_wood_m.data.png"
     }
   ],
-  "output_name": "rls_career_overhaul_river_highway_beta_0.0.5_careermp_delta.zip",
+  "output_name": "rls_career_overhaul_river_highway_beta_0.0.6_careermp_delta.zip",
   "overlay_files": [
     "levels/river_highway/art/forest/managedItemData.json",
     "levels/river_highway/art/rls_compat_materials/main.materials.json",

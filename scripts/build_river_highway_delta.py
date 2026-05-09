@@ -217,7 +217,7 @@ def build_river_delta(
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent
     parser = argparse.ArgumentParser(description="Build the RLS CareerMP River Highway compatibility delta zip.")
-    parser.add_argument("--rls-river-original", required=True, type=Path, help="Path to rls_career_overhaul_river_highway_beta_0.0.5.zip")
+    parser.add_argument("--rls-river-original", required=True, type=Path, help="Path to rls_career_overhaul_river_highway_beta_0.0.6.zip")
     parser.add_argument("--river-phi-original", required=True, type=Path, help="Path to River_Highway_Rework_PHI.zip")
     parser.add_argument("--beamng-root", type=Path, help="Path to the BeamNG.drive installation folder")
     parser.add_argument("--out-dir", type=Path, default=repo_root / "built", help="Output directory for the generated River delta zip")
