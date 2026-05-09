@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.0-beta.16
+
+### Changed
+
+- Rebased the stable compatibility builder for `RLS Career Overhaul 2.6.5.4` and `CareerMP v0.0.37`.
+- The generated compatible RLS zip is now `rls_career_overhaul_2.6.5.4_careermp_compatible.zip`.
+- The builder now accepts the full `CareerMP_v0.0.37.zip` package and extracts its nested `Resources/Client/CareerMP.zip` before applying client patches.
+- Kept the beta15 online job/freeroam save-timing guards while applying the existing traffic, workshop, drag, cargo, camera, queue, and resync fixes to the new bases.
+
+### Fixed
+
+- Fixed the default 7-Zip staging path used by the builder so large RLS zips with deep paths can fall back safely to Python ZIP output when 7-Zip fails on Windows.
+
 ## v1.0.0-beta.15
 
 ### Fixed

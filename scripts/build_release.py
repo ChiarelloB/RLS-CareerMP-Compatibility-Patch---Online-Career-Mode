@@ -2,13 +2,16 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import zipfile
 from pathlib import Path
 
+from zip_utils import add_zip_engine_argument, describe_zip_engine, write_zip
+
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
-PATCH_VERSION = "v1.0.0-beta.15"
+PATCH_VERSION = "v1.0.0-beta.16"
 
 RLS_REMOVE_PREFIXES = (
     # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
@@ -32,13 +35,31 @@ def sha256sum(path: Path) -> str:
 
 
 def read_zip_entries(zip_path: Path) -> dict[str, bytes]:
-    data: dict[str, bytes] = {}
     with zipfile.ZipFile(zip_path, "r") as zf:
-        for info in zf.infolist():
-            if info.is_dir():
-                continue
-            data[info.filename.replace("\\", "/")] = zf.read(info.filename)
+        return read_zip_entries_from_zipfile(zf)
+
+
+def read_zip_entries_from_bytes(zip_data: bytes) -> dict[str, bytes]:
+    with zipfile.ZipFile(io.BytesIO(zip_data), "r") as zf:
+        return read_zip_entries_from_zipfile(zf)
+
+
+def read_zip_entries_from_zipfile(zf: zipfile.ZipFile) -> dict[str, bytes]:
+    data: dict[str, bytes] = {}
+    for info in zf.infolist():
+        if info.is_dir():
+            continue
+        data[info.filename.replace("\\", "/")] = zf.read(info.filename)
     return data
+
+
+def read_careermp_entries(zip_path: Path) -> dict[str, bytes]:
+    with zipfile.ZipFile(zip_path, "r") as zf:
+        names = {info.filename.replace("\\", "/") for info in zf.infolist()}
+        nested_client = "Resources/Client/CareerMP.zip"
+        if nested_client in names:
+            return read_zip_entries_from_bytes(zf.read(nested_client))
+    return read_zip_entries(zip_path)
 
 
 def overlay_directory(entries: dict[str, bytes], patch_dir: Path) -> None:
@@ -657,22 +678,21 @@ def patch_rls_entries(entries: dict[str, bytes], output_name: str) -> None:
     entries[RLS_INFO_PATH] = (json.dumps(data, ensure_ascii=False, indent=4) + "\n").encode("utf-8")
 
 
-def write_zip(zip_path: Path, entries: dict[str, bytes]) -> None:
-    zip_path.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-        for name in sorted(entries):
-            zf.writestr(name, entries[name])
-
-
-def build_mod(base_zip: Path, patch_dir: Path, output_zip: Path, remove_prefixes: tuple[str, ...] = ()) -> tuple[int, str]:
-    entries = read_zip_entries(base_zip)
+def build_mod(
+    base_zip: Path,
+    patch_dir: Path,
+    output_zip: Path,
+    remove_prefixes: tuple[str, ...] = (),
+    zip_engine: str = "auto",
+) -> tuple[int, str]:
+    entries = read_careermp_entries(base_zip) if patch_dir.name == "CareerMP" else read_zip_entries(base_zip)
     remove_entry_prefixes(entries, remove_prefixes)
     overlay_directory(entries, patch_dir)
     if patch_dir.name == "CareerMP":
         patch_careermp_entries(entries)
     elif patch_dir.name == "RLS":
         patch_rls_entries(entries, output_zip.name)
-    write_zip(output_zip, entries)
+    write_zip(output_zip, entries, engine=zip_engine)
     return output_zip.stat().st_size, sha256sum(output_zip)
 
 
@@ -683,6 +703,7 @@ def main() -> int:
     parser.add_argument("--rls-original", required=True, type=Path, help="Path to the original rls_career_overhaul zip")
     parser.add_argument("--careermp-original", required=True, type=Path, help="Path to the original CareerMP.zip")
     parser.add_argument("--out-dir", type=Path, default=repo_root / "built", help="Output directory for the generated zips")
+    add_zip_engine_argument(parser)
     args = parser.parse_args()
 
     rls_original = args.rls_original.expanduser().resolve()
@@ -702,8 +723,8 @@ def main() -> int:
     rls_out = out_dir / f"{rls_original.stem}_careermp_compatible.zip"
     careermp_out = out_dir / "CareerMP.zip"
 
-    rls_size, rls_hash = build_mod(rls_original, rls_patch_dir, rls_out, RLS_REMOVE_PREFIXES)
-    cmp_size, cmp_hash = build_mod(careermp_original, careermp_patch_dir, careermp_out, CAREERMP_REMOVE_PREFIXES)
+    rls_size, rls_hash = build_mod(rls_original, rls_patch_dir, rls_out, RLS_REMOVE_PREFIXES, args.zip_engine)
+    cmp_size, cmp_hash = build_mod(careermp_original, careermp_patch_dir, careermp_out, CAREERMP_REMOVE_PREFIXES, args.zip_engine)
 
     checksums = out_dir / "checksums.txt"
     checksums.write_text(
@@ -714,6 +735,7 @@ def main() -> int:
                 "",
                 f"{rls_out.name} size={rls_size}",
                 f"{careermp_out.name} size={cmp_size}",
+                f"zip_engine={describe_zip_engine(args.zip_engine)}",
             ]
         ),
         encoding="utf-8",
@@ -722,6 +744,7 @@ def main() -> int:
     print(f"Built: {rls_out}")
     print(f"Built: {careermp_out}")
     print(f"Wrote: {checksums}")
+    print(f"Zip engine: {describe_zip_engine(args.zip_engine)}")
     return 0
 
 
