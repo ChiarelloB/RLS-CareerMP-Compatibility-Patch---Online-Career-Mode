@@ -11,10 +11,10 @@ from zip_utils import add_zip_engine_argument, describe_zip_engine, write_zip
 
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
-PATCH_VERSION = "v1.0.0-beta.16"
+PATCH_VERSION = "v1.0.0-beta.17"
 
 RLS_REMOVE_PREFIXES = (
-    # RLS 2.6.5.x ships a legacy minimap app override that can remain in the
+    # RLS 2.6.x ships a legacy minimap app override that can remain in the
     # final zip after patch overlay and crash BeamNG on rejoin.
     "lua/ge/extensions/overrides/ui/apps/minimap/",
 )
@@ -92,7 +92,7 @@ def patch_rls_online_save_timing(entries: dict[str, bytes]) -> None:
     """Defer event-completion saves that desync online jobs and freeroam events.
 
     RLS 2.6.4 MP builds had these mission/freeroam save calls commented out.
-    In 2.6.5.x they were re-enabled, and in CareerMP/BeamMP sessions they can
+    In current RLS 2.6.x builds they are enabled, and in CareerMP/BeamMP sessions they can
     fire while rewards, mission cleanup, or the next freeroam event are still
     being synchronized. Keep normal single-player autosave behavior, but do not
     call saveCurrent immediately from these callbacks during an MP session.

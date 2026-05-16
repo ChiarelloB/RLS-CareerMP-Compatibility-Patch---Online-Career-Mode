@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.17
+
+### Changed
+
+- Rebased the stable compatibility builder for `RLS Career Overhaul 2.6.6` and `CareerMP v0.0.37`.
+- The generated compatible RLS zip is now `rls_career_overhaul_2.6.6_careermp_compatible.zip`.
+- Kept the beta16 CareerMP wrapper handling, manual queue/resync controls, save-timing guards, traffic, workshop, drag, cargo, camera, and grey-orb mitigations on the new RLS base.
+
 ## v1.0.0-beta.16
 
 ### Changed
