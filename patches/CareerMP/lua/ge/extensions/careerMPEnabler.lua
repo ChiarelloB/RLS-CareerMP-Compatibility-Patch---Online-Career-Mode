@@ -4,7 +4,17 @@ local M = {}
 
 --Setup
 
-local nickname = MPConfig.getNickname()
+local function getMPNickname()
+	if MPConfig and MPConfig.getNickname then
+		local ok, value = pcall(MPConfig.getNickname)
+		if ok and value and value ~= "" then
+			return value
+		end
+	end
+	return ""
+end
+
+local nickname = getMPNickname()
 
 local blockedInputActions = {}
 
@@ -575,7 +585,7 @@ end
 local function rxCareerSync(data)
 	clientConfig = jsonDecode(data)
 	diag('rx career sync payload=' .. tostring(data))
-	nickname = MPConfig.getNickname()
+	nickname = getMPNickname()
 	blockedInputActions = {}
 	settingsCheck()
 	actionsCheck()

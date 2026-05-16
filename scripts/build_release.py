@@ -11,7 +11,7 @@ from zip_utils import add_zip_engine_argument, describe_zip_engine, write_zip
 
 
 RLS_INFO_PATH = "mod_info/RLSCO24/info.json"
-PATCH_VERSION = "v1.0.0-beta.17"
+PATCH_VERSION = "v1.0.0-beta.18"
 
 RLS_REMOVE_PREFIXES = (
     # RLS 2.6.x ships a legacy minimap app override that can remain in the
@@ -212,6 +212,70 @@ def patch_careermp_entries(entries: dict[str, bytes]) -> None:
     suppress it during module initialization and ignore stale remote clears
     while a local drag race is already active.
     """
+
+    enabler_path = "lua/ge/extensions/careerMPEnabler.lua"
+    enabler = entries.get(enabler_path)
+    if enabler:
+        text = enabler.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required_unless(
+            text,
+            "local nickname = MPConfig.getNickname()\n",
+            "local function getMPNickname()\n"
+            "\tif MPConfig and MPConfig.getNickname then\n"
+            "\t\tlocal ok, value = pcall(MPConfig.getNickname)\n"
+            "\t\tif ok and value and value ~= \"\" then\n"
+            "\t\t\treturn value\n"
+            "\t\tend\n"
+            "\tend\n"
+            "\treturn \"\"\n"
+            "end\n"
+            "\n"
+            "local nickname = getMPNickname()\n",
+            enabler_path,
+            "CareerMP enabler MPConfig early-load guard",
+            "local function getMPNickname()",
+        )
+        text = replace_required_unless(
+            text,
+            "\tnickname = MPConfig.getNickname()\n",
+            "\tnickname = getMPNickname()\n",
+            enabler_path,
+            "CareerMP enabler MPConfig sync guard",
+            "\tnickname = getMPNickname()\n",
+        )
+        entries[enabler_path] = text.encode("utf-8")
+
+    payments_path = "lua/ge/extensions/careerMPPlayerPayments.lua"
+    payments = entries.get(payments_path)
+    if payments:
+        text = payments.decode("utf-8").replace("\r\n", "\n")
+        text = replace_required_unless(
+            text,
+            "local nickname = MPConfig.getNickname()\n",
+            "local function getMPNickname()\n"
+            "\tif MPConfig and MPConfig.getNickname then\n"
+            "\t\tlocal ok, value = pcall(MPConfig.getNickname)\n"
+            "\t\tif ok and value and value ~= \"\" then\n"
+            "\t\t\treturn value\n"
+            "\t\tend\n"
+            "\tend\n"
+            "\treturn \"\"\n"
+            "end\n"
+            "\n"
+            "local nickname = getMPNickname()\n",
+            payments_path,
+            "CareerMP payments MPConfig early-load guard",
+            "local function getMPNickname()",
+        )
+        text = replace_required_unless(
+            text,
+            "\t\tnickname = MPConfig.getNickname()\n",
+            "\t\tnickname = getMPNickname()\n",
+            payments_path,
+            "CareerMP payments MPConfig world-ready guard",
+            "\t\tnickname = getMPNickname()\n",
+        )
+        entries[payments_path] = text.encode("utf-8")
 
     display_path = "lua/ge/extensions/gameplay/drag/display.lua"
     display = entries.get(display_path)

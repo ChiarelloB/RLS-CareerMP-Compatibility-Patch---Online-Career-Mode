@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.0-beta.18
+
+### Changed
+
+- Added RaceTab and CareerMP Tablet 0.0.5 to the ready-to-use server bundle.
+- Updated the visible CareerMP player-list marker to `RLS CareerMP Patch v1.0.0-beta.18`.
+
+### Fixed
+
+- Guarded early `MPConfig.getNickname()` calls in `careerMPEnabler.lua` and `careerMPPlayerPayments.lua`.
+- Fixes the load-order crash where RaceTab/CareerMP could fail before BeamMP exposed `MPConfig`, then the BeamMP UI cascaded into `MPCoreNetwork.getLoginState()` nil fatal errors.
+
 ## v1.0.0-beta.17
 
 ### Changed
